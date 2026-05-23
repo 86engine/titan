@@ -1,0 +1,182 @@
+---
+// src/pages/es/politica-de-privacidad.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const lang = 'en';
+
+const pageTranslations = {
+  en: { url: '/privacy-policy' },
+  es: { url: '/es/politica-de-privacidad' },
+  ru: { url: '/ru/politika-konfidencialnosti' },
+};
+
+const alternates = {
+  en: '/privacy-policy',
+  es: '/es/politica-de-privacidad',
+  ru: '/ru/politika-konfidencialnosti',
+};
+---
+
+<BaseLayout lang={lang} translations={pageTranslations} alternates={alternates}>
+  <section class="rs-breadcrumb-area rs-breadcrumb-one p-relative">
+    <div class="rs-breadcrumb-bg" style="background-image: url('https://img.titan-recycling.com/wp-content/uploads/2026/04/cookie.jpg');"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-6 col-xl-8 col-lg-8">
+          <div class="rs-breadcrumb-content-wrapper">
+            <div class="rs-breadcrumb-title-wrapper">
+              <h1 class="rs-breadcrumb-title">Política de cookies</h1>
+            </div>
+            <div class="rs-breadcrumb-menu">
+              <nav>
+                <ul>
+                  <li><span><a href="/es/">Inicio</a></span></li>
+                  <li><span>Política de cookies</span></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rs-postbox-area section-space">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-xl-8 col-lg-8 cookie-content" style="margin:0 auto;float:none;">
+          <div class="rs-postbox-details-wrapper content">
+            <p class="last-updated">Última actualización: 2026-04-18</p>
+            <section><h2>1. ¿Qué es una cookie?</h2><p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, teléfono inteligente, tableta, etc.) cuando navega por la mayoría de los sitios web. Salvo en algunos casos, las cookies requieren su consentimiento para ser almacenadas en su dispositivo.</p><p>Puede gestionar sus preferencias modificando total o parcialmente la configuración de cookies a continuación. También puede permitir o desactivar todas las cookies.</p></section>
+            <section><h2>2. ¿Qué información recopilamos?</h2><p>Las cookies que almacenamos en su dispositivo con su consentimiento nos permiten recopilar la siguiente información:</p><h3>2.1 Información relacionada con el dispositivo que está utilizando:</h3><ul><li>El tipo de dispositivo que utiliza (teléfono inteligente, tableta, ordenador, etc.);</li><li>El sistema operativo de su dispositivo (macOS, iOS, Android, Windows, BlackBerry, etc.);</li><li>El tipo y la versión de los complementos de su dispositivo;</li><li>El navegador utilizado (Safari, Chrome, Internet Explorer, etc.);</li><li>La dirección IP de su dispositivo;</li><li>Los datos de geolocalización de su dispositivo;</li><li>Su preferencia de idioma.</li></ul><h3>2.2 Datos de navegación y comportamiento del usuario:</h3><ul><li>Estadísticas de tráfico de las páginas individuales de nuestro sitio web;</li><li>Las rutas URL completas hacia, a través y desde nuestro sitio;</li><li>Detalles de cualquier anuncio que se le haya mostrado;</li><li>Su interacción con dichos anuncios;</li><li>La acción que realizó después de hacer clic en un anuncio;</li><li>La cantidad de veces que ha recibido anuncios publicitarios;</li><li>Información personal relacionada con sus actividades en línea.</li></ul></section>
+            <section><h2>3. Cookies básicas</h2><p>Estas cookies son necesarias para el correcto funcionamiento del sitio web. Su configuración no puede modificarse.</p><p>Estas cookies básicas no requieren su consentimiento.</p></section>
+            <section><h2>4. Cookies de rendimiento</h2><p>Estas cookies cuentan y analizan el número de visitantes de nuestro sitio web con el fin de mejorar el rendimiento del sitio.</p><p>Estas cookies requieren su consentimiento previo.</p></section>
+            <section><h2>5. Cookies de publicidad y redes sociales</h2><p>Estas cookies se utilizan para personalizar nuestros anuncios en sitios web de terceros en función de sus preferencias.</p><p>Estas cookies requieren su consentimiento previo.</p></section>
+            <section><h2>6. Cookies de terceros</h2><p>Dado que nuestro sitio web contiene aplicaciones de terceros, nuestros socios pueden instalar cookies.</p><p>Estas cookies requieren su consentimiento previo.</p></section>
+            <section><h2>7. ¿Para qué se utilizan estas cookies y durante cuánto tiempo se almacenan?</h2>
+              <div class="table-responsive">
+                <table class="cookie-table">
+                  <thead><tr><th>Tipo de cookie</th><th>Nombre</th><th>Finalidad</th><th>Duración de la cookie</th></tr></thead>
+                  <tbody><tr><td>Cookie básica</td><td>Consentimiento de cookies</td><td>Comprueba si el usuario ha aceptado las cookies</td><td>100 days</td></tr><tr><td>Cookie de rendimiento</td><td></td><td>Almacenamiento de ID de sesión de Google Analytics</td><td>2 years</td></tr><tr><td>Cookie de publicidad</td><td>Consentimiento de cookies de Google</td><td>Comprueba si el usuario acepta las políticas de Google</td><td>1 year</td></tr></tbody>
+                </table>
+              </div>
+            </section>
+            <section><h2>8. Sus preferencias de cookies</h2><p>Recopilamos y procesamos sus datos en este sitio web para comprender mejor su uso. Siempre solicitaremos su consentimiento. Puede cambiar su configuración de privacidad aquí.</p><p>Además, puede bloquear la instalación de cookies ajustando la configuración de su navegador. Tenga en cuenta que desactivar las cookies afectará la funcionalidad de este sitio web, así como la de muchos otros sitios que visite.</p>
+              <button id="cookieSettingsBtn" class="rs-btn blue-bg cookie-settings-btn">Configuración</button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- Cookie 弹窗 -->
+<div class="cookie-overlay" id="cookieModal" style="display:none;">
+  <div class="cookie-panel">
+    <h2 id="cookieTitle"></h2>
+    <p id="cookieDesc"></p>
+    <div class="cookie-top-row">
+      <a href="/es/politica-de-privacidad" id="cookiePrivacyLink"></a>
+      <select id="cookieLang"><option value="en">English</option><option value="es">Español</option><option value="ru">русский</option></select>
+    </div>
+    <div class="cookie-options">
+      <label class="cookie-option"><div><strong id="cookieEssentialTitle"></strong><small id="cookieEssentialDesc"></small><em id="cookieEssentialRequired"></em></div><span class="toggle-switch"><input type="checkbox" checked disabled><span class="toggle-slider"></span></span></label>
+      <label class="cookie-option"><div><strong id="cookieAnalyzeTitle"></strong><small id="cookieAnalyzeDesc"></small></div><span class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></span></label>
+      <label class="cookie-option"><div><strong id="cookiePersonalizedTitle"></strong><small id="cookiePersonalizedDesc"></small></div><span class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></span></label>
+      <label class="cookie-option"><div><strong id="cookieMarketingTitle"></strong><small id="cookieMarketingDesc"></small></div><span class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></span></label>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-btn primary" id="btnAcceptAll"></button>
+      <button class="cookie-btn outline" id="btnStrictlyNecessary"></button>
+      <button class="cookie-btn outline" id="btnSaveSettings"></button>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import "../../styles/cookie.css";
+  .cookie-settings-btn { font-size: 16px; padding: 10px 30px; height: auto; width: auto; }
+</style>
+
+<script is:inline>
+  (async () => {
+    const res = await fetch('/data/cookie-i18n.json');
+    const translations = await res.json();
+
+    const ids = {
+      cookieTitle: 'title',
+      cookieDesc: 'desc',
+      cookiePrivacyLink: 'privacy',
+      cookieEssentialTitle: 'essentialTitle',
+      cookieEssentialDesc: 'essentialDesc',
+      cookieEssentialRequired: 'essentialRequired',
+      cookieAnalyzeTitle: 'analyzeTitle',
+      cookieAnalyzeDesc: 'analyzeDesc',
+      cookiePersonalizedTitle: 'personalizedTitle',
+      cookiePersonalizedDesc: 'personalizedDesc',
+      cookieMarketingTitle: 'marketingTitle',
+      cookieMarketingDesc: 'marketingDesc',
+      btnAcceptAll: 'acceptAll',
+      btnStrictlyNecessary: 'strictlyNecessary',
+      btnSaveSettings: 'saveSettings'
+    };
+
+    const langSelect = document.getElementById('cookieLang');
+    const opts = langSelect.querySelectorAll('option');
+
+    function setLang(lang) {
+      const t = translations[lang];
+      if (!t) return;
+      Object.entries(ids).forEach(([elId, key]) => {
+        const el = document.getElementById(elId);
+        if (el) el.textContent = t[key] || '';
+      });
+      opts[0].textContent = t.langEn;
+      opts[1].textContent = t.langEs;
+      opts[2].textContent = t.langRu;
+      localStorage.setItem('cookieLang', lang);
+    }
+
+    langSelect.addEventListener('change', e => setLang(e.target.value));
+
+    const savedLang = localStorage.getItem('cookieLang') || 'es';
+    langSelect.value = savedLang;
+    setLang(savedLang);
+
+    document.getElementById('cookieSettingsBtn')?.addEventListener('click', () => {
+      document.getElementById('cookieModal').style.display = 'flex';
+    });
+
+    document.querySelectorAll('#btnAcceptAll, #btnStrictlyNecessary, #btnSaveSettings').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('cookieModal').style.display = 'none';
+
+        const newLang = document.getElementById('cookieLang').value;
+        const path = window.location.pathname;
+
+        const pageMap = {
+          '/privacy-policy': {
+            en: '/privacy-policy',
+            es: '/es/politica-de-privacidad',
+            ru: '/ru/politika-konfidencialnosti',
+          },
+          '/es/politica-de-privacidad': {
+            en: '/privacy-policy',
+            es: '/es/politica-de-privacidad',
+            ru: '/ru/politika-konfidencialnosti',
+          },
+          '/ru/politika-konfidencialnosti': {
+            en: '/privacy-policy',
+            es: '/es/politica-de-privacidad',
+            ru: '/ru/politika-konfidencialnosti',
+          },
+        };
+
+        const target = pageMap[path]?.[newLang];
+        if (target && target !== path) {
+          window.location.href = target;
+        }
+      });
+    });
+  })();
+</script>

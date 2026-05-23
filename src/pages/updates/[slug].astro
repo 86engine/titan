@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import UpdatesDetail from "../../components/UpdatesDetail.astro";
+import { getUpdates } from "../../data/updates.js";
+import { buildContentIndex } from "../../lib/wordpress.js";
+
+export async function getStaticPaths() {
+  const updates = await getUpdates('en');
+  return updates.map(u => ({ params: { slug: u.id }, props: { update: u } }));
+}
+
+const lang = 'en';
+const { update } = Astro.props;
+
+if (!update) return Astro.redirect('/updates');
+
+const allUpdates = await getUpdates('en');
+const contentIndex = buildContentIndex(allUpdates);
+
+const ui = {
+  home: 'Home', updates: 'Updates', detail: 'Detail', by: 'By', recommended: 'Recommended',
+};
+
+const alternates = {
+  en: update.translations?.en?.url || '#',
+  es: update.translations?.es?.url || '#',
+  ru: update.translations?.ru?.url || '#',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={update.translations} 
+  contentIndex={contentIndex} 
+  currentContentId={update.content_id}
+  title={update.pageTitle}
+  description={update.pageDescription}
+  keywords={update.pageKeywords}
+  alternates={alternates}
+>
+  <UpdatesDetail lang={lang} update={update} ui={ui} />
+</BaseLayout>

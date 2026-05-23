@@ -1,0 +1,323 @@
+{
+  "en": {
+    "title": "TITAN strives to provide you with the best user experience.",
+    "desc": "This site uses cookies for essential functions, service delivery, and to analyze site traffic for improvement. You may accept all, only necessary, or reject non-essential cookies, and update your choice anytime.",
+    "privacy": "Privacy Policy",
+    "essentialTitle": "Essential Cookies",
+    "essentialDesc": "Cookies essential for the proper functioning of the website cannot be disabled.",
+    "essentialRequired": "Required item",
+    "analyzeTitle": "Analyze Cookies",
+    "analyzeDesc": "Analyzes site usage to enhance our services and user experience.",
+    "personalizedTitle": "Personalized Cookies",
+    "personalizedDesc": "To enhance your experience by remembering your settings.",
+    "marketingTitle": "Marketing Cookies",
+    "marketingDesc": "Targeted advertising and analytics measurement.",
+    "acceptAll": "Accept all",
+    "strictlyNecessary": "Strictly necessary",
+    "saveSettings": "Save settings",
+    "langEn": "English",
+    "langEs": "Español",
+    "langRu": "русский",
+    
+    "pageTitle": "Cookie Policy",
+    "home": "Home",
+    "lastUpdated": "last updated: 2026-04-18",
+    "sections": [
+      {
+        "h2": "1. What is a Cookie?",
+        "content": [
+          { "p": "Cookies are small text files that are stored on your device (computer, smartphone, tablet, etc.) when you browse most websites. Except in some cases, cookies require your consent to be stored on your device." },
+          { "p": "You can manage your preferences by changing all or some of the cookie settings below. You can also allow or disable all cookies." }
+        ]
+      },
+      {
+        "h2": "2. What information do we collect?",
+        "content": [
+          { "p": "The cookies we store on your device with your consent enable us to collect the following information:" },
+          { "h3": "2.1 Information related to the device you are using:" },
+          { "ul": [
+            "The type of device you are using (smartphone, tablet, computer, etc.);",
+            "The operating system of your device (macOS, iOS, Android, Windows, BlackBerry, etc.);",
+            "The type and version of plug-ins for your device;",
+            "The browser used (Safari, Chrome, Internet Explorer, etc.);",
+            "The IP address of your device;",
+            "Your device's geolocation data;",
+            "Your language preference."
+          ]},
+          { "h3": "2.2 Browsing and user behavior data:" },
+          { "ul": [
+            "Traffic statistics for individual pages of our website;",
+            "The full URL paths to, through and from our site;",
+            "Details of any advertisements that have been served to you;",
+            "Your interaction with those ads;",
+            "The action you took after clicking on an ad;",
+            "The number of times you have received placed advertisements;",
+            "Personal information related to your activities online."
+          ]}
+        ]
+      },
+      {
+        "h2": "3. Basic Cookies",
+        "content": [
+          { "p": "These cookies are necessary for the proper functioning of the website. Their settings cannot be changed." },
+          { "p": "These basic cookies do not require your consent." }
+        ]
+      },
+      {
+        "h2": "4. Performance Cookies",
+        "content": [
+          { "p": "These cookies count and analyze the number of visitors to our website in order to improve the performance of the site." },
+          { "p": "These cookies require your prior consent." }
+        ]
+      },
+      {
+        "h2": "5. Advertising and Social Media Cookies",
+        "content": [
+          { "p": "These cookies are used to customize our advertisements on third-party websites based on your preferences." },
+          { "p": "These cookies require your prior consent." }
+        ]
+      },
+      {
+        "h2": "6. Third Party Cookies",
+        "content": [
+          { "p": "As our website contains third-party applications, our partners may set cookies." },
+          { "p": "These cookies require your prior consent." }
+        ]
+      },
+      {
+        "h2": "7. What are these cookies used for and how long are they stored?",
+        "table": {
+          "headers": ["Type of Cookie", "Name", "Purpose", "Cookie Duration"],
+          "rows": [
+            ["Basic Cookie", "Cookie consent", "Checks if the user has accepted cookies", "100 days"],
+            ["Performance Cookie", "", "Google Analytics session ID storage", "2 years"],
+            ["Advertising Cookie", "Cookie consent to Google", "Checks if user agrees to Google's policies", "1 year"]
+          ]
+        }
+      },
+      {
+        "h2": "8. Your Cookie Preferences",
+        "content": [
+          { "p": "We collect and process your data on this website to better understand its use. We will always ask for your consent. You can change your privacy settings here." },
+          { "p": "In addition, you can block the setting of cookies by adjusting your browser settings. Please note that disabling cookies will affect the functionality of this website as well as many other websites you visit." }
+        ],
+        "button": "setting"
+      }
+    ]
+  },
+  "es": {
+    "title": "TITAN se esfuerza por ofrecerle la mejor experiencia de usuario.",
+    "desc": "TEste sitio utiliza cookies para funciones esenciales, prestación de servicios y análisis del tráfico con fines de mejora. Puede aceptar todas las cookies, solo las necesarias o rechazar las no esenciales, y actualizar su elección en cualquier momento.",
+    "privacy": "Política de privacidad",
+    "essentialTitle": "Cookies esenciales",
+    "essentialDesc": "Las cookies necesarias para el correcto funcionamiento del sitio web no pueden desactivarse.",
+    "essentialRequired": "Elemento obligatorio",
+    "analyzeTitle": "Cookies de análisis",
+    "analyzeDesc": "Analizan el uso del sitio para mejorar nuestros servicios y la experiencia del usuario.",
+    "personalizedTitle": "Cookies personalizadas",
+    "personalizedDesc": "Para mejorar su experiencia recordando sus preferencias.",
+    "marketingTitle": "Cookies de marketing",
+    "marketingDesc": "Publicidad dirigida y medición analítica.",
+    "acceptAll": "Aceptar todas",
+    "strictlyNecessary": "Solo necesarias",
+    "saveSettings": "Guardar configuración",
+    "langEn": "English",
+    "langEs": "Español",
+    "langRu": "русский",
+    
+    "pageTitle": "Política de cookies",
+    "home": "Inicio",
+    "lastUpdated": "Última actualización: 2026-04-18",
+    "sections": [
+      {
+        "h2": "1. ¿Qué es una cookie?",
+        "content": [
+          { "p": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, teléfono inteligente, tableta, etc.) cuando navega por la mayoría de los sitios web. Salvo en algunos casos, las cookies requieren su consentimiento para ser almacenadas en su dispositivo." },
+          { "p": "Puede gestionar sus preferencias modificando total o parcialmente la configuración de cookies a continuación. También puede permitir o desactivar todas las cookies." }
+        ]
+      },
+      {
+        "h2": "2.  ¿Qué información recopilamos?",
+        "content": [
+          { "p": "Las cookies que almacenamos en su dispositivo con su consentimiento nos permiten recopilar la siguiente información:" },
+          { "h3": "2.1 Información relacionada con el dispositivo que está utilizando:" },
+          { "ul": [
+            "El tipo de dispositivo que utiliza (teléfono inteligente, tableta, ordenador, etc.);",
+            "El sistema operativo de su dispositivo (macOS, iOS, Android, Windows, BlackBerry, etc.);",
+            "El tipo y la versión de los complementos de su dispositivo;",
+            "El navegador utilizado (Safari, Chrome, Internet Explorer, etc.);",
+            "La dirección IP de su dispositivo;",
+            "Los datos de geolocalización de su dispositivo;",
+            "Su preferencia de idioma."
+          ]},
+          { "h3": "2.2 Datos de navegación y comportamiento del usuario:" },
+          { "ul": [
+            "Estadísticas de tráfico de las páginas individuales de nuestro sitio web;",
+            "Las rutas URL completas hacia, a través y desde nuestro sitio;",
+            "Detalles de cualquier anuncio que se le haya mostrado;",
+            "Su interacción con dichos anuncios;",
+            "La acción que realizó después de hacer clic en un anuncio;",
+            "La cantidad de veces que ha recibido anuncios publicitarios;",
+            "Información personal relacionada con sus actividades en línea."
+          ]}
+        ]
+      },
+      {
+        "h2": "3. Cookies básicas",
+        "content": [
+          { "p": "Estas cookies son necesarias para el correcto funcionamiento del sitio web. Su configuración no puede modificarse." },
+          { "p": "Estas cookies básicas no requieren su consentimiento." }
+        ]
+      },
+      {
+        "h2": "4. Cookies de rendimiento",
+        "content": [
+          { "p": "Estas cookies cuentan y analizan el número de visitantes de nuestro sitio web con el fin de mejorar el rendimiento del sitio." },
+          { "p": "Estas cookies requieren su consentimiento previo." }
+        ]
+      },
+      {
+        "h2": "5. Cookies de publicidad y redes sociales",
+        "content": [
+          { "p": "Estas cookies se utilizan para personalizar nuestros anuncios en sitios web de terceros en función de sus preferencias." },
+          { "p": "Estas cookies requieren su consentimiento previo." }
+        ]
+      },
+      {
+        "h2": "6. Cookies de terceros",
+        "content": [
+          { "p": "Dado que nuestro sitio web contiene aplicaciones de terceros, nuestros socios pueden instalar cookies." },
+          { "p": "Estas cookies requieren su consentimiento previo." }
+        ]
+      },
+      {
+        "h2": "7. ¿Para qué se utilizan estas cookies y durante cuánto tiempo se almacenan?",
+        "table": {
+          "headers": ["Tipo de cookie", "Nombre", "Finalidad", "Duración de la cookie"],
+          "rows": [
+            ["Cookie básica", "Consentimiento de cookies", "Comprueba si el usuario ha aceptado las cookies", "100 days"],
+            ["Cookie de rendimiento", "", "Almacenamiento de ID de sesión de Google Analytics", "2 years"],
+            ["Cookie de publicidad", "Consentimiento de cookies de Google", "Comprueba si el usuario acepta las políticas de Google", "1 year"]
+          ]
+        }
+      },
+      {
+        "h2": "8. Sus preferencias de cookies",
+        "content": [
+          { "p": "Recopilamos y procesamos sus datos en este sitio web para comprender mejor su uso. Siempre solicitaremos su consentimiento. Puede cambiar su configuración de privacidad aquí." },
+          { "p": "Además, puede bloquear la instalación de cookies ajustando la configuración de su navegador. Tenga en cuenta que desactivar las cookies afectará la funcionalidad de este sitio web, así como la de muchos otros sitios que visite." }
+        ],
+        "button": "Configuración"
+      }
+    ]
+  },
+
+  "ru":  {
+    "title": "TITAN стремится предоставить вам наилучший пользовательский опыт.",
+    "desc": "Этот сайт использует файлы cookie для обеспечения основных функций, предоставления услуг и анализа трафика в целях улучшения. Вы можете принять все файлы cookie, только необходимые или отказаться от необязательных, а также изменить свой выбор в любое время.",
+    "privacy": "Политика конфиденциальности",
+    "essentialTitle": "Необходимые файлы cookie",
+    "essentialDesc": "Файлы cookie, необходимые для корректной работы сайта, не могут быть отключены.",
+    "essentialRequired": "Обязательный пункт",
+    "analyzeTitle": "Аналитические файлы cookie",
+    "analyzeDesc": "Анализируют использование сайта для улучшения наших услуг и пользовательского опыта.",
+    "personalizedTitle": "Персонализированные файлы cookie",
+    "personalizedDesc": "Для улучшения вашего опыта путём запоминания ваших настроек.",
+    "marketingTitle": "Маркетинговые файлы cookie",
+    "marketingDesc": "Таргетированная реклама и аналитические измерения.",
+    "acceptAll": "Принять все",
+    "strictlyNecessary": "Только необходимые",
+    "saveSettings": "Сохранить настройки",
+    "langEn": "English",
+    "langEs": "Español",
+    "langRu": "русский",
+    
+    "pageTitle": "Политика использования файлов cookie",
+    "home": "Главная",
+    "lastUpdated": "Последнее обновление: 2026-04-18",
+    "sections": [
+      {
+        "h2": "1. Что такое файл cookie?",
+        "content": [
+          { "p": "Файлы cookie — это небольшие текстовые файлы, которые сохраняются на вашем устройстве (компьютере, смартфоне, планшете и т. д.) при посещении большинства веб-сайтов. За исключением некоторых случаев, для сохранения файлов cookie на вашем устройстве требуется ваше согласие." },
+          { "p": "Вы можете управлять своими предпочтениями, изменив все или некоторые настройки файлов cookie ниже. Вы также можете разрешить или отключить все файлы cookie." }
+        ]
+      },
+      {
+        "h2": "2. Какую информацию мы собираем?",
+        "content": [
+          { "p": "Файлы cookie, сохраняемые на вашем устройстве с вашего согласия, позволяют нам собирать следующую информацию:" },
+          { "h3": "2.1 Информация, связанная с используемым вами устройством:" },
+          { "ul": [
+            "Тип используемого вами устройства (смартфон, планшет, компьютер и т. д.);",
+            "Операционная система вашего устройства (macOS, iOS, Android, Windows, BlackBerry и т. д.);",
+            "Тип и версия плагинов вашего устройства;",
+            "Используемый браузер (Safari, Chrome, Internet Explorer и т. д.);",
+            "IP-адрес вашего устройства;",
+            "Данные о геолокации вашего устройства;",
+            "Ваши языковые предпочтения."
+          ]},
+          { "h3": "2.2 Данные о просмотре и поведении пользователя:" },
+          { "ul": [
+            "Статистика трафика по отдельным страницам нашего сайта;",
+            "Полные URL-пути при переходе на наш сайт, внутри него и с него;",
+            "Сведения о любых рекламных объявлениях, которые были вам показаны;",
+            "Ваше взаимодействие с этими объявлениями;",
+            "Действие, которое вы совершили после нажатия на объявление;",
+            "Количество показов размещённой рекламы;",
+            "Персональная информация, связанная с вашей онлайн-активностью."
+          ]}
+        ]
+      },
+      {
+        "h2": "3. Основные файлы cookie",
+        "content": [
+          { "p": "Эти файлы cookie необходимы для корректной работы сайта. Их настройки не могут быть изменены." },
+          { "p": "Эти основные файлы cookie не требуют вашего согласия." }
+        ]
+      },
+      {
+        "h2": "4. Файлы cookie производительности",
+        "content": [
+          { "p": "Эти файлы cookie подсчитывают и анализируют количество посетителей нашего сайта с целью улучшения его производительности." },
+          { "p": "Эти файлы cookie требуют вашего предварительного согласия." }
+        ]
+      },
+      {
+        "h2": "5. Рекламные файлы cookie и файлы cookie социальных сетей",
+        "content": [
+          { "p": "Эти файлы cookie используются для персонализации нашей рекламы на сторонних веб-сайтах с учётом ваших предпочтений." },
+          { "p": "Эти файлы cookie требуют вашего предварительного согласия." }
+        ]
+      },
+      {
+        "h2": "6. Сторонние файлы cookie",
+        "content": [
+          { "p": "Поскольку наш сайт содержит приложения сторонних разработчиков, наши партнёры могут устанавливать файлы cookie." },
+          { "p": "Эти файлы cookie требуют вашего предварительного согласия." }
+        ]
+      },
+      {
+        "h2": "7. Для чего используются эти файлы cookie и как долго они хранятся?",
+        "table": {
+          "headers": ["Тип файла cookie", "Название", "Назначение", "Срок действия"],
+          "rows": [
+            ["Основной файл cookie", "Согласие на cookie", "Проверяет, принял ли пользователь файлы cookie", "100 days"],
+            ["Файл cookie производительности", "", "Хранение идентификатора сеанса Google Analytics", "2 years"],
+            ["Рекламный файл cookie", "Согласие на файлы cookie Google", "Проверяет, согласен ли пользователь с политиками Google", "1 year"]
+          ]
+        }
+      },
+      {
+        "h2": "8. Ваши предпочтения в отношении файлов cookie",
+        "content": [
+          { "p": "Мы собираем и обрабатываем ваши данные на этом веб-сайте, чтобы лучше понимать, как он используется. Мы всегда будем запрашивать ваше согласие. Вы можете изменить настройки конфиденциальности здесь." },
+          { "p": "Кроме того, вы можете заблокировать установку файлов cookie, изменив настройки вашего браузера. Обратите внимание, что отключение файлов cookie повлияет на функциональность этого сайта, а также многих других посещаемых вами сайтов." }
+        ],
+        "button": "Настройки"
+      }
+    ]
+  }
+
+
+}

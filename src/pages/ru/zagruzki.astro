@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DownloadsPage from "../../components/DownloadsPage.astro";
+
+const lang = 'ru';
+
+const pageTranslations = {
+  en: { url: '/downloads' },
+  es: { url: '/es/descargas' },
+  ru: { url: '/ru/zagruzki' },
+};
+
+const ui = {
+  home: 'Главная',
+  pageTitle: 'Загрузки',
+  heading: 'Загрузки',
+  subheading: 'Документация и материалы по оборудованию и системам для переработки металла',
+  downloadBtn: 'Скачать PDF',
+  cards: [
+    { title: 'Брикетировочный Пресс', desc: 'Полное руководство...', date: '2026-03-08', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/Руководство-по-эксплуатации-брикетировочного-пресса-для-металла.pdf' },
+    { title: 'Пакетировочный Пресс', desc: 'Полное руководство...', date: '2026-03-17', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/Руководство-по-эксплуатации-пакетировочного-пресса-для-металла.pdf' },
+    { title: 'Ножницы для Металла', desc: 'Полное руководство...', date: '2026-04-22', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/Руководство-по-эксплуатации-гидравлических-ножниц-для-металла.pdf' },
+    { title: 'Шредер для Металла', desc: 'Полное руководство...', date: '2026-05-13', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/Руководство-по-эксплуатации-измельчителя-металла.pdf' },
+  ],
+};
+
+const title = 'Загрузки | Каталоги и технические паспорта оборудования для переработки металла';
+const description = 'Скачайте каталоги продукции, технические паспорта и брошюры об оборудовании для переработки металла, включая брикетировочные прессы, пакетировочные прессы и дробильные системы.';
+const keywords = 'Каталог по переработке металла';
+
+const alternates = {
+  en: '/downloads',
+  es: '/es/descargas',
+  ru: '/ru/zagruzki',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={pageTranslations}
+  title={title} 
+  description={description} 
+  keywords={keywords}
+  alternates={alternates}
+>
+  <DownloadsPage lang={lang} ui={ui} />
+</BaseLayout>

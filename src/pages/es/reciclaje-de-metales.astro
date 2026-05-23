@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ApplicationList from "../../components/ApplicationList.astro";
+import { getApplications } from "../../data/applications.js";
+import { getApplicationCategories } from "../../data/applicationCategories.js";
+
+const lang = 'es';
+
+const [applications, applicationCategories] = await Promise.all([
+  getApplications(lang),
+  getApplicationCategories(lang),
+]);
+
+const pageTranslations = {};
+for (const [l, data] of Object.entries(applicationCategories.translations || {})) {
+  if (data?.link) {
+    pageTranslations[l] = { url: new URL(data.link).pathname };
+  }
+}
+
+const ui = { home: 'Inicio', applications: 'Soluciones'};
+
+const alternates = {
+  en: '/metal-recycling',
+  es: '/es/reciclaje-de-metales',
+  ru: '/ru/pererabotka-metalla',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={pageTranslations}
+  title={applicationCategories.pageTitle} 
+  description={applicationCategories.pageDescription} 
+  keywords={applicationCategories.pageKeywords}
+  alternates={alternates}
+>
+  <ApplicationList lang={lang} applications={applications} applicationCategories={applicationCategories} ui={ui} />
+</BaseLayout>

@@ -1,0 +1,160 @@
+---
+// src/components/ParentKnowledgeList.astro
+import PageBanner from "./PageBanner.astro";
+
+const { lang, pageData, ui } = Astro.props;
+
+const slugs = {
+  en: 'knowledge',
+  es: 'conocimiento',
+  ru: 'znaniya',
+};
+const currentSlug = slugs[lang];
+const prefix = lang === 'en' ? '' : `/${lang}`;
+
+const typeSlugs = {
+  briquetting:    { en: 'briquetting', es: 'briqueteado', ru: 'briketirovanie-metalla' },
+  baling:         { en: 'baling', es: 'embalaje', ru: 'pressovanie-metalla' },
+  'metal-shearing': { en: 'metal-shearing', es: 'cizallado', ru: 'rezka-metalla' },
+  shredding:      { en: 'shredding', es: 'trituracion', ru: 'droblenie-metalla' },
+};
+
+const cards = [
+  {
+    href: `${prefix}/${currentSlug}/${typeSlugs.briquetting[lang]}`,
+    img: 'https://img.titan-recycling.com/wp-content/uploads/2026/04/briquetting-press.webp',
+    title: {
+      en: 'Briquetting Machine Guides',
+      es: 'Guías de Máquinas Briqueteadoras',
+      ru: 'Руководства по брикетировочным машинам',
+    },
+  },
+  {
+    href: `${prefix}/${currentSlug}/${typeSlugs.baling[lang]}`,
+    img: 'https://img.titan-recycling.com/wp-content/uploads/2026/04/baling-press.webp',
+    title: {
+      en: 'Metal Baler Guides',
+      es: 'Guías de Prensas Empacadoras',
+      ru: 'Руководства по пакетировочным прессам',
+    },
+  },
+  {
+    href: `${prefix}/${currentSlug}/${typeSlugs['metal-shearing'][lang]}`,
+    img: 'https://img.titan-recycling.com/wp-content/uploads/2026/04/scrap-shear.webp',
+    title: {
+      en: 'Shearing Machine Guides',
+      es: 'Guías de Cizallas',
+      ru: 'Руководства по ножницам',
+    },
+  },
+  {
+    href: `${prefix}/${currentSlug}/${typeSlugs.shredding[lang]}`,
+    img: 'https://img.titan-recycling.com/wp-content/uploads/2026/04/scrap-shredder.webp',
+    title: {
+      en: 'Metal Shredder Guides',
+      es: 'Guías de Trituradoras',
+      ru: 'Руководства по шредерам',
+    },
+  },
+];
+---
+
+<PageBanner
+  title={pageData.pageH1 || ui.knowledge}
+  breadcrumb={[
+    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
+    { label: ui.knowledge }
+  ]}
+  background="https://img.titan-recycling.com/wp-content/uploads/2026/04/background-metal-recycling-machine.webp"
+/>
+
+<section class="rs-feature-area section-space-top rs-feature-two">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-9 col-lg-9 col-md-10">
+        <div class="rs-section-title-wrapper text-center">
+          <h2 class="rs-section-subtitle has-theme-blue">{pageData.pageModuleOneTitle}</h2>
+          <div class="rs-section-title has-theme-blue rs-size rich-text mb-30">
+            <p style="font-size:24px;line-height:36px;color:#0C3C61;font-weight:700"
+               set:html={pageData.pageModuleOneDescription} />
+          </div>
+          <h2 class="rs-section-subtitle has-theme-blue">{pageData.pageModuleTwoTitle}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rs-team-area section-space rs-team-one">
+  <div class="container">
+    <div class="row g-5">
+      {cards.map(card => (
+        <div class="col-xl-4 col-lg-4 col-md-6">
+          <div class="rs-team-item">
+            <div class="rs-team-thumb has-clip">
+              <a href={card.href}>
+                <img src={card.img} alt="image">
+              </a>
+            </div>
+            <div class="rs-team-content-wrapper">
+              <div class="rs-team-content-box">
+                <h5 class="rs-team-title">
+                  <a href={card.href}>{card.title[lang] || card.title.en}</a>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{pageData.blocks && pageData.blocks.length > 0 && (
+  <section class="rs-services-area section-space">
+    <div class="container">
+      <div class="rs-services-details-wrapper">
+        {pageData.blocks.map((block, index) => (
+          <>
+            {block.title && (
+              <h2 class="rs-section-subtitle has-theme-blue" style="justify-content:left;margin-bottom:30px">{block.title}</h2>
+            )}
+            {block.description && block.image && (
+              <div class="detail-left__html" style="margin-bottom:30px">
+                <div style="display: flex; gap: 30px; align-items: flex-start; margin-bottom: 25px;">
+                  {index % 2 === 0 ? (
+                    <>
+                      <div style="flex: 1 1 55%; min-width: 280px;" set:html={block.description} />
+                      <div style="flex: 0 0 45%; max-width: 45%;">
+                        <img src={block.image} alt={block.title || ''} style="border-radius: 24px; width: 100%;" />
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div style="flex: 0 0 45%; max-width: 45%;">
+                        <img src={block.image} alt={block.title || ''} style="border-radius: 24px; width: 100%;" />
+                      </div>
+                      <div style="flex: 1 1 55%; min-width: 280px;" set:html={block.description} />
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+            {block.description && !block.image && (
+              <div class="detail-left__html" style="margin-bottom:30px" set:html={block.description} />
+            )}
+            {block.bottomText && (
+              <div class="detail-left__html" style="margin-bottom:30px" set:html={block.bottomText} />
+            )}
+          </>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+.rs-services-details-wrapper {
+  margin-top: -120px;
+}
+</style>

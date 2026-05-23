@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import KnowledgeSubList from "../../../components/KnowledgeSubList.astro";
+import { getKnowledge } from "../../../data/knowledge.js";
+import { getKnowledgeCategory } from "../../../data/knowledgeCategories.js";
+
+const lang = 'es';
+const type = 'baling';
+const [allKnowledge, pageData] = await Promise.all([
+  getKnowledge(lang),
+  getKnowledgeCategory(lang, type),
+]);
+const knowledgeList = allKnowledge.filter(item => item.knowledgeType === type);
+const knowledgeParents = { en: 'knowledge', es: 'conocimiento', ru: 'znaniya' };
+const pageTranslations = {};
+for (const [l, data] of Object.entries(pageData.translations || {})) {
+  if (data?.slug) {
+    const parentSlug = knowledgeParents[l];
+    const childSlug = data.slug;
+    const prefix = l === 'en' ? '' : `/${l}`;
+    pageTranslations[l] = { url: `${prefix}/${parentSlug}/${childSlug}` };
+  }
+}
+const ui = { home: 'Inicio', knowledge: 'Conocimiento', detail: 'Detalle' };
+
+const alternates = {
+  en: '/knowledge/baling',
+  es: '/es/conocimiento/embalaje',
+  ru: '/ru/znaniya/pressovanie-metalla',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={pageTranslations}
+  title={pageData.pageTitle} 
+  description={pageData.pageDescription} 
+  keywords={pageData.pageKeywords}
+  alternates={alternates}
+>
+  <KnowledgeSubList lang={lang} type={type} knowledgeList={knowledgeList} pageData={pageData} ui={ui} />
+</BaseLayout>

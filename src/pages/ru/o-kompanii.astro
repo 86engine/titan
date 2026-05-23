@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AboutPage from "../../components/AboutPage.astro";
+import { getAbout } from "../../data/about.js";
+
+const lang = 'ru';
+
+const about = await getAbout(lang);
+
+const pageTranslations = {};
+for (const [l, data] of Object.entries(about.translations || {})) {
+  if (data?.link) {
+    pageTranslations[l] = { url: new URL(data.link).pathname };
+  }
+}
+
+const ui = {
+  home: 'Главная',
+  about: 'О компании',
+  aboutLabel: 'О КОМПАНИИ',
+  aboutTitle: 'Добро пожаловать в TITAN, где передовые технологии переработки встречаются с практическими решениями, помогая вам превращать металлолом в реальную ценность.',
+  missionTitle: 'Наша Миссия',
+  missionDesc: 'Помогать нашим клиентам превращать металлолом в ценность, предлагая эффективное, экономичное и надежное оборудование для переработки.',
+  visionTitle: 'Наше Видение',
+  visionDesc: 'Стать первым выбором в области решений по переработке металлов, постоянно совершенствуя технологии, сервис и удовлетворенность клиентов.',
+};
+
+const alternates = {
+  en: '/about',
+  es: '/es/sobre-nosotros',
+  ru: '/ru/o-kompanii',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={pageTranslations}
+  title={about.pageTitle} 
+  description={about.pageDescription} 
+  keywords={about.pageKeywords}
+  alternates={alternates}
+>
+  <AboutPage lang={lang} about={about} ui={ui} />
+</BaseLayout>

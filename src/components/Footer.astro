@@ -1,0 +1,127 @@
+---
+import footerI18n from "../../public/data/footer-i18n.json" with { type: 'json' };
+
+const { lang } = Astro.props;
+
+const ui = footerI18n[lang] || footerI18n.en;
+
+const prefix = lang === 'en' ? '' : `/${lang}`;
+const privacyPath = lang === 'en' ? '/privacy-policy' : lang === 'es' ? '/es/politica-de-privacidad' : '/ru/politika-konfidencialnosti';
+
+const links = [
+  { key: 'products', path: lang === 'en' ? '/metal-recycling-equipment' : lang === 'es' ? '/es/equipos-reciclaje-metales' : '/ru/oborudovanie-dlya-pererabotki-metallov' },
+  { key: 'solutions', path: lang === 'en' ? '/metal-recycling' : lang === 'es' ? '/es/reciclaje-de-metales' : '/ru/pererabotka-metalla' },
+  { key: 'about', path: lang === 'en' ? '/about' : lang === 'es' ? '/es/sobre-nosotros' : '/ru/o-kompanii' },
+  { key: 'updates', path: lang === 'en' ? '/updates' : lang === 'es' ? '/es/actualizaciones' : '/ru/obnovleniya' },
+  { key: 'contact', path: lang === 'en' ? '/contact' : lang === 'es' ? '/es/contacto' : '/ru/kontakty' },
+  { key: 'downloads', path: lang === 'en' ? '/downloads' : lang === 'es' ? '/es/descargas' : '/ru/zagruzki' },
+  { key: 'knowledge', path: lang === 'en' ? '/knowledge' : lang === 'es' ? '/es/conocimiento' : '/ru/znaniya' },
+];
+---
+
+<div class="rs-footer-bg-thumb-wrapper">
+  <div class="rs-footer-bg-thumb" style="background-image: url('https://img.titan-recycling.com/system/titan-recycling-systems-footer-pattern.webp');"></div>
+
+  <div class="rs-subscribe-area rs-subscribe-one">
+    <div class="container">
+      <div class="rs-subscribe-wrapper">
+        <div class="row g-5 align-items-center">
+          <div class="col-xl-3 col-lg-3">
+            <div class="rs-subscribe-logo">
+              <img src="https://img.titan-recycling.com/system/recycling-systems-titan.png" alt={ui.logoAlt}>
+            </div>
+          </div>
+          <div class="col-xl-9 col-lg-9">
+            <div class="rs-subscribe-content" style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="rs-subscribe-text"><p>{ui.subscribeText}</p></div> 
+              <a href={lang === 'en' ? '/contact#get-in-touch' : lang === 'es' ? '/es/contacto#get-in-touch' : '/ru/kontakty#get-in-touch'} class="rs-btn blue-bg" style="flex-shrink: 0; width: auto; padding: 10px 50px;">
+                {ui.contactUs}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="rs-footer-area rs-footer-two has-theme-blue">
+      <div class="container">
+        <div class="rs-footer-top">
+          <div class="row g-5">
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+              <div class="rs-footer-widget footer-2-col-1">
+                <h5 class="rs-footer-widget-title">{ui.aboutTitle}</h5>
+                <div class="rs-footer-widget-content">
+                  <p class="rs-footer-widget-description">{ui.aboutDesc}</p>
+                  <div class="rs-footer-widget-stroke-text">
+                    <h3 class="rs-footer-stroke-text has-theme-blue">Since 2013</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+              <div class="rs-footer-widget footer-2-col-2">
+                <h5 class="rs-footer-widget-title">{ui.usefulLinks}</h5>
+                <div class="rs-footer-widget-content">
+                  <div class="rs-footer-widget-links has-theme-blue">
+                    <ul>
+                      {links.map(link => <li><a href={link.path}>{ui[link.key]}</a></li>)}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+              <div class="rs-footer-widget footer-2-col-3">
+                <h5 class="rs-footer-widget-title">{ui.officeAddress}</h5>
+                <div class="rs-footer-widget-content">
+                  <div class="rs-footer-widget-meta">
+                    <div class="rs-footer-widget-address">
+                      <a target="_blank" href="https://www.google.com/maps">No. 1 Dongde Rd., High-Tech Zone, Jiangyin, Jiangsu, China</a>
+                    </div>
+                    <h5 class="rs-footer-widget-title">{ui.emailAddress}</h5>
+                    <div class="rs-footer-widget-email">
+                      <a href="mailto:aaron@titan-recycling.com">aaron@titan-recycling.com</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+              <div class="rs-footer-widget footer-2-col-4">
+                <h5 class="rs-footer-widget-title">{ui.phoneNumber}</h5>
+                <div class="rs-footer-widget-content">
+                  <div class="rs-footer-widget-contact-info">
+                    <div class="rs-footer-widget-number"><span><a href="tel:8618360809300">+86 183 6080 9300</a></span></div>
+                  </div>
+                  <h5 class="rs-footer-widget-title">{ui.followUs}</h5>
+                  <div class="rs-footer-widget-social">
+                    <div class="rs-theme-social has-theme-blue">
+                      <!--<a href="#"><i class="ri-twitter-x-line"></i></a>-->
+                      <!--<a href="#"><i class="ri-facebook-fill"></i></a>-->
+                      <a href="#"><i class="ri-linkedin-fill"></i></a>
+                      <!--<a href="#"><i class="ri-instagram-line"></i></a>-->
+                      <a href="#"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rs-footer-copyright-area rs-copyright-one">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-12">
+              <div class="rs-footer-copyright has-theme-blue text-center">
+                <p class="underline">{ui.copyright} <span><a href={privacyPath}>{ui.cookiePolicy}</a></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

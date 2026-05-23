@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import UpdatesList from "../../components/UpdatesList.astro";
+import { getUpdates, getUpdateCategories } from "../../data/updates.js";
+
+const lang = 'ru';
+
+const [allUpdates, categories] = await Promise.all([
+  getUpdates(lang),
+  getUpdateCategories(lang),
+]);
+
+const pageTranslations = {};
+for (const [l, data] of Object.entries(categories.translations || {})) {
+  if (data?.link) {
+    pageTranslations[l] = { url: new URL(data.link).pathname };
+  }
+}
+
+const ui = { 
+  home: 'Главная', updates: 'Обновления', by: 'От', continueReading: 'Читать далее',
+  search: 'Поиск...', categories: 'Категории', latestPosts: 'Последние записи', all: 'Все',
+};
+
+const alternates = {
+  en: '/updates',
+  es: '/es/actualizaciones',
+  ru: '/ru/obnovleniya',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={pageTranslations}
+  title={categories.pageTitle} 
+  description={categories.pageDescription} 
+  keywords={categories.pageKeywords}
+  alternates={alternates}
+>
+  <UpdatesList lang={lang} updates={allUpdates} ui={ui} />
+</BaseLayout>

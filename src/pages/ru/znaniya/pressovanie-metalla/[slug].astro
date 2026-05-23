@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import KnowledgeDetail from "../../../../components/KnowledgeDetail.astro";
+import { getKnowledge } from "../../../../data/knowledge.js";
+import { buildContentIndex } from "../../../../lib/wordpress.js";
+
+export async function getStaticPaths() {
+  const all = await getKnowledge('ru');
+  const filtered = all.filter(k => k.knowledgeType === 'baling');
+  return filtered.map(k => ({ params: { slug: k.id }, props: { knowledge: k } }));
+}
+
+const lang = 'ru';
+const type = 'baling';
+const { knowledge } = Astro.props;
+
+if (!knowledge) return Astro.redirect('/ru/znaniya/pressovanie-metalla');
+
+const allKnowledge = await getKnowledge('ru');
+const contentIndex = buildContentIndex(allKnowledge);
+
+const ui = {
+  ru: { home: 'Главная', knowledge: 'Знания', detail: 'Детали' },
+};
+
+const alternates = {
+  en: (knowledge.translations as any)?.en?.url || '#',
+  es: (knowledge.translations as any)?.es?.url || '#',
+  ru: (knowledge.translations as any)?.ru?.url || '#',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={knowledge.translations} 
+  contentIndex={contentIndex} 
+  currentContentId={knowledge.content_id}
+  title={knowledge.pageTitle}
+  description={knowledge.pageDescription}
+  keywords={knowledge.pageKeywords}
+  alternates={alternates}
+>
+  <KnowledgeDetail lang={lang} type={type} knowledge={knowledge} ui={ui.ru} />
+</BaseLayout>

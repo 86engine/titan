@@ -1,0 +1,84 @@
+---
+// src/components/UpdatesDetail.astro
+import PageBanner from "./PageBanner.astro";
+
+const { lang, update, ui } = Astro.props;
+
+const updatesSlugs = {
+  en: 'updates',
+  es: 'actualizaciones',
+  ru: 'obnovleniya',
+};
+const currentSlug = updatesSlugs[lang];
+const prefix = lang === 'en' ? '' : `/${lang}`;
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  if (lang === 'ru') return d.toLocaleDateString('ru-RU');
+  if (lang === 'es') return d.toLocaleDateString('es-ES');
+  return d.toLocaleDateString('en-US');
+}
+---
+
+<PageBanner
+  title={update.pageH1}
+  breadcrumb={[
+    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
+    { label: ui.updates, href: `${prefix}/${currentSlug}` },
+    { label: ui.detail }
+  ]}
+  background="https://img.titan-recycling.com/wp-content/uploads/2026/04/news-detail.jpg"
+/>
+
+<section class="rs-postbox-area section-space">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-xl-8 col-lg-8">
+        <div class="rs-postbox-details-wrapper">
+
+          {update.image && (
+            <div class="rs-postbox-details-thumb">
+              <img src={update.image} alt={update.title} />
+            </div>
+          )}
+
+          <div class="rs-postbox-content">
+            <div class="rs-postbox-meta-list">
+              <div class="rs-postbox-meta-item">
+                <span class="rs-meta-text">{ui.by} <a class="meta-author" href={`${prefix}/${currentSlug}/${update.id}`}>{update.author}</a></span>
+              </div>
+              <div class="rs-postbox-meta-item">
+                <span class="rs-postbox-meta-text">{formatDate(update.date)}</span>
+              </div>
+            </div>
+            <h3 class="rs-postbox-details-title">{update.title}</h3>
+          </div>
+
+          <div class="rs-postbox-details-content" set:html={update.content} />
+
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-lg-4">
+        <div class="rs-sidebar-wrapper rs-sidebar-sticky">
+          <div class="sidebar-widget widget-categories-two mb-30">
+            <h5 class="sidebar-widget-title">{ui.recommended}</h5>
+            <div class="sidebar-widget-content">
+              <div class="list">
+                <ul>
+                  <li>
+                    <a href={`${prefix}/${currentSlug}/${update.id}`}>{update.title}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.widget-categories-two .list ul li a:hover { background-color: var(--rs-theme-blue) !important; color: #fff !important; }
+</style>

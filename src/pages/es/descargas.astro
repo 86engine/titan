@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DownloadsPage from "../../components/DownloadsPage.astro";
+
+const lang = 'es';
+
+const pageTranslations = {
+  en: { url: '/downloads' },
+  es: { url: '/es/descargas' },
+  ru: { url: '/ru/zagruzki' },
+};
+
+const ui = {
+  home: 'Inicio',
+  pageTitle: 'Descargas',
+  heading: 'Descargas',
+  subheading: 'Documentación y materiales relacionados con equipos y sistemas de reciclaje de metales',
+  downloadBtn: 'Descargar PDF',
+  cards: [
+    { title: 'Prensa Briqueteadora de Metal', desc: 'Manual completo del producto...', date: '2026-02-18', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/Manual-de-producto-de-la-briqueteadora-de-metales.pdf' },
+    { title: 'Empacadora de Metal', desc: 'Manual completo del producto...', date: '2026-03-09', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/Manual-de-producto-de-la-prensa-embaladora-de-metales.pdf' },
+    { title: 'Cizalla de Metal', desc: 'Manual completo del producto...', date: '2026-04-08', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/Manual-de-producto-de-la-cizalla-para-metales.pdf' },
+    { title: 'Trituradora de Metal', desc: 'Manual completo del producto...', date: '2026-03-27', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/Manual-de-producto-de-la-trituradora-de-metales.pdf' },
+  ],
+};
+
+const title = 'Descargas | Catálogos y fichas técnicas de equipos para reciclaje de metales';
+const description = 'Descargue catálogos de productos, fichas técnicas y folletos de equipos para reciclaje de metales, incluyendo prensas para briquetas, empacadoras y sistemas de trituración.';
+const keywords = 'Catálogo de reciclaje de metales';
+
+const alternates = {
+  en: '/downloads',
+  es: '/es/descargas',
+  ru: '/ru/zagruzki',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={pageTranslations}
+  title={title} 
+  description={description} 
+  keywords={keywords}
+  alternates={alternates}
+>
+  <DownloadsPage lang={lang} ui={ui} />
+</BaseLayout>

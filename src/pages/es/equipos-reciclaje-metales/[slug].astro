@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductDetail from "../../../components/ProductDetail.astro";
+import { getProducts } from "../../../data/products.js";
+import { buildContentIndex } from "../../../lib/wordpress.js";
+
+export async function getStaticPaths() {
+  const products = await getProducts('es');
+  return products.map(p => ({
+    params: { slug: p.id },
+    props: { product: p }
+  }));
+}
+
+const lang = 'es';
+const { product } = Astro.props;
+
+if (!product) return Astro.redirect('/equipos-reciclaje-metales');
+
+const allProducts = await getProducts('es');
+const contentIndex = buildContentIndex(allProducts);
+
+const ui = {
+  es: { home: 'Inicio', products: 'Productos', detail: 'Detalle' , download: 'Descargar', requestQuote: 'Solicitar un presupuesto',contactUrl: '/es/contacto#get-in-touch'}
+};
+
+const alternates = {
+  en: product.translations?.en?.url || '#',
+  es: product.translations?.es?.url || '#',
+  ru: product.translations?.ru?.url || '#',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={product.translations} 
+  contentIndex={contentIndex} 
+  currentContentId={product.content_id}
+  title={product.pageTitle} 
+  description={product.pageDescription} 
+  keywords={product.pageKeywords}
+  alternates={alternates}
+>
+  <ProductDetail lang={lang} product={product} ui={ui.es} />
+</BaseLayout>

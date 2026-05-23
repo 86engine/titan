@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DownloadsPage from "../components/DownloadsPage.astro";
+
+const lang = 'en';
+
+const pageTranslations = {
+  en: { url: '/downloads' },
+  es: { url: '/es/descargas' },
+  ru: { url: '/ru/zagruzki' },
+};
+
+const ui = {
+  home: 'Home',
+  pageTitle: 'Downloads',
+  heading: 'Downloads',
+  subheading: 'Documentation and materials related to metal recycling equipment and systems',
+  downloadBtn: 'Download PDF',
+  cards: [
+    { title: 'Metal Briquetting Press', desc: 'Comprehensive product manual covering specifications, features, and application scenarios.', date: '2026-02-08', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/metal-briquetting-machine-product-manual.pdf' },
+    { title: 'Metal Baler', desc: 'Comprehensive product manual covering specifications, features, and application scenarios.', date: '2026-03-08', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/metal-baler-product-manual.pdf' },
+    { title: 'Metal Shear', desc: 'Comprehensive product manual covering specifications, features, and application scenarios.', date: '2026-03-01', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/metal-shearing-machine-product-manual.pdf' },
+    { title: 'Metal Shredder', desc: 'Comprehensive product manual covering specifications, features, and application scenarios.', date: '2026-04-07', url: 'https://wp.titan-recycling.com/wp-content/uploads/2026/04/metal-shredder-product-manual.pdf' },
+  ],
+};
+
+const title = 'Downloads | Metal Recycling Equipment Catalogs & Datasheets';
+const description = 'Download product catalogs, technical datasheets and brochures for metal recycling equipment, including briquetting machines, balers and shredding systems.';
+const keywords = 'metal recycling catalog';
+
+const alternates = {
+  en: '/downloads',
+  es: '/es/descargas',
+  ru: '/ru/zagruzki',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={pageTranslations}
+  title={title} 
+  description={description} 
+  keywords={keywords}
+>
+  <DownloadsPage lang={lang} ui={ui} />
+</BaseLayout>

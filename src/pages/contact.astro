@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactPage from "../components/ContactPage.astro";
+
+const lang = 'en';
+
+const pageTranslations = {
+  en: { url: '/contact' },
+  es: { url: '/es/contacto' },
+  ru: { url: '/ru/kontakty' },
+};
+
+const ui = {
+  home: 'Home',
+  pageTitle: 'Contact Us',
+  globalBranch: 'Contact Us',
+  heading: 'Get in touch with our team',
+  subheading: 'We can provide you with professional solutions to help you solve problems in the production process!',
+  locationTitle: 'Our Location',
+  locationDesc: 'No. 1 Dongde Rd., High-Tech Zone, Jiangyin, Jiangsu, China',
+  chatTitle: 'Chat to Support',
+  mailto:'aaron@titan-recycling.com',
+  callTitle: 'Call Us',
+  phone:'+86 183 6080 9300',
+  formTitle: 'Get in Touch',
+  formDesc: 'Our team is here to answer any questions you may have',
+  namePlaceholder: 'Full Name',
+  emailPlaceholder: 'Email Address',
+  phonePlaceholder: 'Your Phone',
+  messagePlaceholder: 'Write Your Message',
+  sendBtn: 'Send Message',
+  nameRequired: 'Please enter your name',
+  emailRequired: 'Please enter your email or phone number',
+  messageRequired: 'Please enter your message',
+};
+
+const title = 'Contact TITAN | Metal Recycling Equipment Manufacturer';
+const description = 'Contact TITAN for metal recycling equipment solutions, technical support and quotations. Get fast response from our engineering team.';
+const keywords = 'titan';
+
+const alternates = {
+  en: '/contact',
+  es: '/es/contacto',
+  ru: '/ru/kontakty',
+};
+---
+
+<BaseLayout 
+  lang={lang} 
+  translations={pageTranslations}
+  title={title} 
+  description={description} 
+  keywords={keywords}
+  alternates={alternates}
+>
+  <ContactPage lang={lang} ui={ui} />
+</BaseLayout>
