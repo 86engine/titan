@@ -22,6 +22,7 @@ const featuredApplications = applications.slice(0, 6);
 const productUrl = `${prefix}/metal-recycling-equipment`;
 const productListSlug = 'equipos-reciclaje-metales';
 const applicationListSlug = 'reciclaje-de-metales';
+const heroImage = 'https://img.titan-recycling.com/system/titan-recycling-systems-hero-banner.webp';
 const pageTranslations = {
   en: { url: '/' },
   es: { url: '/es/' },
@@ -41,11 +42,21 @@ const alternates = {
   description={description} 
   keywords={keywords}
   alternates={alternates}
+  preloadImages={[heroImage]}
 >
   <main>
     <!-- banner -->
     <section class="rs-banner-area rs-banner-three p-relative">
-      <div class="rs-banner-bg-thumb" style="background-image: url('https://img.titan-recycling.com/system/titan-recycling-systems-hero-banner.webp');"></div>
+      <div class="rs-banner-bg-thumb">
+        <img
+          src={heroImage}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-xl-9 col-lg-8 col-md-10">
@@ -92,7 +103,7 @@ const alternates = {
               <div class="rs-feature-item wow fadeInUp" data-wow-delay={`.${[0.3, 0.5, 0.7][n-1]}s`} data-wow-duration="1s">
                 <h3 class="rs-feature-title">{ui[`feature${n}Title`]}</h3>
                 <div class="rs-feature-descrip"><p>{ui[`feature${n}Desc`]}</p></div>
-                <div class="rs-feature-icon"><img src={`../assets/images/icon/feature-icon-0${n}.png`} alt="image"></div>
+                <div class="rs-feature-icon"><img src={`../assets/images/icon/feature-icon-0${n}.png`} loading="lazy" decoding="async" alt="image"></div>
               </div>
             </div>
           ))}
@@ -131,7 +142,7 @@ const alternates = {
 
                         return (
                       <div class="rs-services-item">
-                        <div class="rs-services-thumb"><a href={productDetailUrl}><img src={product.productListImage} alt={product.productName} /></a></div>
+                        <div class="rs-services-thumb"><a href={productDetailUrl}><img src={product.productListImage} loading="lazy" decoding="async" alt={product.productName} /></a></div>
                         <div class="rs-services-content">
                           <h5 class="rs-services-title"><a href={productDetailUrl}>{product.productName}</a></h5>
                           <p class="descrip">{product.productListDescription}</p>
@@ -183,7 +194,7 @@ const alternates = {
               <div class="rs-portfolio-item wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
                 <div class="rs-portfolio-thumb">
                   <a href={appDetailUrl}>
-                    <img src={app.applicationListImage} alt={app.applicationName}>
+                    <img src={app.applicationListImage} loading="lazy" decoding="async" alt={app.applicationName}>
                   </a>
                   <div class="rs-portfolio-content">
                     <div class="rs-portfolio-tag"><a href={appDetailUrl}>{ui.solutionTag}</a></div>
@@ -231,9 +242,9 @@ const alternates = {
           </div>
           <div class="col-xl-5 col-lg-5">
             <div class="rs-why-choose-thumb-wrapper">
-              <div class="rs-why-choose-thumb"><img src="https://img.titan-recycling.com/system/titan-recycling-factory-workshop.webp" alt={ui.whyChooseAlt1}></div>
+              <div class="rs-why-choose-thumb"><img src="https://img.titan-recycling.com/system/titan-recycling-factory-workshop.webp" loading="lazy" decoding="async" alt={ui.whyChooseAlt1}></div>
               <div class="rs-why-choose-small-thumb">
-                <img src="https://img.titan-recycling.com/wp-content/uploads/2026/05/metal-briquette-assortment.webp" alt={ui.whyChooseAlt2}>
+                <img src="https://img.titan-recycling.com/wp-content/uploads/2026/05/metal-briquette-assortment.webp" loading="lazy" decoding="async" alt={ui.whyChooseAlt2}>
                 <div class="rs-why-choose-btn"><a href="https://img.titan-recycling.com/system/video/aluminum-briquetting-machine-in-action.mp4" class="rs-play-btn popup-video has-theme-blue"><i class="ri-play-fill"></i></a></div>
               </div>
             </div>

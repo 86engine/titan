@@ -46,7 +46,7 @@ const { lang } = Astro.props;
 </style>
 
 <script is:inline>
-  (async () => {
+  const initCookieConsent = async () => {
     // 检查是否已经处理过
     if (localStorage.getItem('cookieConsent')) return;
 
@@ -113,5 +113,24 @@ const { lang } = Astro.props;
         }
       });
     });
-  })();
+  };
+
+  const scheduleCookieConsent = () => {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => {
+        initCookieConsent();
+      }, { timeout: 1500 });
+      return;
+    }
+
+    window.setTimeout(() => {
+      initCookieConsent();
+    }, 300);
+  };
+
+  if (document.readyState === 'complete') {
+    scheduleCookieConsent();
+  } else {
+    window.addEventListener('load', scheduleCookieConsent, { once: true });
+  }
 </script>

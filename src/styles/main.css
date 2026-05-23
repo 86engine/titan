@@ -6992,6 +6992,13 @@ body.rtl .rs-theme-dir-slide {
   background-size: cover;
   z-index: -1;
 }
+.rs-banner-three .rs-banner-bg-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
 [dir=rtl] .rs-banner-three .rs-banner-bg-thumb {
   transform: rotateY(180deg);
 }
