@@ -71,13 +71,14 @@ const pages = {
 };
 
 // 从 wp-data 提取各语言详情页 URL
-function getDetailUrls(items, buildUrl) {
+function getDetailUrls(items, lang, buildUrl) {
   const urls = [];
   const seen = new Set();
   for (const item of items) {
-    const cid = item.acf?.content_id;
-    if (!cid || seen.has(cid)) continue;
-    seen.add(cid);
+    if (item.lang !== lang) continue;
+    const key = item.acf?.content_id || item.slug || item.id;
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
     const url = buildUrl(item);
     if (url) urls.push(url);
   }
@@ -86,20 +87,18 @@ function getDetailUrls(items, buildUrl) {
 
 // 产品详情 en: /metal-recycling-equipment/{slug}
 function productUrl(item, lang) {
-  const t = item.translations?.[lang];
-  if (!t?.slug) return null;
+  if (!item.slug) return null;
   const prefix = lang === 'en' ? '' : `/${lang}`;
   const listMap = { en: 'metal-recycling-equipment', es: 'equipos-reciclaje-metales', ru: 'oborudovanie-dlya-pererabotki-metallov' };
-  return `${prefix}/${listMap[lang]}/${t.slug}`;
+  return `${prefix}/${listMap[lang]}/${item.slug}`;
 }
 
 // 应用详情
 function appUrl(item, lang) {
-  const t = item.translations?.[lang];
-  if (!t?.slug) return null;
+  if (!item.slug) return null;
   const prefix = lang === 'en' ? '' : `/${lang}`;
   const listMap = { en: 'metal-recycling', es: 'reciclaje-de-metales', ru: 'pererabotka-metalla' };
-  return `${prefix}/${listMap[lang]}/${t.slug}`;
+  return `${prefix}/${listMap[lang]}/${item.slug}`;
 }
 
 // 知识详情
@@ -111,44 +110,42 @@ const typeMap = {
 };
 
 function knowledgeUrl(item, lang) {
-  const t = item.translations?.[lang];
   const kType = item.acf?.knowledge_type;
-  if (!t?.slug || !kType) return null;
+  if (!item.slug || !kType) return null;
   const prefix = lang === 'en' ? '' : `/${lang}`;
   const listSlug = { en: 'knowledge', es: 'conocimiento', ru: 'znaniya' }[lang];
   const typeSlug = typeMap[kType]?.[lang];
   if (!typeSlug) return null;
-  return `${prefix}/${listSlug}/${typeSlug}/${t.slug}`;
+  return `${prefix}/${listSlug}/${typeSlug}/${item.slug}`;
 }
 
 // 新闻详情
 function updateUrl(item, lang) {
-  const t = item.translations?.[lang];
-  if (!t?.slug) return null;
+  if (!item.slug) return null;
   const prefix = lang === 'en' ? '' : `/${lang}`;
   const listMap = { en: 'updates', es: 'actualizaciones', ru: 'obnovleniya' };
-  return `${prefix}/${listMap[lang]}/${t.slug}`;
+  return `${prefix}/${listMap[lang]}/${item.slug}`;
 }
 
 // 各语言详情 URL
 const detailUrls = {
   en: [
-    ...getDetailUrls(wpData.products || [], (item) => productUrl(item, 'en')),
-    ...getDetailUrls(wpData.applications || [], (item) => appUrl(item, 'en')),
-    ...getDetailUrls(wpData.knowledge || [], (item) => knowledgeUrl(item, 'en')),
-    ...getDetailUrls(wpData.posts || [], (item) => updateUrl(item, 'en')),
+    ...getDetailUrls(wpData.products || [], 'en', (item) => productUrl(item, 'en')),
+    ...getDetailUrls(wpData.applications || [], 'en', (item) => appUrl(item, 'en')),
+    ...getDetailUrls(wpData.knowledge || [], 'en', (item) => knowledgeUrl(item, 'en')),
+    ...getDetailUrls(wpData.posts || [], 'en', (item) => updateUrl(item, 'en')),
   ],
   es: [
-    ...getDetailUrls(wpData.products || [], (item) => productUrl(item, 'es')),
-    ...getDetailUrls(wpData.applications || [], (item) => appUrl(item, 'es')),
-    ...getDetailUrls(wpData.knowledge || [], (item) => knowledgeUrl(item, 'es')),
-    ...getDetailUrls(wpData.posts || [], (item) => updateUrl(item, 'es')),
+    ...getDetailUrls(wpData.products || [], 'es', (item) => productUrl(item, 'es')),
+    ...getDetailUrls(wpData.applications || [], 'es', (item) => appUrl(item, 'es')),
+    ...getDetailUrls(wpData.knowledge || [], 'es', (item) => knowledgeUrl(item, 'es')),
+    ...getDetailUrls(wpData.posts || [], 'es', (item) => updateUrl(item, 'es')),
   ],
   ru: [
-    ...getDetailUrls(wpData.products || [], (item) => productUrl(item, 'ru')),
-    ...getDetailUrls(wpData.applications || [], (item) => appUrl(item, 'ru')),
-    ...getDetailUrls(wpData.knowledge || [], (item) => knowledgeUrl(item, 'ru')),
-    ...getDetailUrls(wpData.posts || [], (item) => updateUrl(item, 'ru')),
+    ...getDetailUrls(wpData.products || [], 'ru', (item) => productUrl(item, 'ru')),
+    ...getDetailUrls(wpData.applications || [], 'ru', (item) => appUrl(item, 'ru')),
+    ...getDetailUrls(wpData.knowledge || [], 'ru', (item) => knowledgeUrl(item, 'ru')),
+    ...getDetailUrls(wpData.posts || [], 'ru', (item) => updateUrl(item, 'ru')),
   ],
 };
 
