@@ -7,6 +7,15 @@ const LIST_SLUGS = {
   ru: 'pererabotka-metalla',
 };
 
+const APPLICATIONS_BY_CONTENT_ID = new Map();
+for (const application of wpData.applications) {
+  const contentId = application.acf?.content_id;
+  if (!contentId) continue;
+  const group = APPLICATIONS_BY_CONTENT_ID.get(contentId) || {};
+  group[application.lang] = application;
+  APPLICATIONS_BY_CONTENT_ID.set(contentId, group);
+}
+
 function buildBlocks(acf) {
   if (!acf) return [];
   const blocks = [];
@@ -51,12 +60,15 @@ export async function getApplications(lang = 'en') {
   const items = wpData.applications.filter(a => a.lang === lang);
   return items.map(app => {
     const translations = {};
-    for (const [l, trans] of Object.entries(app.translations || {})) {
+    const relatedApplications = APPLICATIONS_BY_CONTENT_ID.get(app.acf?.content_id) || {};
+
+    for (const [l, listSlug] of Object.entries(LIST_SLUGS)) {
+      const translatedApplication = relatedApplications[l];
+      if (!translatedApplication?.slug) continue;
       const prefix = l === 'en' ? '' : `/${l}`;
-      const listSlug = LIST_SLUGS[l];
       translations[l] = {
-        ...trans,
-        url: trans.slug ? `${prefix}/${listSlug}/${trans.slug}` : '#',
+        slug: translatedApplication.slug,
+        url: `${prefix}/${listSlug}/${translatedApplication.slug}`,
       };
     }
 
