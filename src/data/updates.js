@@ -7,16 +7,28 @@ const LIST_SLUGS = {
   ru: 'obnovleniya',
 };
 
+const UPDATES_BY_CONTENT_ID = new Map();
+for (const update of wpData.posts) {
+  const contentId = update.acf?.content_id;
+  if (!contentId) continue;
+  const group = UPDATES_BY_CONTENT_ID.get(contentId) || {};
+  group[update.lang] = update;
+  UPDATES_BY_CONTENT_ID.set(contentId, group);
+}
+
 export async function getUpdates(lang = 'en') {
   const items = wpData.posts.filter(p => p.lang === lang);
   return items.map(update => {
     const translations = {};
-    for (const [l, trans] of Object.entries(update.translations || {})) {
+    const relatedUpdates = UPDATES_BY_CONTENT_ID.get(update.acf?.content_id) || {};
+
+    for (const [l, listSlug] of Object.entries(LIST_SLUGS)) {
+      const translatedUpdate = relatedUpdates[l];
+      if (!translatedUpdate?.slug) continue;
       const prefix = l === 'en' ? '' : `/${l}`;
-      const listSlug = LIST_SLUGS[l];
       translations[l] = {
-        ...trans,
-        url: trans.slug && listSlug ? `${prefix}/${listSlug}/${trans.slug}` : '#',
+        slug: translatedUpdate.slug,
+        url: `${prefix}/${listSlug}/${translatedUpdate.slug}`,
       };
     }
 

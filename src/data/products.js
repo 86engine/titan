@@ -8,6 +8,15 @@ const LIST_SLUGS = {
   ru: 'oborudovanie-dlya-pererabotki-metallov',
 };
 
+const PRODUCTS_BY_CONTENT_ID = new Map();
+for (const product of wpData.products) {
+  const contentId = product.acf?.content_id;
+  if (!contentId) continue;
+  const group = PRODUCTS_BY_CONTENT_ID.get(contentId) || {};
+  group[product.lang] = product;
+  PRODUCTS_BY_CONTENT_ID.set(contentId, group);
+}
+
 function buildBlocks(acf) {
   if (!acf) return [];
   const blocks = [];
@@ -50,14 +59,16 @@ function buildBlocks(acf) {
 export async function getProducts(lang = 'en') {
   const items = wpData.products.filter(p => p.lang === lang);
   return items.map(product => {
-    // 为 translations 中每个语言补充 url 字段
     const translations = {};
-    for (const [l, trans] of Object.entries(product.translations || {})) {
+    const relatedProducts = PRODUCTS_BY_CONTENT_ID.get(product.acf?.content_id) || {};
+
+    for (const [l, listSlug] of Object.entries(LIST_SLUGS)) {
+      const translatedProduct = relatedProducts[l];
+      if (!translatedProduct?.slug) continue;
       const prefix = l === 'en' ? '' : `/${l}`;
-      const listSlug = LIST_SLUGS[l];
       translations[l] = {
-        ...trans,
-        url: trans.slug ? `${prefix}/${listSlug}/${trans.slug}` : '#',
+        slug: translatedProduct.slug,
+        url: `${prefix}/${listSlug}/${translatedProduct.slug}`,
       };
     }
 

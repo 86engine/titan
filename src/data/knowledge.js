@@ -14,6 +14,15 @@ const TYPE_SLUGS = {
   shredding:       { en: 'shredding', es: 'trituracion', ru: 'droblenie-metalla' },
 };
 
+const KNOWLEDGE_BY_CONTENT_ID = new Map();
+for (const knowledge of wpData.knowledge) {
+  const contentId = knowledge.acf?.content_id;
+  if (!contentId) continue;
+  const group = KNOWLEDGE_BY_CONTENT_ID.get(contentId) || {};
+  group[knowledge.lang] = knowledge;
+  KNOWLEDGE_BY_CONTENT_ID.set(contentId, group);
+}
+
 function buildBlocks(acf) {
   if (!acf) return [];
   const blocks = [];
@@ -59,13 +68,17 @@ export async function getKnowledge(lang = 'en') {
   return items.map(knowledge => {
     const kType = knowledge.acf?.knowledge_type;
     const translations = {};
-    for (const [l, trans] of Object.entries(knowledge.translations || {})) {
+    const relatedKnowledge = KNOWLEDGE_BY_CONTENT_ID.get(knowledge.acf?.content_id) || {};
+
+    for (const [l, listSlug] of Object.entries(LIST_SLUGS)) {
+      const translatedKnowledge = relatedKnowledge[l];
+      const translatedType = translatedKnowledge?.acf?.knowledge_type || kType;
+      const typeSlug = TYPE_SLUGS[translatedType]?.[l];
+      if (!translatedKnowledge?.slug || !typeSlug) continue;
       const prefix = l === 'en' ? '' : `/${l}`;
-      const listSlug = LIST_SLUGS[l];
-      const typeSlug = TYPE_SLUGS[kType]?.[l];
       translations[l] = {
-        ...trans,
-        url: trans.slug && listSlug && typeSlug ? `${prefix}/${listSlug}/${typeSlug}/${trans.slug}` : '#',
+        slug: translatedKnowledge.slug,
+        url: `${prefix}/${listSlug}/${typeSlug}/${translatedKnowledge.slug}`,
       };
     }
 
