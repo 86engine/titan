@@ -21,6 +21,8 @@ const [products, applications] = await Promise.all([
 const featuredProducts = products.slice(0, 4);
 const featuredApplications = applications.slice(0, 6);
 const productUrl = `${prefix}/metal-recycling-equipment`;
+const productListSlug = 'metal-recycling-equipment';
+const applicationListSlug = 'metal-recycling';
 const pageTranslations = {
   en: { url: '/' },
   es: { url: '/es/' },
@@ -123,15 +125,22 @@ const alternates = {
                 <div class="swiper-wrapper">
                   {featuredProducts.map(product => (
                     <div class="swiper-slide">
+                      {(() => {
+                        const productDetailUrl =
+                          product.translations?.[lang]?.url && product.translations[lang].url !== '#'
+                            ? product.translations[lang].url
+                            : `${prefix}/${productListSlug}/${product.id}`;
+
+                        return (
                       <div class="rs-services-item">
-                        <div class="rs-services-thumb"><a href={product.translations?.[lang]?.url || '#'}><img src={product.productListImage} alt={product.productName} /></a></div>
+                        <div class="rs-services-thumb"><a href={productDetailUrl}><img src={product.productListImage} alt={product.productName} /></a></div>
                         <div class="rs-services-content">
-                          <h5 class="rs-services-title"><a href={product.translations?.[lang]?.url || '#'}>{product.productName}</a></h5>
+                          <h5 class="rs-services-title"><a href={productDetailUrl}>{product.productName}</a></h5>
                           <p class="descrip">{product.productListDescription}</p>
                           <div class="rs-services-number"></div>
                           <div class="rs-services-btn-wrapper">
-                            <div class="rs-services-text-btn underline has-theme-blue"><a class="rs-text-btn" href={product.translations?.[lang]?.url || '#'}>{ui.viewDetail}</a></div>
-                            <a class="rs-square-btn has-icon has-light-bg" href={product.translations?.[lang]?.url || '#'}>
+                            <div class="rs-services-text-btn underline has-theme-blue"><a class="rs-text-btn" href={productDetailUrl}>{ui.viewDetail}</a></div>
+                            <a class="rs-square-btn has-icon has-light-bg" href={productDetailUrl}>
                               <span class="icon-box">
                                 <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 4.60551 0.319797 4.28571 0.714286 4.28571L8.98985 4.28571L5.92349 1.21936C5.64455 0.940417 5.64455 0.488155 5.92349 0.209209C6.20244 -0.0697365 6.6547 -0.0697365 6.93365 0.209209L11.2194 4.49492C11.4983 4.77387 11.4983 5.22613 11.2194 5.50508L6.93365 9.79079C6.6547 10.0697 6.20244 10.0697 5.92349 9.79079C5.64455 9.51184 5.64455 9.05958 5.92349 8.78064L8.98985 5.71429L0.714286 5.71429C0.319797 5.71429 0 5.39449 0 5Z" fill="#616161"/></svg>
                                 <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 4.60551 0.319797 4.28571 0.714286 4.28571L8.98985 4.28571L5.92349 1.21936C5.64455 0.940417 5.64455 0.488155 5.92349 0.209209C6.20244 -0.0697365 6.6547 -0.0697365 6.93365 0.209209L11.2194 4.49492C11.4983 4.77387 11.4983 5.22613 11.2194 5.50508L6.93365 9.79079C6.6547 10.0697 6.20244 10.0697 5.92349 9.79079C5.64455 9.51184 5.64455 9.05958 5.92349 8.78064L8.98985 5.71429L0.714286 5.71429C0.319797 5.71429 0 5.39449 0 5Z" fill="#616161"/></svg>
@@ -140,6 +149,8 @@ const alternates = {
                           </div>
                         </div>
                       </div>
+                        );
+                      })()}
                     </div>
                   ))}
                 </div>
@@ -164,17 +175,26 @@ const alternates = {
         <div class="row g-5">
           {featuredApplications.map(app => (
             <div class="col-xl-4 col-lg-4 col-md-6">
+              {(() => {
+                const appDetailUrl =
+                  app.translations?.[lang]?.url && app.translations[lang].url !== '#'
+                    ? app.translations[lang].url
+                    : `${prefix}/${applicationListSlug}/${app.id}`;
+
+                return (
               <div class="rs-portfolio-item wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
                 <div class="rs-portfolio-thumb">
-                  <a href={app.translations?.[lang]?.url || '#'}>
+                  <a href={appDetailUrl}>
                     <img src={app.applicationListImage} alt={app.applicationName}>
                   </a>
                   <div class="rs-portfolio-content">
-                    <div class="rs-portfolio-tag"><a href={app.translations?.[lang]?.url || '#'}>{ui.solutionTag}</a></div>
-                    <div class="rs-portfolio-title-info"><h5 class="rs-portfolio-title"><a href={app.translations?.[lang]?.url || '#'}>{app.applicationName}</a></h5></div>
+                    <div class="rs-portfolio-tag"><a href={appDetailUrl}>{ui.solutionTag}</a></div>
+                    <div class="rs-portfolio-title-info"><h5 class="rs-portfolio-title"><a href={appDetailUrl}>{app.applicationName}</a></h5></div>
                   </div>
                 </div>
               </div>
+                );
+              })()}
             </div>
           ))}
         </div>
@@ -267,14 +287,22 @@ const alternates = {
               <div class="rs-contact-form-bg-thumb" data-background="https://img.titan-recycling.com/wp-content/uploads/2026/04/contact-bg-03.png" style="background-image: url('https://img.titan-recycling.com/wp-content/uploads/2026/04/contact-bg-03.png');"></div>
               <h3 class="rs-contact-form-title">{ui.contactFormTitle}</h3>
               <p class="descrip">{ui.contactFormDesc}</p>
-              <div class="row g-4">
-                <div class="col-md-12"><div class="rs-contact-input"><input id="name" name="name" type="text" maxlength="15" placeholder={ui.contactFormName}></div></div>
-                <div class="col-md-12"><div class="rs-contact-input"><input id="email" name="email" type="email" maxlength="30" placeholder={ui.contactFormEmail}></div></div>
-                <div class="col-md-12"><div class="rs-contact-input"><input id="phone" name="phone" type="text" maxlength="15" placeholder={ui.contactFormPhone}></div></div>
-                <div class="col-md-12"><div class="rs-contact-input"><textarea id="message" name="message" maxlength="300" placeholder={ui.contactFormMessage}></textarea></div></div>
-                <div class="col-md-12"><div class="rs-contact-btn"><button type="submit" class="rs-btn blue-bg">{ui.contactFormBtn}</button></div></div>
-              </div>
-              <div id="form-messages"></div>
+              <form
+                id="contact-form"
+                action="https://wp.titan-recycling.com/wp-json/api/inquiry"
+                data-submit-mode="json"
+                data-success-message={ui.contactFormSuccess}
+                data-error-message={ui.contactFormError}
+              >
+                <div class="row g-4">
+                  <div class="col-md-12"><div class="rs-contact-input"><input id="name" name="name" type="text" maxlength="15" required data-required-message={ui.contactFormNameRequired} placeholder={ui.contactFormName}></div></div>
+                  <div class="col-md-12"><div class="rs-contact-input"><input id="email" name="email" type="email" maxlength="30" required data-required-message={ui.contactFormEmailRequired} data-invalid-message={ui.contactFormEmailInvalid} placeholder={ui.contactFormEmail}></div></div>
+                  <div class="col-md-12"><div class="rs-contact-input"><input id="phone" name="phone" type="text" maxlength="15" placeholder={ui.contactFormPhone}></div></div>
+                  <div class="col-md-12"><div class="rs-contact-input"><textarea id="content" name="content" maxlength="300" required data-required-message={ui.contactFormMessageRequired} placeholder={ui.contactFormMessage}></textarea></div></div>
+                  <div class="col-md-12"><div class="rs-contact-btn"><button type="submit" class="rs-btn blue-bg">{ui.contactFormBtn}</button></div></div>
+                </div>
+                <div id="form-messages"></div>
+              </form>
             </div>
           </div>
         </div>

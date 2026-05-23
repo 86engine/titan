@@ -24,11 +24,7 @@ const ui = {
   es: { home: 'Inicio', products: 'Productos', detail: 'Detalle' , download: 'Descargar', requestQuote: 'Solicitar un presupuesto',contactUrl: '/es/contacto#get-in-touch'}
 };
 
-const alternates = {
-  en: product.translations?.en?.url || '#',
-  es: product.translations?.es?.url || '#',
-  ru: product.translations?.ru?.url || '#',
-};
+const alternates = contentIndex[product.content_id] || {};
 ---
 
 <BaseLayout 

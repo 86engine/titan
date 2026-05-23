@@ -8,7 +8,7 @@ export function buildContentIndex(allPosts) {
     if (!cid) continue;
     if (!index[cid]) index[cid] = {};
     for (const [lang, trans] of Object.entries(post.translations || {})) {
-      if (trans.url) {
+      if (trans.url && trans.url !== '#') {
         index[cid][lang] = trans.url;
       }
     }

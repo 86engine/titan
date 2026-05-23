@@ -8,6 +8,10 @@ $(function() {
 
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
+		if ($(form).data('submitMode') === 'json') {
+			return;
+		}
+
 		// Stop the browser from submitting the form.
 		e.preventDefault();
 

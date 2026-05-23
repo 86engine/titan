@@ -25,11 +25,7 @@ const t = {
 };
 const ui = t[lang];
 
-const alternates = {
-  en: application.translations?.en?.url || '#',
-  es: application.translations?.es?.url || '#',
-  ru: application.translations?.ru?.url || '#',
-};
+const alternates = contentIndex[application.content_id] || {};
 ---
 
 <BaseLayout 

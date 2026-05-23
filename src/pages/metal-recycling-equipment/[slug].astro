@@ -24,11 +24,7 @@ const ui = {
   en: { home: 'Home', products: 'Products', detail: 'Detail', download: 'Download', requestQuote: 'Request A Quote', contactUrl: '/contact#get-in-touch'},
 };
 
-const alternates = {
-  en: product.translations?.en?.url || '#',
-  es: product.translations?.es?.url || '#',
-  ru: product.translations?.ru?.url || '#',
-};
+const alternates = contentIndex[product.content_id] || {};
 ---
 
 <BaseLayout 

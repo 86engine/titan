@@ -24,11 +24,7 @@ const ui = {
    ru: { home: 'Главная', products: 'Продукты', detail: 'Детали' , download: 'Скачать', requestQuote: 'Запросить цену',contactUrl: '/ru/kontakty#get-in-touch'}
 };
 
-const alternates = {
-  en: product.translations?.en?.url || '#',
-  es: product.translations?.es?.url || '#',
-  ru: product.translations?.ru?.url || '#',
-};
+const alternates = contentIndex[product.content_id] || {};
 ---
 
 <BaseLayout 

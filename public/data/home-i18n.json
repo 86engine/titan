@@ -40,10 +40,16 @@
     "contactFormTitle": "Get in Touch",
     "contactFormDesc": "Submit your info and we'll get in touch shortly",
     "contactFormName": "Full Name",
+    "contactFormNameRequired": "Please enter your name.",
     "contactFormEmail": "Email Address",
+    "contactFormEmailRequired": "Please enter your email address.",
+    "contactFormEmailInvalid": "Please enter a valid email address.",
     "contactFormPhone": "Your Phone",
     "contactFormMessage": "Write Your Message",
-    "contactFormBtn": "Send Message"
+    "contactFormMessageRequired": "Please enter your message.",
+    "contactFormBtn": "Send Message",
+    "contactFormSuccess": "Submitted successfully. We'll contact you as soon as possible.",
+    "contactFormError": "Submission failed. Please try again later."
   },
   "es": {
     "bannerTitle": "Fabricante de Equipos de Reciclaje de Metales",
@@ -86,10 +92,16 @@
     "contactFormTitle": "Póngase en contacto",
     "contactFormDesc": "Envíenos sus datos y nos pondremos en contacto con usted en breve.",
     "contactFormName": "Nombre completo",
+    "contactFormNameRequired": "Por favor introduzca su nombre.",
     "contactFormEmail": "Dirección de correo",
+    "contactFormEmailRequired": "Por favor, introduzca su correo electrónico.",
+    "contactFormEmailInvalid": "Por favor, introduzca una dirección de correo válida.",
     "contactFormPhone": "Su teléfono",
     "contactFormMessage": "Escriba su mensaje",
-    "contactFormBtn": "Enviar mensaje"
+    "contactFormMessageRequired": "Por favor introduzca su mensaje.",
+    "contactFormBtn": "Enviar mensaje",
+    "contactFormSuccess": "Enviado correctamente. Nos pondremos en contacto con usted lo antes posible.",
+    "contactFormError": "No se pudo enviar. Inténtelo de nuevo más tarde."
   },
   "ru": {
     "bannerTitle": "Производитель оборудования для переработки металлолома",
@@ -132,9 +144,15 @@
     "contactFormTitle": "Свяжитесь с нами",
     "contactFormDesc": "Отправьте свои данные, и мы свяжемся с вами в ближайшее время.",
     "contactFormName": "Полное имя",
+    "contactFormNameRequired": "Пожалуйста, введите ваше имя.",
     "contactFormEmail": "Эл. почта",
+    "contactFormEmailRequired": "Пожалуйста, введите адрес электронной почты.",
+    "contactFormEmailInvalid": "Пожалуйста, введите корректный адрес электронной почты.",
     "contactFormPhone": "Ваш телефон",
     "contactFormMessage": "Напишите сообщение",
-    "contactFormBtn": "Отправить"
+    "contactFormMessageRequired": "Пожалуйста, введите ваше сообщение.",
+    "contactFormBtn": "Отправить",
+    "contactFormSuccess": "Сообщение успешно отправлено. Мы свяжемся с вами как можно скорее.",
+    "contactFormError": "Не удалось отправить сообщение. Повторите попытку позже."
   }
 }

@@ -44,21 +44,30 @@ const prefix = lang === 'en' ? '' : `/${lang}`;
       {applications.map(application => (
         <div class="col-xl-4 col-lg-4 col-md-6">
           <div class="rs-portfolio-item">
+            {(() => {
+              const detailUrl =
+                application.translations?.[lang]?.url && application.translations[lang].url !== '#'
+                  ? application.translations[lang].url
+                  : `${prefix}/${currentSlug}/${application.id}`;
+
+              return (
             <div class="rs-portfolio-thumb">
-              <a href={application.translations?.[lang]?.url || '#'}>
+              <a href={detailUrl}>
               <img src={application.applicationListImage} loading="lazy" decoding="async" alt={application.applicationName} />
               </a>
               <div class="rs-portfolio-content">
                 <div class="rs-portfolio-tag">
-                  <a href={`${prefix}/${currentSlug}/${application.id}`}>{ui.applications}</a>
+                  <a href={detailUrl}>{ui.applications}</a>
                 </div>
                 <div class="rs-portfolio-title-info">
                   <h5 class="rs-portfolio-title">
-                    <a href={`${prefix}/${currentSlug}/${application.id}`}>{application.applicationName}</a>
+                    <a href={detailUrl}>{application.applicationName}</a>
                   </h5>
                 </div>
               </div>
             </div>
+              );
+            })()}
           </div>
         </div>
       ))}

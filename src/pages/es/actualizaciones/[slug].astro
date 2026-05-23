@@ -21,11 +21,7 @@ const ui = {
   home: 'Inicio', updates: 'Actualizaciones', detail: 'Detalle', by: 'Por', recommended: 'Recomendado',
 };
 
-const alternates = {
-  en: update.translations?.en?.url || '#',
-  es: update.translations?.es?.url || '#',
-  ru: update.translations?.ru?.url || '#',
-};
+const alternates = contentIndex[update.content_id] || {};
 ---
 
 <BaseLayout 

@@ -901,35 +901,118 @@ Sidebar Toggle
     });
 
     // Contact Form Activation
+    function syncFieldValidityMessage(field, $field) {
+        field.setCustomValidity('');
+
+        if (field.validity.valueMissing && $field.data('requiredMessage')) {
+            field.setCustomValidity($field.data('requiredMessage'));
+            return;
+        }
+
+        if ((field.validity.typeMismatch || field.validity.patternMismatch) && $field.data('invalidMessage')) {
+            field.setCustomValidity($field.data('invalidMessage'));
+        }
+    }
+
+    $('[data-required-message], [data-invalid-message]').each(function () {
+        var $field = $(this);
+        $field.on('invalid input change blur', function () {
+            syncFieldValidityMessage(this, $field);
+        });
+    });
+
     var form = $('#contact-form');
     var formMessages = $('#form-messages');
     $(form).submit(function (e) {
         e.preventDefault();
-        var formData = $(form).serialize();
+
+        if (typeof form[0].reportValidity === 'function' && !form[0].reportValidity()) {
+            return;
+        }
+
+        var $form = $(form);
+        var $formMessages = $(formMessages);
+        var $submitButton = $form.find('button[type="submit"]');
+        var submitMode = $form.data('submitMode');
+        var actionUrl = $form.attr('action');
+
+        $formMessages.removeClass('success error').text('');
+        $submitButton.prop('disabled', true);
+
+        if (submitMode === 'json') {
+            var payload = {
+                name: ($('#name').val() || '').trim(),
+                email: ($('#email').val() || '').trim(),
+                message: ($('#content').val() || $('#message').val() || '').trim()
+            };
+
+            fetch(actionUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(function (response) {
+                    if (!response.ok) {
+                        return response.text().then(function (text) {
+                            throw new Error(text || $form.data('errorMessage') || 'Submission failed. Please try again later.');
+                        });
+                    }
+
+                    var contentType = response.headers.get('content-type') || '';
+                    if (contentType.indexOf('application/json') !== -1) {
+                        return response.json();
+                    }
+
+                    return response.text();
+                })
+                .then(function (result) {
+                    var successMessage = $form.data('successMessage');
+                    if (result && typeof result === 'object') {
+                        successMessage = result.message || result.msg || successMessage;
+                    } else if (typeof result === 'string' && result.trim()) {
+                        successMessage = result.trim();
+                    }
+
+                    $formMessages.removeClass('success error').text('');
+                    form[0].reset();
+                    window.alert(successMessage);
+                })
+                .catch(function (error) {
+                    var errorMessage = error && error.message ? error.message : '';
+                    $formMessages.removeClass('success').addClass('error').text(errorMessage || $form.data('errorMessage') || 'Submission failed. Please try again later.');
+                })
+                .finally(function () {
+                    $submitButton.prop('disabled', false);
+                });
+
+            return;
+        }
+
+        var formData = $form.serialize();
         $.ajax({
             type: 'POST',
-            url: $(form).attr('action'),
+            url: actionUrl,
             data: formData
         })
             .done(function (response) {
-                $(formMessages).removeClass('error');
-                $(formMessages).addClass('success');
-                $(formMessages).text(response);
-                $('#name, #email, #message').val('');
-                if ($('#phone').length) $('#phone').val('');
-                if ($('#website').length) $('#website').val('');
-                if ($('#subject').length) $('#subject').val('');
-                if ($('#date').length) $('#date').val('');
-                if ($('#time').length) $('#time').val('');
+                $formMessages.removeClass('error');
+                $formMessages.addClass('success');
+                $formMessages.text(response);
+                form[0].reset();
             })
             .fail(function (data) {
-                $(formMessages).removeClass('success');
-                $(formMessages).addClass('error');
+                $formMessages.removeClass('success');
+                $formMessages.addClass('error');
                 if (data.responseText !== '') {
-                    $(formMessages).text(data.responseText);
+                    $formMessages.text(data.responseText);
                 } else {
-                    $(formMessages).text('Oops! An error occurred and your message could not be sent.');
+                    $formMessages.text('Oops! An error occurred and your message could not be sent.');
                 }
+            })
+            .always(function () {
+                $submitButton.prop('disabled', false);
             });
     });
 

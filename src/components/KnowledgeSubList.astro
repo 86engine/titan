@@ -9,7 +9,14 @@ const knowledgeSlugs = {
   es: 'conocimiento',
   ru: 'znaniya',
 };
+const typeSlugs = {
+  baling: { en: 'baling', es: 'embalaje', ru: 'pressovanie-metalla' },
+  briquetting: { en: 'briquetting', es: 'briqueteado', ru: 'briketirovanie-metalla' },
+  'metal-shearing': { en: 'metal-shearing', es: 'cizallado', ru: 'rezka-metalla' },
+  shredding: { en: 'shredding', es: 'trituracion', ru: 'droblenie-metalla' },
+};
 const currentKnowledgeSlug = knowledgeSlugs[lang];
+const currentTypeSlug = typeSlugs[type]?.[lang];
 const prefix = lang === 'en' ? '' : `/${lang}`;
 ---
 
@@ -48,7 +55,10 @@ const prefix = lang === 'en' ? '' : `/${lang}`;
   <div class="container">
     <div class="row g-5 process-counts">
       {knowledgeList.map(item => {
-        const detailUrl = item.translations?.[lang]?.url || '#';
+        const detailUrl =
+          item.translations?.[lang]?.url && item.translations[lang].url !== '#'
+            ? item.translations[lang].url
+            : `${prefix}/${currentKnowledgeSlug}/${currentTypeSlug}/${item.id}`;
         return (
           <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
             <div class="rs-services-item">

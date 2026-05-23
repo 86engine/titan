@@ -78,21 +78,26 @@ const { lang, ui } = Astro.props;
         <div class="rs-contact-form">
           <h3 class="rs-contact-form-title" id="get-in-touch">{ui.formTitle}</h3>
           <p class="descrip">{ui.formDesc}</p>
-          <form id="contact-form" action="#">
+          <form
+            id="contact-form"
+            action="https://wp.titan-recycling.com/wp-json/api/inquiry"
+            data-submit-mode="json"
+            data-success-message={ui.submitSuccess}
+            data-error-message={ui.submitError}
+          >
           <div class="row g-5">
             <div class="col-md-4">
               <div class="rs-contact-input">
                 <input id="name" name="name" type="text" required
-                oninvalid="this.setCustomValidity('{ui.nameRequired}')"
-                oninput="this.setCustomValidity('')"
+                data-required-message={ui.nameRequired}
                 placeholder={ui.namePlaceholder}>
               </div>
             </div>
             <div class="col-md-4">
               <div class="rs-contact-input">
                 <input id="email" name="email" type="email" required
-                oninvalid="this.setCustomValidity('{ui.emailRequired}')"
-                oninput="this.setCustomValidity('')"
+                data-required-message={ui.emailRequired}
+                data-invalid-message={ui.emailInvalid}
                 placeholder={ui.emailPlaceholder}>
               </div>
             </div>
@@ -104,9 +109,8 @@ const { lang, ui } = Astro.props;
             </div>
             <div class="col-md-12">
               <div class="rs-contact-input">
-                <textarea id="message" name="message" maxlength="300" required
-                oninvalid="this.setCustomValidity('{ui.messageRequired}')"
-                oninput="this.setCustomValidity('')"
+                <textarea id="content" name="content" maxlength="300" required
+                data-required-message={ui.messageRequired}
                 placeholder={ui.messagePlaceholder}></textarea>
               </div>
             </div>

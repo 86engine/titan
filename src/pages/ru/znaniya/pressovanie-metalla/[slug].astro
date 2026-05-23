@@ -23,11 +23,7 @@ const ui = {
   ru: { home: 'Главная', knowledge: 'Знания', detail: 'Детали' },
 };
 
-const alternates = {
-  en: (knowledge.translations as any)?.en?.url || '#',
-  es: (knowledge.translations as any)?.es?.url || '#',
-  ru: (knowledge.translations as any)?.ru?.url || '#',
-};
+const alternates = contentIndex[knowledge.content_id] || {};
 ---
 
 <BaseLayout 

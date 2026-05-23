@@ -15,6 +15,17 @@ const locales = [
   { code: 'ru', label: 'Русский' },
 ];
 const currentLangLabel = locales.find(l => l.code === lang)?.label || 'English';
+const productListSlugs = {
+  en: 'metal-recycling-equipment',
+  es: 'equipos-reciclaje-metales',
+  ru: 'oborudovanie-dlya-pererabotki-metallov',
+};
+const applicationListSlugs = {
+  en: 'metal-recycling',
+  es: 'reciclaje-de-metales',
+  ru: 'pererabotka-metalla',
+};
+const prefix = lang === 'en' ? '' : `/${lang}`;
 
 // 菜单链接：固定页从 STATIC_PAGES 取，动态页从 translations 取
 const menuLinks = {
@@ -57,17 +68,25 @@ function switchLangURL(targetLang) {
               <li class="menu-item-has-children">
                 <a href={menuLinks.products}>{ui.products}</a>
                 <ul class="submenu last-children">
-                  {products.map(p => (
-                    <li><a href={p.translations?.[lang]?.url || '#'}>{p.productName}</a></li>
-                  ))}
+                  {products.map(p => {
+                    const productUrl =
+                      p.translations?.[lang]?.url && p.translations[lang].url !== '#'
+                        ? p.translations[lang].url
+                        : `${prefix}/${productListSlugs[lang]}/${p.id}`;
+                    return <li><a href={productUrl}>{p.productName}</a></li>;
+                  })}
                 </ul>
               </li>
               <li class="menu-item-has-children">
                 <a href={menuLinks.solutions}>{ui.solutions}</a>
                   <ul class="submenu last-children">
-                    {applications.map(a => (
-                      <li><a href={a.translations?.[lang]?.url || '#'}>{a.applicationName}</a></li>
-                    ))}
+                    {applications.map(a => {
+                      const applicationUrl =
+                        a.translations?.[lang]?.url && a.translations[lang].url !== '#'
+                          ? a.translations[lang].url
+                          : `${prefix}/${applicationListSlugs[lang]}/${a.id}`;
+                      return <li><a href={applicationUrl}>{a.applicationName}</a></li>;
+                    })}
                   </ul>
               </li>
               <li class="has-mega-menu menu-item-has-children">
