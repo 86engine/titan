@@ -53,7 +53,7 @@ const { lang, ui } = Astro.props;
             </div>
             <div class="rs-contact-content">
               <h5 class="rs-contact-title">{ui.chatTitle}</h5>
-              <a href="mailto:{ui.mailto}">{ui.mailto}</a>
+              <a href={`mailto:${ui.mailto}`}>{ui.mailto}</a>
             </div>
           </div>
           <div class="rs-contact-item">
