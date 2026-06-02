@@ -10,7 +10,7 @@ const { lang, knowledge, ui, parentContentId } = Astro.props;
   breadcrumb={buildBreadcrumb(lang, [
     { label: ui.knowledge, href: getPageURL('knowledgeList', lang) },
     { label: getSubCategoryName(parentContentId, lang), href: getPageURL(parentContentId, lang) },
-    { label: knowledge.acf?.knowledge_name }
+    { label: { en: 'Detail', es: 'Detalles', ru: 'Подробности' }[lang] || 'Detail' }
   ])}
   background={knowledge.acf?.knowledge_bg_img}
 />

@@ -16,9 +16,9 @@ function formatDate(dateStr) {
   title={update.pageH1 || update.title}
   breadcrumb={buildBreadcrumb(lang, [
     { label: ui.updates, href: getPageURL('newsList', lang) },
-    { label: update.title }
+    { label: { en: 'Update Details', es: 'Detalles de la Actualización', ru: 'Подробности обновления' }[lang] || 'Update Details' }
   ])}
-  background="https://img.titan-recycling.com/wp-content/uploads/2026/04/news-detail.jpg"
+  background="https://img.titan-recycling.com/wp-content/uploads/2026/06/news-detail.webp"
 />
 
 <section class="rs-postbox-area section-space">
