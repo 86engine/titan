@@ -9,7 +9,7 @@ const BASE = 'https://titan-recycling.com';
 
 const LANGS = ['en', 'es', 'ru'];
 
-// 各语言的页面 URL
+// 各语言的页面 URL — 和改造后的 getPageURL 一致
 const pages = {
   en: {
     static: [
@@ -18,16 +18,6 @@ const pages = {
       { url: '/contact', priority: '0.7' },
       { url: '/downloads', priority: '0.6' },
       { url: '/privacy-policy', priority: '0.5' },
-    ],
-    lists: [
-      { url: '/metal-recycling-equipment', priority: '0.9' },
-      { url: '/metal-recycling', priority: '0.9' },
-      { url: '/knowledge', priority: '0.8' },
-      { url: '/knowledge/baling', priority: '0.7' },
-      { url: '/knowledge/briquetting', priority: '0.7' },
-      { url: '/knowledge/metal-shearing', priority: '0.7' },
-      { url: '/knowledge/shredding', priority: '0.7' },
-      { url: '/updates', priority: '0.8' },
     ],
   },
   es: {
@@ -38,16 +28,6 @@ const pages = {
       { url: '/es/descargas', priority: '0.6' },
       { url: '/es/politica-de-privacidad', priority: '0.5' },
     ],
-    lists: [
-      { url: '/es/equipos-reciclaje-metales', priority: '0.9' },
-      { url: '/es/reciclaje-de-metales', priority: '0.9' },
-      { url: '/es/conocimiento', priority: '0.8' },
-      { url: '/es/conocimiento/embalaje', priority: '0.7' },
-      { url: '/es/conocimiento/briqueteado', priority: '0.7' },
-      { url: '/es/conocimiento/cizallado', priority: '0.7' },
-      { url: '/es/conocimiento/trituracion', priority: '0.7' },
-      { url: '/es/actualizaciones', priority: '0.8' },
-    ],
   },
   ru: {
     static: [
@@ -57,109 +37,111 @@ const pages = {
       { url: '/ru/zagruzki', priority: '0.6' },
       { url: '/ru/politika-konfidencialnosti', priority: '0.5' },
     ],
-    lists: [
-      { url: '/ru/oborudovanie-dlya-pererabotki-metallov', priority: '0.9' },
-      { url: '/ru/pererabotka-metalla', priority: '0.9' },
-      { url: '/ru/znaniya', priority: '0.8' },
-      { url: '/ru/znaniya/pressovanie-metalla', priority: '0.7' },
-      { url: '/ru/znaniya/briketirovanie-metalla', priority: '0.7' },
-      { url: '/ru/znaniya/rezka-metalla', priority: '0.7' },
-      { url: '/ru/znaniya/droblenie-metalla', priority: '0.7' },
-      { url: '/ru/obnovleniya', priority: '0.8' },
-    ],
   },
 };
 
-// 从 wp-data 提取各语言详情页 URL
-function getDetailUrls(items, lang, buildUrl) {
+// 从 wp-data 中提取列表页的 translations[lang].link，转为本地路径
+function getListUrls(dataKey, lang) {
   const urls = [];
   const seen = new Set();
-  for (const item of items) {
-    if (item.lang !== lang) continue;
-    const key = item.acf?.content_id || item.slug || item.id;
-    if (!key || seen.has(key)) continue;
-    seen.add(key);
-    const url = buildUrl(item);
-    if (url) urls.push(url);
+  const category = wpData[dataKey];
+  if (!category) return urls;
+
+  for (const page of Object.values(category)) {
+    const link = page.translations?.[lang]?.link;
+    if (!link) continue;
+    try {
+      const pathname = new URL(link).pathname;
+      if (!seen.has(pathname)) {
+        seen.add(pathname);
+        urls.push(pathname);
+      }
+    } catch {}
   }
   return urls;
 }
 
-// 产品详情 en: /metal-recycling-equipment/{slug}
-function productUrl(item, lang) {
-  if (!item.slug) return null;
-  const prefix = lang === 'en' ? '' : `/${lang}`;
-  const listMap = { en: 'metal-recycling-equipment', es: 'equipos-reciclaje-metales', ru: 'oborudovanie-dlya-pererabotki-metallov' };
-  return `${prefix}/${listMap[lang]}/${item.slug}`;
+// 从 wp-data 中提取详情页的 translations[lang].link
+function getDetailUrls(dataKey, lang) {
+  const urls = [];
+  const seen = new Set();
+  const items = wpData[dataKey];
+  if (!items) return urls;
+
+  for (const item of items) {
+    if (item.lang !== lang) continue;
+    const link = item.translations?.[lang]?.link || item.link;
+    if (!link) continue;
+    try {
+      const pathname = new URL(link).pathname;
+      if (!seen.has(pathname)) {
+        seen.add(pathname);
+        urls.push(pathname);
+      }
+    } catch {}
+  }
+  return urls;
 }
 
-// 应用详情
-function appUrl(item, lang) {
-  if (!item.slug) return null;
-  const prefix = lang === 'en' ? '' : `/${lang}`;
-  const listMap = { en: 'metal-recycling', es: 'reciclaje-de-metales', ru: 'pererabotka-metalla' };
-  return `${prefix}/${listMap[lang]}/${item.slug}`;
+// 收集各语言所有 URL
+function collectURLs(lang) {
+  const listUrls = [
+    ...getListUrls('productCategories', lang),
+    ...getListUrls('applicationCategories', lang),
+    ...getListUrls('knowledgeParentCategory', lang),
+  ];
+
+  // 子知识分类
+  if (wpData.knowledgeSubCategories) {
+    for (const sub of Object.values(wpData.knowledgeSubCategories)) {
+      const page = sub[lang];
+      if (page?.translations?.[lang]?.link) {
+        try {
+          listUrls.push(new URL(page.translations[lang].link).pathname);
+        } catch {}
+      }
+    }
+  }
+
+  // 新闻列表
+  const updatesPage = wpData.updatesCategory?.[lang];
+  if (updatesPage?.translations?.[lang]?.link) {
+    try {
+      listUrls.push(new URL(updatesPage.translations[lang].link).pathname);
+    } catch {}
+  }
+
+  const detailUrls = [
+    ...getDetailUrls('products', lang),
+    ...getDetailUrls('applications', lang),
+    ...getDetailUrls('knowledge', lang),
+    ...getDetailUrls('posts', lang),
+  ];
+
+  return { listUrls, detailUrls };
 }
-
-// 知识详情
-const typeMap = {
-  baling: { en: 'baling', es: 'embalaje', ru: 'pressovanie-metalla' },
-  briquetting: { en: 'briquetting', es: 'briqueteado', ru: 'briketirovanie-metalla' },
-  'metal-shearing': { en: 'metal-shearing', es: 'cizallado', ru: 'rezka-metalla' },
-  shredding: { en: 'shredding', es: 'trituracion', ru: 'droblenie-metalla' },
-};
-
-function knowledgeUrl(item, lang) {
-  const kType = item.acf?.knowledge_type;
-  if (!item.slug || !kType) return null;
-  const prefix = lang === 'en' ? '' : `/${lang}`;
-  const listSlug = { en: 'knowledge', es: 'conocimiento', ru: 'znaniya' }[lang];
-  const typeSlug = typeMap[kType]?.[lang];
-  if (!typeSlug) return null;
-  return `${prefix}/${listSlug}/${typeSlug}/${item.slug}`;
-}
-
-// 新闻详情
-function updateUrl(item, lang) {
-  if (!item.slug) return null;
-  const prefix = lang === 'en' ? '' : `/${lang}`;
-  const listMap = { en: 'updates', es: 'actualizaciones', ru: 'obnovleniya' };
-  return `${prefix}/${listMap[lang]}/${item.slug}`;
-}
-
-// 各语言详情 URL
-const detailUrls = {
-  en: [
-    ...getDetailUrls(wpData.products || [], 'en', (item) => productUrl(item, 'en')),
-    ...getDetailUrls(wpData.applications || [], 'en', (item) => appUrl(item, 'en')),
-    ...getDetailUrls(wpData.knowledge || [], 'en', (item) => knowledgeUrl(item, 'en')),
-    ...getDetailUrls(wpData.posts || [], 'en', (item) => updateUrl(item, 'en')),
-  ],
-  es: [
-    ...getDetailUrls(wpData.products || [], 'es', (item) => productUrl(item, 'es')),
-    ...getDetailUrls(wpData.applications || [], 'es', (item) => appUrl(item, 'es')),
-    ...getDetailUrls(wpData.knowledge || [], 'es', (item) => knowledgeUrl(item, 'es')),
-    ...getDetailUrls(wpData.posts || [], 'es', (item) => updateUrl(item, 'es')),
-  ],
-  ru: [
-    ...getDetailUrls(wpData.products || [], 'ru', (item) => productUrl(item, 'ru')),
-    ...getDetailUrls(wpData.applications || [], 'ru', (item) => appUrl(item, 'ru')),
-    ...getDetailUrls(wpData.knowledge || [], 'ru', (item) => knowledgeUrl(item, 'ru')),
-    ...getDetailUrls(wpData.posts || [], 'ru', (item) => updateUrl(item, 'ru')),
-  ],
-};
 
 // 生成单个语言 sitemap
 function generateLangSitemap(lang) {
+  const { listUrls, detailUrls } = collectURLs(lang);
+
   const allUrls = [
     ...pages[lang].static,
-    ...pages[lang].lists,
-    ...detailUrls[lang].map(url => ({ url, priority: '0.8' })),
+    ...listUrls.map(url => ({ url, priority: '0.8' })),
+    ...detailUrls.map(url => ({ url, priority: '0.7' })),
   ];
+
+  // 去重
+  const seen = new Set();
+  const unique = allUrls.filter(u => {
+    if (seen.has(u.url)) return false;
+    seen.add(u.url);
+    return true;
+  });
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allUrls.map(p => `  <url>
+${unique.map(p => `  <url>
     <loc>${BASE}${p.url}</loc>
     <priority>${p.priority}</priority>
   </url>`).join('\n')}
@@ -189,6 +171,7 @@ fs.writeFileSync(path.join(outDir, 'sitemap.xml'), generateIndex());
 console.log('✅ sitemap.xml (index)');
 
 for (const lang of LANGS) {
+  const { listUrls, detailUrls } = collectURLs(lang);
   fs.writeFileSync(path.join(outDir, `sitemap-${lang}.xml`), generateLangSitemap(lang));
-  console.log(`✅ sitemap-${lang}.xml (${detailUrls[lang].length} detail pages)`);
+  console.log(`✅ sitemap-${lang}.xml (${listUrls.length} lists + ${detailUrls.length} details)`);
 }

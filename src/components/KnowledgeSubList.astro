@@ -1,32 +1,16 @@
 ---
-// src/components/KnowledgeSubList.astro
 import PageBanner from "./PageBanner.astro";
+import { getPageURL, buildBreadcrumb } from "../data/site.js";
 
-const { lang, type, knowledgeList, pageData, ui } = Astro.props;
-
-const knowledgeSlugs = {
-  en: 'knowledge',
-  es: 'conocimiento',
-  ru: 'znaniya',
-};
-const typeSlugs = {
-  baling: { en: 'baling', es: 'embalaje', ru: 'pressovanie-metalla' },
-  briquetting: { en: 'briquetting', es: 'briqueteado', ru: 'briketirovanie-metalla' },
-  'metal-shearing': { en: 'metal-shearing', es: 'cizallado', ru: 'rezka-metalla' },
-  shredding: { en: 'shredding', es: 'trituracion', ru: 'droblenie-metalla' },
-};
-const currentKnowledgeSlug = knowledgeSlugs[lang];
-const currentTypeSlug = typeSlugs[type]?.[lang];
-const prefix = lang === 'en' ? '' : `/${lang}`;
+const { lang, knowledgeList, pageData, ui, currentContentId, parentContentId } = Astro.props;
 ---
 
-<PageBanner 
-  title={pageData.pageH1 || type}
-  breadcrumb={[
-    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
-    { label: ui.knowledge, href: `${prefix}/${currentKnowledgeSlug}` },
-    { label: ui.detail }
-  ]}
+<PageBanner
+  title={pageData.pageH1 || ui.knowledge}
+  breadcrumb={buildBreadcrumb(lang, [
+    { label: ui.knowledge, href: getPageURL(parentContentId, lang) },
+    { label: pageData.pageH1 || '' }
+  ])}
   background={pageData.pageBackground || "https://img.titan-recycling.com/wp-content/uploads/2026/04/background-metal-recycling-machine.webp"}
 />
 
@@ -55,21 +39,18 @@ const prefix = lang === 'en' ? '' : `/${lang}`;
   <div class="container">
     <div class="row g-5 process-counts">
       {knowledgeList.map(item => {
-        const detailUrl =
-          item.translations?.[lang]?.url && item.translations[lang].url !== '#'
-            ? item.translations[lang].url
-            : `${prefix}/${currentKnowledgeSlug}/${currentTypeSlug}/${item.id}`;
+        const detailUrl = getPageURL(item.content_id, lang) || '#';
         return (
           <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
             <div class="rs-services-item">
               <div class="rs-services-bg-thumb" style="background-image: url('https://img.titan-recycling.com/wp-content/uploads/2026/04/service-shape.png');"></div>
               <h4 class="rs-services-title underline has-theme-blue">
-                <a href={detailUrl}>{item.knowledgeName}</a>
+                <a href={detailUrl}>{item.acf?.knowledge_name}</a>
               </h4>
               <p class="descrip">
-                {item.knowledgeListDescription && item.knowledgeListDescription.length > 100 
-                  ? item.knowledgeListDescription.slice(0, 100) + '...' 
-                  : item.knowledgeListDescription}
+                {item.acf?.knowledge_category_overview && item.acf.knowledge_category_overview.length > 100
+                  ? item.acf.knowledge_category_overview.slice(0, 100) + '...'
+                  : item.acf?.knowledge_category_overview}
               </p>
               <div class="rs-services-icon">
                 <a href={detailUrl} class="rs-btn has-icon has-transparent-btn">
@@ -85,7 +66,7 @@ const prefix = lang === 'en' ? '' : `/${lang}`;
               </div>
               <div class="rs-services-thumb">
                 <a href={detailUrl}>
-                  <img src={item.knowledgeListImage} alt={item.knowledgeName} />
+                  <img src={item.acf?.knowledge_category_img} alt={item.acf?.knowledge_name} />
                 </a>
               </div>
               <div class="rs-services-number"></div>

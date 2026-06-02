@@ -1,28 +1,49 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { LANGS } from "../config/site";
+import { getTranslationsByContentId } from "../data/site.js";
 import "../styles/main.css";
 
-const { lang, translations,contentIndex, currentContentId, title, description, keywords, alternates, preloadImages = [] } = Astro.props;
+const {
+  lang,
+  currentContentId,
+  title,
+  description,
+  keywords,
+  preloadImages = []
+} = Astro.props;
+
 const siteUrl = 'https://titan-recycling.com';
+
+const translations = getTranslationsByContentId(currentContentId);
+
+const alternates = {};
+if (translations) {
+  for (const l of LANGS) {
+    if (translations[l]?.link) {
+      alternates[l] = translations[l].link;
+    }
+  }
+}
+
+const canonical = alternates[lang] || `${siteUrl}/`;
 ---
 
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title || 'Metal Recycling Equipment Manufacturer & Supplier | TITAN'}</title>
+    <title>{title || 'TITAN | Metal Recycling Equipment Manufacturer'}</title>
     {description && <meta name="description" content={description} />}
     {keywords && <meta name="keywords" content={keywords} />}
 
-    <!-- canonical -->
-    {alternates?.en && <link rel="canonical" href={`${siteUrl}${alternates.en}`} />}
+    <link rel="canonical" href={canonical} />
 
-    <!-- hreflang -->
-    {alternates?.en && <link rel="alternate" hreflang="en" href={`${siteUrl}${alternates.en}`} />}
-    {alternates?.es && <link rel="alternate" hreflang="es" href={`${siteUrl}${alternates.es}`} />}
-    {alternates?.ru && <link rel="alternate" hreflang="ru" href={`${siteUrl}${alternates.ru}`} />}
-    {alternates?.en && <link rel="alternate" hreflang="x-default" href={`${siteUrl}${alternates.en}`} />}
+    {alternates.en && <link rel="alternate" hreflang="en" href={alternates.en} />}
+    {alternates.es && <link rel="alternate" hreflang="es" href={alternates.es} />}
+    {alternates.ru && <link rel="alternate" hreflang="ru" href={alternates.ru} />}
+    {alternates.en && <link rel="alternate" hreflang="x-default" href={alternates.en} />}
 
     <link rel="dns-prefetch" href="https://img.titan-recycling.com" />
     <link rel="preconnect" href="https://img.titan-recycling.com" crossorigin />
@@ -43,7 +64,7 @@ const siteUrl = 'https://titan-recycling.com';
   </head>
   
   <body>
-    <Header lang={lang} translations={translations} contentIndex={contentIndex} currentContentId={currentContentId} />
+    <Header lang={lang} currentContentId={currentContentId} />
     <main><slot /></main>
     <Footer lang={lang} />
     <script is:inline defer src="/js/vendor/jquery-3.7.1.min.js"></script>

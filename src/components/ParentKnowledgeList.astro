@@ -1,70 +1,24 @@
 ---
-// src/components/ParentKnowledgeList.astro
 import PageBanner from "./PageBanner.astro";
+import { getPageURL, buildBreadcrumb, getSubKnowledgeList, getSubCategoryName } from "../data/site.js";
 
 const { lang, pageData, ui } = Astro.props;
 
-const slugs = {
-  en: 'knowledge',
-  es: 'conocimiento',
-  ru: 'znaniya',
-};
-const currentSlug = slugs[lang];
-const prefix = lang === 'en' ? '' : `/${lang}`;
+const subKnowledge = getSubKnowledgeList();
 
-const typeSlugs = {
-  briquetting:    { en: 'briquetting', es: 'briqueteado', ru: 'briketirovanie-metalla' },
-  baling:         { en: 'baling', es: 'embalaje', ru: 'pressovanie-metalla' },
-  'metal-shearing': { en: 'metal-shearing', es: 'cizallado', ru: 'rezka-metalla' },
-  shredding:      { en: 'shredding', es: 'trituracion', ru: 'droblenie-metalla' },
+const cardImages = {
+  'knowledgeList-briquetter': 'https://img.titan-recycling.com/system/briquetting-press-knowledge.webp',
+  'knowledgeList-baler': 'https://img.titan-recycling.com/system/baling-press-knowledge.webp',
+  'knowledgeList-shear': 'https://img.titan-recycling.com/system/scrap-shear-knowledge.webp',
+  'knowledgeList-shredder': 'https://img.titan-recycling.com/system/scrap-shredder-knowledge.webp',
 };
-
-const cards = [
-  {
-    href: `${prefix}/${currentSlug}/${typeSlugs.briquetting[lang]}`,
-    img: 'https://img.titan-recycling.com/system/briquetting-press-knowledge.webp',
-    title: {
-      en: 'Briquetting Machine Guides',
-      es: 'Guías de Máquinas Briqueteadoras',
-      ru: 'Руководства по брикетировочным машинам',
-    },
-  },
-  {
-    href: `${prefix}/${currentSlug}/${typeSlugs.baling[lang]}`,
-    img: 'https://img.titan-recycling.com/system/baling-press-knowledge.webp',
-    title: {
-      en: 'Metal Baler Guides',
-      es: 'Guías de Prensas Empacadoras',
-      ru: 'Руководства по пакетировочным прессам',
-    },
-  },
-  {
-    href: `${prefix}/${currentSlug}/${typeSlugs['metal-shearing'][lang]}`,
-    img: 'https://img.titan-recycling.com/system/scrap-shear-knowledge.webp',
-    title: {
-      en: 'Shearing Machine Guides',
-      es: 'Guías de Cizallas',
-      ru: 'Руководства по ножницам',
-    },
-  },
-  {
-    href: `${prefix}/${currentSlug}/${typeSlugs.shredding[lang]}`,
-    img: 'https://img.titan-recycling.com/system/scrap-shredder-knowledge.webp',
-    title: {
-      en: 'Metal Shredder Guides',
-      es: 'Guías de Trituradoras',
-      ru: 'Руководства по шредерам',
-    },
-  },
-];
 ---
 
 <PageBanner
   title={pageData.pageH1 || ui.knowledge}
-  breadcrumb={[
-    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
+  breadcrumb={buildBreadcrumb(lang, [
     { label: ui.knowledge }
-  ]}
+  ])}
   background="https://img.titan-recycling.com/system/metal-recycling-equipment-banner.webp"
 />
 
@@ -88,24 +42,29 @@ const cards = [
 <section class="rs-team-area section-space rs-team-one">
   <div class="container">
     <div class="row g-5">
-      {cards.map(card => (
-        <div class="col-xl-4 col-lg-4 col-md-6">
-          <div class="rs-team-item">
-            <div class="rs-team-thumb has-clip">
-              <a href={card.href}>
-                <img src={card.img} alt="image">
-              </a>
-            </div>
-            <div class="rs-team-content-wrapper">
-              <div class="rs-team-content-box">
-                <h5 class="rs-team-title">
-                  <a href={card.href}>{card.title[lang] || card.title.en}</a>
-                </h5>
+      {subKnowledge.map(sub => {
+        const href = getPageURL(sub.contentId, lang);
+        const img = cardImages[sub.contentId] || 'https://img.titan-recycling.com/system/metal-recycling-equipment-banner.webp';
+        const title = getSubCategoryName(sub.contentId, lang);
+        return (
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="rs-team-item">
+              <div class="rs-team-thumb has-clip">
+                <a href={href}>
+                  <img src={img} alt={title}>
+                </a>
+              </div>
+              <div class="rs-team-content-wrapper">
+                <div class="rs-team-content-box">
+                  <h5 class="rs-team-title">
+                    <a href={href}>{title}</a>
+                  </h5>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>

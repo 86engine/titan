@@ -1,16 +1,15 @@
 ---
-// src/components/ContactPage.astro
 import PageBanner from "./PageBanner.astro";
+import { buildBreadcrumb } from "../data/site.js";
 
 const { lang, ui } = Astro.props;
 ---
 
 <PageBanner
   title={ui.pageTitle}
-  breadcrumb={[
-    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
+  breadcrumb={buildBreadcrumb(lang, [
     { label: ui.pageTitle }
-  ]}
+  ])}
   background="https://img.titan-recycling.com/wp-content/uploads/2026/04/background-contact.webp"
 />
 
@@ -62,7 +61,7 @@ const { lang, ui } = Astro.props;
             </div>
             <div class="rs-contact-content">
               <h5 class="rs-contact-title">{ui.callTitle}</h5>
-              <a href="tel:{ui.phone}">{ui.phone}</a>
+              <a href={`tel:${ui.phone.replace(/\s/g, '')}`}>{ui.phone}</a>
             </div>
           </div>
         </div>

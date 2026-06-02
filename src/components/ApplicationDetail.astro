@@ -1,24 +1,16 @@
 ---
-// src/components/ApplicationDetail.astro
 import PageBanner from "./PageBanner.astro";
+import { getPageURL, buildBreadcrumb } from "../data/site.js";
 
 const { lang, application, ui } = Astro.props;
-const appSlugs = {
-  en: 'metal-recycling',
-  es: 'reciclaje-de-metales',
-  ru: 'pererabotka-metalla',
-};
-const currentSlug = appSlugs[lang];
-const prefix = lang === 'en' ? '' : `/${lang}`;
 ---
 
 <PageBanner
   title={application.pageH1 || application.applicationName}
-  breadcrumb={[
-    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
-    { label: ui.applications, href: `${prefix}/${currentSlug}` },
-    { label: ui.detail }
-  ]}
+  breadcrumb={buildBreadcrumb(lang, [
+    { label: ui.solutions, href: getPageURL('solutionList', lang) },
+    { label: application.applicationName }
+  ])}
   background={application.pageBackground}
 />
 

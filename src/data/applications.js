@@ -1,20 +1,6 @@
 // src/data/applications.js
 import wpData from './wp-data.json' with { type: 'json' };
-
-const LIST_SLUGS = {
-  en: 'metal-recycling',
-  es: 'reciclaje-de-metales',
-  ru: 'pererabotka-metalla',
-};
-
-const APPLICATIONS_BY_CONTENT_ID = new Map();
-for (const application of wpData.applications) {
-  const contentId = application.acf?.content_id;
-  if (!contentId) continue;
-  const group = APPLICATIONS_BY_CONTENT_ID.get(contentId) || {};
-  group[application.lang] = application;
-  APPLICATIONS_BY_CONTENT_ID.set(contentId, group);
-}
+import { localizeURL } from './site.js';
 
 function buildBlocks(acf) {
   if (!acf) return [];
@@ -60,16 +46,15 @@ export async function getApplications(lang = 'en') {
   const items = wpData.applications.filter(a => a.lang === lang);
   return items.map(app => {
     const translations = {};
-    const relatedApplications = APPLICATIONS_BY_CONTENT_ID.get(app.acf?.content_id) || {};
-
-    for (const [l, listSlug] of Object.entries(LIST_SLUGS)) {
-      const translatedApplication = relatedApplications[l];
-      if (!translatedApplication?.slug) continue;
-      const prefix = l === 'en' ? '' : `/${l}`;
-      translations[l] = {
-        slug: translatedApplication.slug,
-        url: `${prefix}/${listSlug}/${translatedApplication.slug}`,
-      };
+    if (app.translations) {
+      for (const [l, t] of Object.entries(app.translations)) {
+        if (t.link) {
+          translations[l] = { link: localizeURL(t.link) };
+        }
+      }
+    }
+    if (app.link) {
+      translations[lang] = { link: localizeURL(app.link) };
     }
 
     return {

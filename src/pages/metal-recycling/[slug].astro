@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ApplicationDetail from "../../components/ApplicationDetail.astro";
 import { getApplications } from "../../data/applications.js";
-import { buildContentIndex } from "../../lib/wordpress.js";
+import headerI18n from "../../../public/data/header-i18n.json" with { type: 'json' };
 
 export async function getStaticPaths() {
   const applications = await getApplications('en');
@@ -17,26 +17,15 @@ const { application } = Astro.props;
 
 if (!application) return Astro.redirect('/metal-recycling');
 
-const allApps = await getApplications('en');
-const contentIndex = buildContentIndex(allApps);
-
-const t = {
-  en: { home: 'Home', applications: 'Solutions', detail: 'Detail' },
-};
-const ui = t[lang];
-
-const alternates = contentIndex[application.content_id] || {};
+const ui = headerI18n[lang] || headerI18n.en;
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={application.translations} 
-  contentIndex={contentIndex} 
+<BaseLayout
+  lang={lang}
   currentContentId={application.content_id}
-  title={application.pageTitle} 
-  description={application.pageDescription} 
+  title={application.pageTitle}
+  description={application.pageDescription}
   keywords={application.pageKeywords}
-  alternates={alternates}
 >
   <ApplicationDetail lang={lang} application={application} ui={ui} />
 </BaseLayout>

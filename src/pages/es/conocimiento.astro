@@ -2,34 +2,21 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ParentKnowledgeList from "../../components/ParentKnowledgeList.astro";
 import { getKnowledgeCategory } from "../../data/parentKnowledge.js";
+import headerI18n from "../../../public/data/header-i18n.json" with { type: 'json' };
 
 const lang = 'es';
 
 const pageData = await getKnowledgeCategory(lang);
 
-const pageTranslations = {};
-for (const [l, data] of Object.entries(pageData.translations || {})) {
-  if (data?.link) {
-    pageTranslations[l] = { url: new URL(data.link).pathname };
-  }
-}
-
-const ui = { home: 'Inicio', knowledge: 'Conocimiento' };
-
-const alternates = {
-  en: '/knowledge',
-  es: '/es/conocimiento',
-  ru: '/ru/znaniya',
-};
+const ui = headerI18n[lang] || headerI18n.en;
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={pageData.pageTitle} 
-  description={pageData.pageDescription} 
+<BaseLayout
+  lang={lang}
+  currentContentId="knowledgeList"
+  title={pageData.pageTitle}
+  description={pageData.pageDescription}
   keywords={pageData.pageKeywords}
-  alternates={alternates}
 >
   <ParentKnowledgeList lang={lang} pageData={pageData} ui={ui} />
 </BaseLayout>

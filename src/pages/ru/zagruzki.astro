@@ -1,47 +1,21 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import DownloadsPage from "../../components/DownloadsPage.astro";
+import downloadsI18n from "../../../public/data/downloads-i18n.json" with { type: 'json' };
 
 const lang = 'ru';
 
-const pageTranslations = {
-  en: { url: '/downloads' },
-  es: { url: '/es/descargas' },
-  ru: { url: '/ru/zagruzki' },
-};
+const ui = downloadsI18n[lang] || downloadsI18n.en;
 
-const ui = {
-  home: 'Главная',
-  pageTitle: 'Загрузки',
-  heading: 'Загрузки',
-  subheading: 'Документация и материалы по оборудованию и системам для переработки металла',
-  downloadBtn: 'Скачать PDF',
-  cards: [
-    { title: 'Брикетировочный Пресс', desc: 'Полное руководство...', date: '2026-03-08', url: 'https://img.titan-recycling.com/wp-content/uploads/2026/05/Y83_Series_Hydraulic_Metal_Chips_Briquetting_Press_Manual_RU_V1.0.pdf' },
-    { title: 'Пакетировочный Пресс', desc: 'Полное руководство...', date: '2026-03-17', url: 'https://img.titan-recycling.com/wp-content/uploads/2026/05/Y81_Series_Hydraulic_Scrap_Baler_Manual_RU_V1.0.pdf' },
-    { title: 'Ножницы для Металла', desc: 'Полное руководство...', date: '2026-04-22', url: 'https://img.titan-recycling.com/wp-content/uploads/2026/05/Q43_Series_Alligator_Metal_Shear_Manual_RU_V1.0.pdf' },
-    { title: 'Шредер для Металла', desc: 'Полное руководство...', date: '2026-05-13', url: 'https://img.titan-recycling.com/wp-content/uploads/2026/05/TS_Series_Single-and-Double-Shaft_Shredder_Manual_RU_V1.0.pdf' },
-  ],
-};
-
-const title = 'Загрузки | Каталоги и технические паспорта оборудования для переработки металла';
-const description = 'Скачайте каталоги продукции, технические паспорта и брошюры об оборудовании для переработки металла, включая брикетировочные прессы, пакетировочные прессы и дробильные системы.';
-const keywords = 'Каталог по переработке металла';
-
-const alternates = {
-  en: '/downloads',
-  es: '/es/descargas',
-  ru: '/ru/zagruzki',
-};
+const title = `${ui.pageTitle} | TITAN`;
+const description = ui.subheading;
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={title} 
-  description={description} 
-  keywords={keywords}
-  alternates={alternates}
+<BaseLayout
+  lang={lang}
+  currentContentId="downloads"
+  title={title}
+  description={description}
 >
   <DownloadsPage lang={lang} ui={ui} />
 </BaseLayout>

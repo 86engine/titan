@@ -1,5 +1,5 @@
 ---
-// src/components/DownloadsPage.astro
+import { buildBreadcrumb } from "../data/site.js";
 
 const { lang, ui } = Astro.props;
 ---
@@ -16,8 +16,11 @@ const { lang, ui } = Astro.props;
           <div class="rs-breadcrumb-menu">
             <nav>
               <ul>
-                <li><span><a href={lang === 'en' ? '/' : `/${lang}`}>{ui.home}</a></span></li>
-                <li><span>{ui.pageTitle}</span></li>
+                {buildBreadcrumb(lang, [{ label: ui.pageTitle }]).map((item, i) => (
+                  <li><span>
+                    {item.href ? <a href={item.href}>{item.label}</a> : item.label}
+                  </span></li>
+                ))}
               </ul>
             </nav>
           </div>

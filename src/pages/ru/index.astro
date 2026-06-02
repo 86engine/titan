@@ -3,15 +3,16 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import CookieConsent from "../../components/CookieConsent.astro";
 import { getProducts } from "../../data/products.js";
 import { getApplications } from "../../data/applications.js";
+import { getPageURL } from "../../data/site.js";
 import homeI18n from "../../../public/data/home-i18n.json" with { type: 'json' };
 
 const lang = 'ru';
-const prefix = lang === 'en' ? '' : `/${lang}`;
+
 const ui = homeI18n[lang] || homeI18n.en;
 
-const title = 'Производитель и поставщик оборудования для переработки металлов | TITAN';
-const description = 'Профессиональный производитель и поставщик оборудования для переработки металлолома, поставляющий прессы, шредеры и ножницы по всему миру.';
-const keywords = 'производитель оборудования для переработки металлов,поставщик оборудования для переработки металлов';
+const title = 'Metal Recycling Equipment Manufacturer & Supplier | TITAN';
+const description = 'TITAN is a professional metal recycling equipment manufacturer and supplier, providing briquetting machines,baling machines,shredders and shearing machines worldwide.';
+const keywords = 'metal recycling equipment manufacturer,metal recycling equipment supplier';
 
 const [products, applications] = await Promise.all([
   getProducts(lang),
@@ -19,44 +20,22 @@ const [products, applications] = await Promise.all([
 ]);
 const featuredProducts = products.slice(0, 4);
 const featuredApplications = applications.slice(0, 6);
-const productUrl = `${prefix}/metal-recycling-equipment`;
-const productListSlug = 'oborudovanie-dlya-pererabotki-metallov';
-const applicationListSlug = 'pererabotka-metalla';
 const heroImage = 'https://img.titan-recycling.com/system/titan-recycling-systems-hero-banner.webp';
-const pageTranslations = {
-  en: { url: '/' },
-  es: { url: '/es/' },
-  ru: { url: '/ru/' },
-};
-
-const alternates = {
-  en: '/',
-  es: '/es/',
-  ru: '/ru/',
-};
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={title} 
-  description={description} 
+<BaseLayout
+  lang={lang}
+  currentContentId="home"
+  title={title}
+  description={description}
   keywords={keywords}
-  alternates={alternates}
   preloadImages={[heroImage]}
 >
   <main>
     <!-- banner -->
     <section class="rs-banner-area rs-banner-three p-relative">
       <div class="rs-banner-bg-thumb">
-        <img
-          src={heroImage}
-          alt=""
-          aria-hidden="true"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
+        <img src={heroImage} alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
       </div>
       <div class="container">
         <div class="row">
@@ -67,7 +46,7 @@ const alternates = {
                 <h1 class="rs-banner-title wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".7s">{ui.bannerTitle}</h1>
                 <p style="color:var(--rs-white);font-size:24px;margin-bottom:60px;">{ui.bannerDesc}</p>
                 <div class="rs-banner-btn" style="display: flex; align-items: center;">
-                  <a class="rs-btn has-theme-blue has-bg has-icon" href={productUrl}>
+                  <a class="rs-btn has-theme-blue has-bg has-icon" href={getPageURL('productList', lang)}>
                     {ui.bannerBtn}
                     <span class="icon-box">
                       <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z"/></svg>
@@ -133,36 +112,30 @@ const alternates = {
             <div class="rs-services-slide-wrapper process-counts">
               <div class="swiper" data-clone-slides="false" data-loop="false" data-speed="1500" data-autoplay="true" data-dots-dynamic="false" data-hover-pause="true" data-effect="false" data-delay="2500" data-item="3" data-item-xl="2" data-item-lg="2" data-item-md="2" data-item-sm="1" data-item-xs="1" data-item-mobile="1" data-margin="30" data-margin-xl="30">
                 <div class="swiper-wrapper">
-                  {featuredProducts.map(product => (
-                    <div class="swiper-slide">
-                      {(() => {
-                        const productDetailUrl =
-                          product.translations?.[lang]?.url && product.translations[lang].url !== '#'
-                            ? product.translations[lang].url
-                            : `${prefix}/${productListSlug}/${product.id}`;
-
-                        return (
-                      <div class="rs-services-item">
-                        <div class="rs-services-thumb"><a href={productDetailUrl}><img src={product.productListImage} loading="lazy" decoding="async" alt={product.productName} /></a></div>
-                        <div class="rs-services-content">
-                          <h5 class="rs-services-title"><a href={productDetailUrl}>{product.productName}</a></h5>
-                          <p class="descrip">{product.productListDescription}</p>
-                          <div class="rs-services-number"></div>
-                          <div class="rs-services-btn-wrapper">
-                            <div class="rs-services-text-btn underline has-theme-blue"><a class="rs-text-btn" href={productDetailUrl}>{ui.viewDetail}</a></div>
-                            <a class="rs-square-btn has-icon has-light-bg" href={productDetailUrl}>
-                              <span class="icon-box">
-                                <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 4.60551 0.319797 4.28571 0.714286 4.28571L8.98985 4.28571L5.92349 1.21936C5.64455 0.940417 5.64455 0.488155 5.92349 0.209209C6.20244 -0.0697365 6.6547 -0.0697365 6.93365 0.209209L11.2194 4.49492C11.4983 4.77387 11.4983 5.22613 11.2194 5.50508L6.93365 9.79079C6.6547 10.0697 6.20244 10.0697 5.92349 9.79079C5.64455 9.51184 5.64455 9.05958 5.92349 8.78064L8.98985 5.71429L0.714286 5.71429C0.319797 5.71429 0 5.39449 0 5Z" fill="#616161"/></svg>
-                                <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 4.60551 0.319797 4.28571 0.714286 4.28571L8.98985 4.28571L5.92349 1.21936C5.64455 0.940417 5.64455 0.488155 5.92349 0.209209C6.20244 -0.0697365 6.6547 -0.0697365 6.93365 0.209209L11.2194 4.49492C11.4983 4.77387 11.4983 5.22613 11.2194 5.50508L6.93365 9.79079C6.6547 10.0697 6.20244 10.0697 5.92349 9.79079C5.64455 9.51184 5.64455 9.05958 5.92349 8.78064L8.98985 5.71429L0.714286 5.71429C0.319797 5.71429 0 5.39449 0 5Z" fill="#616161"/></svg>
-                              </span>
-                            </a>
+                  {featuredProducts.map(product => {
+                    const productDetailUrl = getPageURL(product.content_id, lang) || '#';
+                    return (
+                      <div class="swiper-slide">
+                        <div class="rs-services-item">
+                          <div class="rs-services-thumb"><a href={productDetailUrl}><img src={product.acf?.product_category_img} loading="lazy" decoding="async" alt={product.acf?.product_name} /></a></div>
+                          <div class="rs-services-content">
+                            <h5 class="rs-services-title"><a href={productDetailUrl}>{product.acf?.product_name}</a></h5>
+                            <p class="descrip">{product.acf?.product_category_overview}</p>
+                            <div class="rs-services-number"></div>
+                            <div class="rs-services-btn-wrapper">
+                              <div class="rs-services-text-btn underline has-theme-blue"><a class="rs-text-btn" href={productDetailUrl}>{ui.viewDetail}</a></div>
+                              <a class="rs-square-btn has-icon has-light-bg" href={productDetailUrl}>
+                                <span class="icon-box">
+                                  <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 4.60551 0.319797 4.28571 0.714286 4.28571L8.98985 4.28571L5.92349 1.21936C5.64455 0.940417 5.64455 0.488155 5.92349 0.209209C6.20244 -0.0697365 6.6547 -0.0697365 6.93365 0.209209L11.2194 4.49492C11.4983 4.77387 11.4983 5.22613 11.2194 5.50508L6.93365 9.79079C6.6547 10.0697 6.20244 10.0697 5.92349 9.79079C5.64455 9.51184 5.64455 9.05958 5.92349 8.78064L8.98985 5.71429L0.714286 5.71429C0.319797 5.71429 0 5.39449 0 5Z" fill="#616161"/></svg>
+                                  <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 4.60551 0.319797 4.28571 0.714286 4.28571L8.98985 4.28571L5.92349 1.21936C5.64455 0.940417 5.64455 0.488155 5.92349 0.209209C6.20244 -0.0697365 6.6547 -0.0697365 6.93365 0.209209L11.2194 4.49492C11.4983 4.77387 11.4983 5.22613 11.2194 5.50508L6.93365 9.79079C6.6547 10.0697 6.20244 10.0697 5.92349 9.79079C5.64455 9.51184 5.64455 9.05958 5.92349 8.78064L8.98985 5.71429L0.714286 5.71429C0.319797 5.71429 0 5.39449 0 5Z" fill="#616161"/></svg>
+                                </span>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
-                        );
-                      })()}
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -183,30 +156,24 @@ const alternates = {
           </div>
         </div>
         <div class="row g-5">
-          {featuredApplications.map(app => (
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              {(() => {
-                const appDetailUrl =
-                  app.translations?.[lang]?.url && app.translations[lang].url !== '#'
-                    ? app.translations[lang].url
-                    : `${prefix}/${applicationListSlug}/${app.id}`;
-
-                return (
-              <div class="rs-portfolio-item wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
-                <div class="rs-portfolio-thumb">
-                  <a href={appDetailUrl}>
-                    <img src={app.applicationListImage} loading="lazy" decoding="async" alt={app.applicationName}>
-                  </a>
-                  <div class="rs-portfolio-content">
-                    <div class="rs-portfolio-tag"><a href={appDetailUrl}>{ui.solutionTag}</a></div>
-                    <div class="rs-portfolio-title-info"><h5 class="rs-portfolio-title"><a href={appDetailUrl}>{app.applicationName}</a></h5></div>
+          {featuredApplications.map(app => {
+            const appDetailUrl = getPageURL(app.content_id, lang) || '#';
+            return (
+              <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="rs-portfolio-item wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
+                  <div class="rs-portfolio-thumb">
+                    <a href={appDetailUrl}>
+                      <img src={app.acf?.application_category_img} loading="lazy" decoding="async" alt={app.acf?.application_name}>
+                    </a>
+                    <div class="rs-portfolio-content">
+                      <div class="rs-portfolio-tag"><a href={appDetailUrl}>{ui.solutionTag}</a></div>
+                      <div class="rs-portfolio-title-info"><h5 class="rs-portfolio-title"><a href={appDetailUrl}>{app.acf?.application_name}</a></h5></div>
+                    </div>
                   </div>
                 </div>
               </div>
-                );
-              })()}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -268,7 +235,7 @@ const alternates = {
               <div class="rs-contact-list">
                 {[
                   { icon: 'location', label: ui.contactAddressLabel, value: ui.contactAddressValue, href: '#' },
-                  { icon: 'phone', label: ui.contactPhoneLabel, value: ui.contactPhoneValue, href: 'tel:18020211540' },
+                  { icon: 'phone', label: ui.contactPhoneLabel, value: ui.contactPhoneValue, href: 'tel:+8618360809300' },
                   { icon: 'email', label: ui.contactEmailLabel, value: ui.contactEmailValue, href: 'mailto:aaron@titan-recycling.com' },
                 ].map((item, i) => (
                   <div class="rs-contact-list-item wow fadeIn" data-wow-delay={`.${i+3}s`}>

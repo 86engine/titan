@@ -1,35 +1,16 @@
 // src/data/updates.js
 import wpData from './wp-data.json' with { type: 'json' };
 
-const LIST_SLUGS = {
-  en: 'updates',
-  es: 'actualizaciones',
-  ru: 'obnovleniya',
-};
-
-const UPDATES_BY_CONTENT_ID = new Map();
-for (const update of wpData.posts) {
-  const contentId = update.acf?.content_id;
-  if (!contentId) continue;
-  const group = UPDATES_BY_CONTENT_ID.get(contentId) || {};
-  group[update.lang] = update;
-  UPDATES_BY_CONTENT_ID.set(contentId, group);
-}
-
 export async function getUpdates(lang = 'en') {
   const items = wpData.posts.filter(p => p.lang === lang);
   return items.map(update => {
     const translations = {};
-    const relatedUpdates = UPDATES_BY_CONTENT_ID.get(update.acf?.content_id) || {};
-
-    for (const [l, listSlug] of Object.entries(LIST_SLUGS)) {
-      const translatedUpdate = relatedUpdates[l];
-      if (!translatedUpdate?.slug) continue;
-      const prefix = l === 'en' ? '' : `/${l}`;
-      translations[l] = {
-        slug: translatedUpdate.slug,
-        url: `${prefix}/${listSlug}/${translatedUpdate.slug}`,
-      };
+    if (update.translations) {
+      for (const [l, t] of Object.entries(update.translations)) {
+        if (t.link) {
+          translations[l] = { link: t.link };
+        }
+      }
     }
 
     return {
@@ -58,7 +39,7 @@ export async function getUpdateCategories(lang = 'en') {
   if (!page) return {};
 
   return {
-    pageTitle: page.acf?.newslist_page_title || page.title?.rendered || '',
+    pageTitle: page.acf?.newslist_page_title || page.title?.rendered || 'Updates',
     pageDescription: page.acf?.newslist_page_des || '',
     pageKeywords: page.acf?.newslist_page_keywords || '',
     translations: page.translations,

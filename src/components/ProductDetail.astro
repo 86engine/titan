@@ -1,24 +1,16 @@
 ---
-// src/components/ProductDetail.astro
 import PageBanner from "./PageBanner.astro";
+import { getPageURL, buildBreadcrumb } from "../data/site.js";
 
 const { lang, product, ui } = Astro.props;
-const productSlugs = {
-  en: 'metal-recycling-equipment',
-  es: 'equipos-reciclaje-metales',
-  ru: 'oborudovanie-dlya-pererabotki-metallov',
-};
-const currentSlug = productSlugs[lang];
-const prefix = lang === 'en' ? '' : `/${lang}`;
 ---
 
 <PageBanner
   title={product.pageH1 || product.productName}
-  breadcrumb={[
-    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
-    { label: ui.products, href: `${prefix}/${currentSlug}` },
-    { label: ui.detail }
-  ]}
+  breadcrumb={buildBreadcrumb(lang, [
+    { label: ui.products, href: getPageURL('productList', lang) },
+    { label: product.productName }
+  ])}
   background={product.pageBackground}
 />
 
@@ -141,28 +133,28 @@ const prefix = lang === 'en' ? '' : `/${lang}`;
                   <div class="detail-left__html" style="margin-bottom:30px" set:html={block.topText} />
                 )}
                 {block.image && block.middleText && (
-  <div style="display: flex; gap: 30px; align-items: flex-start; margin-bottom: 25px;">
-    {index % 2 === 0 ? (
-      <>
-        <div style="flex: 0 0 45%; max-width: 45%;">
-          <img src={block.image} alt={block.title || ''} style="border-radius: 24px; width: 100%;" />
-        </div>
-        <div style="flex: 1 1 55%; min-width: 280px;">
-          <div set:html={block.middleText} />
-        </div>
-      </>
-    ) : (
-      <>
-        <div style="flex: 1 1 55%; min-width: 280px;">
-          <div set:html={block.middleText} />
-        </div>
-        <div style="flex: 0 0 45%; max-width: 45%;">
-          <img src={block.image} alt={block.title || ''} style="border-radius: 24px; width: 100%;" />
-        </div>
-      </>
-    )}
-  </div>
-)}
+                  <div style="display: flex; gap: 30px; align-items: flex-start; margin-bottom: 25px;">
+                    {index % 2 === 0 ? (
+                      <>
+                        <div style="flex: 0 0 45%; max-width: 45%;">
+                          <img src={block.image} alt={block.title || ''} style="border-radius: 24px; width: 100%;" />
+                        </div>
+                        <div style="flex: 1 1 55%; min-width: 280px;">
+                          <div set:html={block.middleText} />
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div style="flex: 1 1 55%; min-width: 280px;">
+                          <div set:html={block.middleText} />
+                        </div>
+                        <div style="flex: 0 0 45%; max-width: 45%;">
+                          <img src={block.image} alt={block.title || ''} style="border-radius: 24px; width: 100%;" />
+                        </div>
+                      </>
+                    )}
+                  </div>
+                )}
                 {block.image && !block.middleText && (
                   <div class="rs-services-details-thumb mt-25 mb-25">
                     <img src={block.image} alt={block.title || ''}>

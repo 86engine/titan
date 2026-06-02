@@ -1,18 +1,9 @@
 ---
-// src/components/UpdatesList.astro
 import PageBanner from "./PageBanner.astro";
+import { getPageURL, buildBreadcrumb } from "../data/site.js";
 
 const { lang, updates, ui } = Astro.props;
 
-const slugs = {
-  en: 'updates',
-  es: 'actualizaciones',
-  ru: 'obnovleniya',
-};
-const currentSlug = slugs[lang];
-const prefix = lang === 'en' ? '' : `/${lang}`;
-
-// 日期格式化
 function formatDate(dateStr) {
   const d = new Date(dateStr);
   if (lang === 'ru') return d.toLocaleDateString('ru-RU');
@@ -23,10 +14,9 @@ function formatDate(dateStr) {
 
 <PageBanner
   title={ui.updates}
-  breadcrumb={[
-    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
+  breadcrumb={buildBreadcrumb(lang, [
     { label: ui.updates }
-  ]}
+  ])}
   background="https://img.titan-recycling.com/wp-content/uploads/2026/05/updates-banner.webp"
 />
 
@@ -35,47 +25,50 @@ function formatDate(dateStr) {
     <div class="row g-5">
       <div class="col-xl-8 col-lg-8">
         <div class="rs-postbox-wrapper">
-          {updates.map(update => (
-            <article class="rs-postbox-item">
-              <div class="rs-postbox-thumb">
-                <a href={`${prefix}/${currentSlug}/${update.id}`}>
-                  <img src={update.image} alt={update.title} />
-                </a>
-                <div class="rs-postbox-tag">
-                  <a href={`${prefix}/${currentSlug}/${update.id}`}>{update.category}</a>
-                </div>
-              </div>
-              <div class="rs-postbox-content">
-                <div class="rs-postbox-meta-list">
-                  <div class="rs-postbox-meta-item">
-                    <span class="rs-meta-text">{ui.by} <a class="meta-author" href={`${prefix}/${currentSlug}/${update.id}`}>{update.author}</a></span>
-                  </div>
-                  <div class="rs-postbox-meta-item">
-                    <span class="rs-postbox-meta-text"><a href={`${prefix}/${currentSlug}/${update.id}`}>{formatDate(update.date)}</a></span>
-                  </div>
-                </div>
-                <h3 class="rs-postbox-title">
-                  <a href={`${prefix}/${currentSlug}/${update.id}`}>{update.title}</a>
-                </h3>
-                <div class="rs-postbox-text">
-                  <p>{update.summary}</p>
-                </div>
-                <div class="rs-postbox-btn">
-                  <a class="rs-btn has-theme-blue has-icon has-bg" href={`${prefix}/${currentSlug}/${update.id}`}>
-                    {ui.continueReading}
-                    <span class="icon-box">
-                      <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                        <path d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z"></path>
-                      </svg>
-                      <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                        <path d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z"></path>
-                      </svg>
-                    </span>
+          {updates.map(update => {
+            const detailUrl = getPageURL(update.content_id, lang) || '#';
+            return (
+              <article class="rs-postbox-item">
+                <div class="rs-postbox-thumb">
+                  <a href={detailUrl}>
+                    <img src={update.image} alt={update.title} />
                   </a>
+                  <div class="rs-postbox-tag">
+                    <a href={detailUrl}>{update.category}</a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+                <div class="rs-postbox-content">
+                  <div class="rs-postbox-meta-list">
+                    <div class="rs-postbox-meta-item">
+                      <span class="rs-meta-text">{ui.by} <a class="meta-author" href={detailUrl}>{update.author}</a></span>
+                    </div>
+                    <div class="rs-postbox-meta-item">
+                      <span class="rs-postbox-meta-text"><a href={detailUrl}>{formatDate(update.date)}</a></span>
+                    </div>
+                  </div>
+                  <h3 class="rs-postbox-title">
+                    <a href={detailUrl}>{update.title}</a>
+                  </h3>
+                  <div class="rs-postbox-text">
+                    <p>{update.summary}</p>
+                  </div>
+                  <div class="rs-postbox-btn">
+                    <a class="rs-btn has-theme-blue has-icon has-bg" href={detailUrl}>
+                      {ui.continueReading}
+                      <span class="icon-box">
+                        <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                          <path d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z"></path>
+                        </svg>
+                        <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                          <path d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z"></path>
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
 
@@ -104,7 +97,7 @@ function formatDate(dateStr) {
                 <ul>
                   {[...new Set(updates.map(u => u.category).filter(Boolean))].map(cat => (
                     <li>
-                      <a href={`${prefix}/${currentSlug}?category=${cat}`}>{cat} <i class="ri-arrow-right-line"></i></a>
+                      <a href={`?category=${cat}`}>{cat} <i class="ri-arrow-right-line"></i></a>
                     </li>
                   ))}
                 </ul>
@@ -116,24 +109,27 @@ function formatDate(dateStr) {
             <h5 class="sidebar-widget-title">{ui.latestPosts}</h5>
             <div class="sidebar-widget-content">
               <div class="sidebar-blog-item-wrapper">
-                {updates.slice(0, 4).map(update => (
-                  <div class="sidebar-blog-item">
-                    <div class="sidebar-blog-thumb">
-                      <a href={`${prefix}/${currentSlug}/${update.id}`}>
-                        <img src={update.image} alt={update.title} />
-                      </a>
-                    </div>
-                    <div class="sidebar-blog-content">
-                      <h6 class="sidebar-blog-title">
-                        <a href={`${prefix}/${currentSlug}/${update.id}`}>{update.title}</a>
-                      </h6>
-                      <div class="sidebar-blog-meta">
-                        <i class="ri-calendar-line"></i>
-                        <span>{formatDate(update.date)}</span>
+                {updates.slice(0, 4).map(update => {
+                  const detailUrl = getPageURL(update.content_id, lang) || '#';
+                  return (
+                    <div class="sidebar-blog-item">
+                      <div class="sidebar-blog-thumb">
+                        <a href={detailUrl}>
+                          <img src={update.image} alt={update.title} />
+                        </a>
+                      </div>
+                      <div class="sidebar-blog-content">
+                        <h6 class="sidebar-blog-title">
+                          <a href={detailUrl}>{update.title}</a>
+                        </h6>
+                        <div class="sidebar-blog-meta">
+                          <i class="ri-calendar-line"></i>
+                          <span>{formatDate(update.date)}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

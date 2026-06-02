@@ -1,36 +1,18 @@
 ---
-// src/components/KnowledgeDetail.astro
 import PageBanner from "./PageBanner.astro";
+import { getPageURL, buildBreadcrumb, getSubCategoryName } from "../data/site.js";
 
-const { lang, type, knowledge, ui } = Astro.props;
-
-const knowledgeSlugs = {
-  en: 'knowledge',
-  es: 'conocimiento',
-  ru: 'znaniya',
-};
-
-const typeSlugs = {
-  briquetting:    { en: 'briquetting', es: 'briqueteado', ru: 'briketirovanie-metalla' },
-  baling:         { en: 'baling', es: 'embalaje', ru: 'pressovanie-metalla' },
-  'metal-shearing': { en: 'metal-shearing', es: 'cizallado', ru: 'rezka-metalla' },
-  shredding:      { en: 'shredding', es: 'trituración', ru: 'droblenie-metalla' },
-};
-
-const currentKnowledgeSlug = knowledgeSlugs[lang];
-const currentTypeSlug = typeSlugs[type]?.[lang] || type;
-const prefix = lang === 'en' ? '' : `/${lang}`;
+const { lang, knowledge, ui, parentContentId } = Astro.props;
 ---
 
 <PageBanner
-  title={knowledge.pageH1 || knowledge.knowledgeName}
-  breadcrumb={[
-    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
-    { label: ui.knowledge, href: `${prefix}/${currentKnowledgeSlug}` },
-    { label: type, href: `${prefix}/${currentKnowledgeSlug}/${currentTypeSlug}` },
-    { label: ui.detail }
-  ]}
-  background={knowledge.pageBackground}
+  title={knowledge.acf?.knowledge_h1 || knowledge.acf?.knowledge_name}
+  breadcrumb={buildBreadcrumb(lang, [
+    { label: ui.knowledge, href: getPageURL('knowledgeList', lang) },
+    { label: getSubCategoryName(parentContentId, lang), href: getPageURL(parentContentId, lang) },
+    { label: knowledge.acf?.knowledge_name }
+  ])}
+  background={knowledge.acf?.knowledge_bg_img}
 />
 
 <section class="rs-services-area section-space">

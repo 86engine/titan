@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProductDetail from "../../components/ProductDetail.astro";
 import { getProducts } from "../../data/products.js";
-import { buildContentIndex } from "../../lib/wordpress.js";
+import headerI18n from "../../../public/data/header-i18n.json" with { type: 'json' };
 
 export async function getStaticPaths() {
   const products = await getProducts('en');
@@ -17,25 +17,18 @@ const { product } = Astro.props;
 
 if (!product) return Astro.redirect('/metal-recycling-equipment');
 
-const allProducts = await getProducts('en');
-const contentIndex = buildContentIndex(allProducts);
-
-const ui = {
-  en: { home: 'Home', products: 'Products', detail: 'Detail', download: 'Download', requestQuote: 'Request A Quote', contactUrl: '/contact#get-in-touch'},
-};
-
-const alternates = contentIndex[product.content_id] || {};
+const ui = headerI18n[lang] || headerI18n.en;
+ui.download = { en: 'Download', es: 'Descargar', ru: 'Скачать' }[lang] || 'Download';
+ui.requestQuote = { en: 'Request A Quote', es: 'Solicitar Cotización', ru: 'Запросить КП' }[lang] || 'Request A Quote';
+ui.contactUrl = { en: '/contact#get-in-touch', es: '/es/contacto#get-in-touch', ru: '/ru/kontakty#get-in-touch' }[lang] || '/contact#get-in-touch';
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={product.translations} 
-  contentIndex={contentIndex} 
+<BaseLayout
+  lang={lang}
   currentContentId={product.content_id}
-  title={product.pageTitle} 
-  description={product.pageDescription} 
+  title={product.pageTitle}
+  description={product.pageDescription}
   keywords={product.pageKeywords}
-  alternates={alternates}
 >
-  <ProductDetail lang={lang} product={product} ui={ui.en} />
+  <ProductDetail lang={lang} product={product} ui={ui} />
 </BaseLayout>

@@ -1,60 +1,21 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ContactPage from "../../components/ContactPage.astro";
+import contactI18n from "../../../public/data/contact-i18n.json" with { type: 'json' };
 
 const lang = 'es';
 
-const pageTranslations = {
-  en: { url: '/contact' },
-  es: { url: '/es/contacto' },
-  ru: { url: '/ru/kontakty' },
-};
+const ui = contactI18n[lang] || contactI18n.en;
 
-const ui = {
-  home: 'Inicio',
-  pageTitle: 'Contacto',
-  globalBranch: 'Contáctanos',
-  heading: 'Póngase en contacto con nuestro equipo',
-  subheading: '¡Podemos ofrecerle soluciones profesionales para ayudarle a resolver problemas en el proceso de producción!',
-  locationTitle: 'Nuestra Ubicación',
-  locationDesc: 'N.º 1 Dongde Road, Zona de Alta Tecnología, Jiangyin, Jiangsu, China',
-  chatTitle: 'Chatear con Soporte',
-  mailto:'aaron@titan-recycling.com',
-  callTitle: 'Llámanos',
-  phone:'+86 183 6080 9300',
-  formTitle: 'Contáctanos',
-  formDesc: 'Nuestro equipo está aquí para responder cualquier pregunta que tenga',
-  namePlaceholder: 'Nombre Completo',
-  emailPlaceholder: 'Correo Electrónico',
-  phonePlaceholder: 'Teléfono',
-  messagePlaceholder: 'Escriba Su Mensaje',
-  sendBtn: 'Enviar Mensaje',
-  nameRequired: 'Por favor ingrese su nombre',
-  emailRequired: 'Por favor introduzca su correo electrónico.',
-  emailInvalid: 'Por favor introduzca una dirección de correo válida.',
-  messageRequired: 'Por favor ingrese su mensaje',
-  submitSuccess: 'Mensaje enviado correctamente. Nos pondremos en contacto con usted lo antes posible.',
-  submitError: 'No se pudo enviar. Inténtelo de nuevo más tarde.',
-};
-
-const title = 'Contactar con TITAN | Fabricante de Equipos de Reciclaje de Metales';
-const description = 'Contacte con TITAN para soluciones de equipos de reciclaje de metales, soporte técnico y cotizaciones. Obtenga una respuesta rápida de nuestro equipo de ingeniería.';
-const keywords = 'fabricante de equipos de reciclaje de metales,proveedor de equipos de reciclaje de metales';
-
-const alternates = {
-  en: '/contact',
-  es: '/es/contacto',
-  ru: '/ru/kontakty',
-};
+const title = `${ui.pageTitle} | TITAN`;
+const description = ui.subheading;
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={title} 
-  description={description} 
-  keywords={keywords}
-  alternates={alternates}
+<BaseLayout
+  lang={lang}
+  currentContentId="contact"
+  title={title}
+  description={description}
 >
   <ContactPage lang={lang} ui={ui} />
 </BaseLayout>

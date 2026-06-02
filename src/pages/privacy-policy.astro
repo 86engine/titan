@@ -1,21 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CookieConsent from "../components/CookieConsent.astro";
+import { STATIC_PAGES } from "../config/site";
+import { buildBreadcrumb } from "../data/site.js";
+
 const lang = 'en';
 
-const pageTranslations = {
-  en: { url: '/privacy-policy' },
-  es: { url: '/es/politica-de-privacidad' },
-  ru: { url: '/ru/politika-konfidencialnosti' },
-};
-
-const alternates = {
-  en: '/privacy-policy',
-  es: '/es/politica-de-privacidad',
-  ru: '/ru/politika-konfidencialnosti',
-};
+const title = 'Cookie Policy | TITAN';
 ---
 
-<BaseLayout lang={lang} translations={pageTranslations} alternates={alternates}>
+<BaseLayout
+  lang={lang}
+  currentContentId="privacy-policy"
+  title={title}
+>
   <section class="rs-breadcrumb-area rs-breadcrumb-one p-relative">
     <div class="rs-breadcrumb-bg" style="background-image: url('https://img.titan-recycling.com/wp-content/uploads/2026/04/cookie.jpg');"></div>
     <div class="container">
@@ -28,8 +26,11 @@ const alternates = {
             <div class="rs-breadcrumb-menu">
               <nav>
                 <ul>
-                  <li><span><a href="/">Home</a></span></li>
-                  <li><span>Cookie Policy</span></li>
+                  {buildBreadcrumb(lang, [{ label: 'Cookie Policy' }]).map((item, i) => (
+                    <li><span>
+                      {item.href ? <a href={item.href}>{item.label}</a> : item.label}
+                    </span></li>
+                  ))}
                 </ul>
               </nav>
             </div>
@@ -60,7 +61,7 @@ const alternates = {
               </div>
             </section>
             <section><h2>8. Your Cookie Preferences</h2><p>We collect and process your data on this website to better understand its use. We will always ask for your consent. You can change your privacy settings here.</p><p>In addition, you can block the setting of cookies by adjusting your browser settings. Please note that disabling cookies will affect the functionality of this website as well as many other websites you visit.</p>
-              <button id="cookieSettingsBtn" class="rs-btn blue-bg cookie-settings-btn">setting</button>
+              <button id="cookieSettingsBtn" class="rs-btn blue-bg cookie-settings-btn">Settings</button>
             </section>
           </div>
         </div>
@@ -69,14 +70,20 @@ const alternates = {
   </section>
 </BaseLayout>
 
+<CookieConsent lang={lang} />
+
 <!-- Cookie 弹窗 -->
 <div class="cookie-overlay" id="cookieModal" style="display:none;">
   <div class="cookie-panel">
     <h2 id="cookieTitle"></h2>
     <p id="cookieDesc"></p>
     <div class="cookie-top-row">
-      <a href="/privacy-policy" id="cookiePrivacyLink"></a>
-      <select id="cookieLang"><option value="en">English</option><option value="es">Español</option><option value="ru">русский</option></select>
+      <a href={STATIC_PAGES['privacy-policy'][lang]} id="cookiePrivacyLink"></a>
+      <select id="cookieLang" onchange="window._cookieSetLang(this.value)">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="ru">русский</option>
+      </select>
     </div>
     <div class="cookie-options">
       <label class="cookie-option"><div><strong id="cookieEssentialTitle"></strong><small id="cookieEssentialDesc"></small><em id="cookieEssentialRequired"></em></div><span class="toggle-switch"><input type="checkbox" checked disabled><span class="toggle-slider"></span></span></label>
@@ -120,9 +127,6 @@ const alternates = {
       btnSaveSettings: 'saveSettings'
     };
 
-    const langSelect = document.getElementById('cookieLang');
-    const opts = langSelect.querySelectorAll('option');
-
     function setLang(lang) {
       const t = translations[lang];
       if (!t) return;
@@ -130,51 +134,35 @@ const alternates = {
         const el = document.getElementById(elId);
         if (el) el.textContent = t[key] || '';
       });
-      opts[0].textContent = t.langEn;
-      opts[1].textContent = t.langEs;
-      opts[2].textContent = t.langRu;
+      const opts = document.querySelectorAll('#cookieLang option');
+      if (opts[0]) opts[0].textContent = t.langEn || 'English';
+      if (opts[1]) opts[1].textContent = t.langEs || 'Español';
+      if (opts[2]) opts[2].textContent = t.langRu || 'русский';
       localStorage.setItem('cookieLang', lang);
     }
 
-    langSelect.addEventListener('change', e => setLang(e.target.value));
-
-    const savedLang = localStorage.getItem('cookieLang') || 'en';
-    langSelect.value = savedLang;
-    setLang(savedLang);
+    window._cookieSetLang = setLang;
 
     document.getElementById('cookieSettingsBtn')?.addEventListener('click', () => {
-      document.getElementById('cookieModal').style.display = 'flex';
+      const modal = document.getElementById('cookieModal');
+      modal.style.display = 'flex';
+      const savedLang = localStorage.getItem('cookieLang') || 'en';
+      document.getElementById('cookieLang').value = savedLang;
+      setLang(savedLang);
     });
 
     document.querySelectorAll('#btnAcceptAll, #btnStrictlyNecessary, #btnSaveSettings').forEach(btn => {
       btn.addEventListener('click', () => {
         document.getElementById('cookieModal').style.display = 'none';
-
         const newLang = document.getElementById('cookieLang').value;
         const path = window.location.pathname;
-
         const pageMap = {
-          '/privacy-policy': {
-            en: '/privacy-policy',
-            es: '/es/politica-de-privacidad',
-            ru: '/ru/politika-konfidencialnosti',
-          },
-          '/es/politica-de-privacidad': {
-            en: '/privacy-policy',
-            es: '/es/politica-de-privacidad',
-            ru: '/ru/politika-konfidencialnosti',
-          },
-          '/ru/politika-konfidencialnosti': {
-            en: '/privacy-policy',
-            es: '/es/politica-de-privacidad',
-            ru: '/ru/politika-konfidencialnosti',
-          },
+          '/privacy-policy': { en: '/privacy-policy', es: '/es/politica-de-privacidad', ru: '/ru/politika-konfidencialnosti' },
+          '/es/politica-de-privacidad': { en: '/privacy-policy', es: '/es/politica-de-privacidad', ru: '/ru/politika-konfidencialnosti' },
+          '/ru/politika-konfidencialnosti': { en: '/privacy-policy', es: '/es/politica-de-privacidad', ru: '/ru/politika-konfidencialnosti' },
         };
-
         const target = pageMap[path]?.[newLang];
-        if (target && target !== path) {
-          window.location.href = target;
-        }
+        if (target && target !== path) window.location.href = target;
       });
     });
   })();

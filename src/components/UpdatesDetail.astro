@@ -1,16 +1,8 @@
 ---
-// src/components/UpdatesDetail.astro
 import PageBanner from "./PageBanner.astro";
+import { getPageURL, buildBreadcrumb } from "../data/site.js";
 
 const { lang, update, ui } = Astro.props;
-
-const updatesSlugs = {
-  en: 'updates',
-  es: 'actualizaciones',
-  ru: 'obnovleniya',
-};
-const currentSlug = updatesSlugs[lang];
-const prefix = lang === 'en' ? '' : `/${lang}`;
 
 function formatDate(dateStr) {
   const d = new Date(dateStr);
@@ -21,12 +13,11 @@ function formatDate(dateStr) {
 ---
 
 <PageBanner
-  title={update.pageH1}
-  breadcrumb={[
-    { label: ui.home, href: lang === 'en' ? '/' : `/${lang}` },
-    { label: ui.updates, href: `${prefix}/${currentSlug}` },
-    { label: ui.detail }
-  ]}
+  title={update.pageH1 || update.title}
+  breadcrumb={buildBreadcrumb(lang, [
+    { label: ui.updates, href: getPageURL('newsList', lang) },
+    { label: update.title }
+  ])}
   background="https://img.titan-recycling.com/wp-content/uploads/2026/04/news-detail.jpg"
 />
 
@@ -45,7 +36,7 @@ function formatDate(dateStr) {
           <div class="rs-postbox-content">
             <div class="rs-postbox-meta-list">
               <div class="rs-postbox-meta-item">
-                <span class="rs-meta-text">{ui.by} <a class="meta-author" href={`${prefix}/${currentSlug}/${update.id}`}>{update.author}</a></span>
+                <span class="rs-meta-text">{ui.by} <a class="meta-author" href={getPageURL(update.content_id, lang)}>{update.author}</a></span>
               </div>
               <div class="rs-postbox-meta-item">
                 <span class="rs-postbox-meta-text">{formatDate(update.date)}</span>
@@ -67,7 +58,7 @@ function formatDate(dateStr) {
               <div class="list">
                 <ul>
                   <li>
-                    <a href={`${prefix}/${currentSlug}/${update.id}`}>{update.title}</a>
+                    <a href={getPageURL(update.content_id, lang)}>{update.title}</a>
                   </li>
                 </ul>
               </div>

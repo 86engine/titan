@@ -1,0 +1,41 @@
+{
+  "en": {
+    "pageTitle": "Downloads",
+    "heading": "Downloads",
+    "subheading": "Documentation and materials related to metal recycling equipment and systems",
+    "downloadBtn": "Download PDF",
+    "home": "Home",
+    "cards": [
+      { "title": "Metal Briquetting Press", "desc": "Comprehensive product manual covering specifications, features, and application scenarios.", "date": "2026-02-08", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/Y83_Series_Hydraulic_Metal_Chips_Briquetting_Press_Manual_EN_V1.0.pdf" },
+      { "title": "Metal Baler", "desc": "Comprehensive product manual covering specifications, features, and application scenarios.", "date": "2026-03-08", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/Y81_Series_Hydraulic_Scrap_Baler_Manual_EN_V1.0.pdf" },
+      { "title": "Metal Shear", "desc": "Comprehensive product manual covering specifications, features, and application scenarios.", "date": "2026-03-01", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/Q43_Series_Alligator_Metal_Shear_Manual_EN_V1.0.pdf" },
+      { "title": "Metal Shredder", "desc": "Comprehensive product manual covering specifications, features, and application scenarios.", "date": "2026-04-07", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/TS_Series_Single-and-Double-Shaft_Shredder_Manual_EN_V1.0.pdf" }
+    ]
+  },
+  "es": {
+    "pageTitle": "Descargas",
+    "heading": "Descargas",
+    "subheading": "Documentación y materiales relacionados con equipos y sistemas de reciclaje de metales",
+    "downloadBtn": "Descargar PDF",
+    "home": "Inicio",
+    "cards": [
+      { "title": "Prensa Briqueteadora de Metal", "desc": "Manual completo del producto con especificaciones, características y escenarios de aplicación.", "date": "2026-02-08", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/Y83_Series_Hydraulic_Metal_Chips_Briquetting_Press_Manual_ES_V1.0.pdf" },
+      { "title": "Prensa Empacadora de Metal", "desc": "Manual completo del producto con especificaciones, características y escenarios de aplicación.", "date": "2026-03-08", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/Y81_Series_Hydraulic_Scrap_Baler_Manual_ES_V1.0.pdf" },
+      { "title": "Cizalla para Metal", "desc": "Manual completo del producto con especificaciones, características y escenarios de aplicación.", "date": "2026-03-01", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/Q43_Series_Alligator_Metal_Shear_Manual_ES_V1.0.pdf" },
+      { "title": "Trituradora de Metal", "desc": "Manual completo del producto con especificaciones, características y escenarios de aplicación.", "date": "2026-04-07", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/TS_Series_Single-and-Double-Shaft_Shredder_Manual_ES_V1.0.pdf" }
+    ]
+  },
+  "ru": {
+    "pageTitle": "Загрузки",
+    "heading": "Загрузки",
+    "subheading": "Документация и материалы по оборудованию и системам для переработки металлов",
+    "downloadBtn": "Скачать PDF",
+    "home": "Главная",
+    "cards": [
+      { "title": "Брикетировочный пресс для металла", "desc": "Полное руководство по продукту с техническими характеристиками, особенностями и сценариями применения.", "date": "2026-02-08", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/Y83_Series_Hydraulic_Metal_Chips_Briquetting_Press_Manual_RU_V1.0.pdf" },
+      { "title": "Пакетировочный пресс для металла", "desc": "Полное руководство по продукту с техническими характеристиками, особенностями и сценариями применения.", "date": "2026-03-08", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/Y81_Series_Hydraulic_Scrap_Baler_Manual_RU_V1.0.pdf" },
+      { "title": "Ножницы для металла", "desc": "Полное руководство по продукту с техническими характеристиками, особенностями и сценариями применения.", "date": "2026-03-01", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/Q43_Series_Alligator_Metal_Shear_Manual_RU_V1.0.pdf" },
+      { "title": "Шредер для металла", "desc": "Полное руководство по продукту с техническими характеристиками, особенностями и сценариями применения.", "date": "2026-04-07", "url": "https://img.titan-recycling.com/wp-content/uploads/2026/06/TS_Series_Single-and-Double-Shaft_Shredder_Manual_RU_V1.0.pdf" }
+    ]
+  }
+}

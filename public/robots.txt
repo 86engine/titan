@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /privacy-policy
+Disallow: /es/politica-de-privacidad
+Disallow: /ru/politika-konfidencialnosti
+Allow: /
+
+Sitemap: https://titan-recycling.com/sitemap.xml

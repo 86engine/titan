@@ -1,46 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import DownloadsPage from "../components/DownloadsPage.astro";
+import downloadsI18n from "../../public/data/downloads-i18n.json" with { type: 'json' };
 
 const lang = 'en';
 
-const pageTranslations = {
-  en: { url: '/downloads' },
-  es: { url: '/es/descargas' },
-  ru: { url: '/ru/zagruzki' },
-};
+const ui = downloadsI18n[lang] || downloadsI18n.en;
 
-const ui = {
-  home: 'Home',
-  pageTitle: 'Downloads',
-  heading: 'Downloads',
-  subheading: 'Documentation and materials related to metal recycling equipment and systems',
-  downloadBtn: 'Download PDF',
-  cards: [
-    { title: 'Metal Briquetting Press', desc: 'Comprehensive product manual covering specifications, features, and application scenarios.', date: '2026-02-08', url: 'https://img.titan-recycling.com/wp-content/uploads/2026/05/Y83_Series_Hydraulic_Metal_Chips_Briquetting_Press_Manual_EN_V1.0.pdf' },
-    { title: 'Metal Baler', desc: 'Comprehensive product manual covering specifications, features, and application scenarios.', date: '2026-03-08', url: 'https://img.titan-recycling.com/wp-content/uploads/2026/05/Y81_Series_Hydraulic_Scrap_Baler_Manual_EN_V1.0.pdf' },
-    { title: 'Metal Shear', desc: 'Comprehensive product manual covering specifications, features, and application scenarios.', date: '2026-03-01', url: 'https://img.titan-recycling.com/wp-content/uploads/2026/05/Q43_Series_Alligator_Metal_Shear_Manual_EN_V1.0.pdf' },
-    { title: 'Metal Shredder', desc: 'Comprehensive product manual covering specifications, features, and application scenarios.', date: '2026-04-07', url: 'https://img.titan-recycling.com/wp-content/uploads/2026/05/TS_Series_Single-and-Double-Shaft_Shredder_Manual_EN_V1.0.pdf' },
-  ],
-};
-
-const title = 'Downloads | Metal Recycling Equipment Catalogs & Datasheets';
-const description = 'Download product catalogs, technical datasheets and brochures for metal recycling equipment, including briquetting machines, balers and shredding systems.';
-const keywords = 'metal recycling catalog';
-
-const alternates = {
-  en: '/downloads',
-  es: '/es/descargas',
-  ru: '/ru/zagruzki',
-};
+const title = `${ui.pageTitle} | TITAN`;
+const description = ui.subheading;
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={title} 
-  description={description} 
-  keywords={keywords}
+<BaseLayout
+  lang={lang}
+  currentContentId="downloads"
+  title={title}
+  description={description}
 >
   <DownloadsPage lang={lang} ui={ui} />
 </BaseLayout>

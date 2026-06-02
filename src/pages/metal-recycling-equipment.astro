@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ProductList from "../components/ProductList.astro";
 import { getProducts } from "../data/products.js";
 import { getProductCategories } from "../data/productCategories.js";
+import headerI18n from "../../public/data/header-i18n.json" with { type: 'json' };
 
 const lang = 'en';
 
@@ -11,30 +12,16 @@ const [products, productCategories] = await Promise.all([
   getProductCategories(lang),
 ]);
 
-// 把 WordPress link 转成 Astro 路径，传给 Header 做语言切换
-const pageTranslations = {};
-for (const [l, data] of Object.entries(productCategories.translations || {})) {
-  if (data?.link) {
-    pageTranslations[l] = { url: new URL(data.link).pathname };
-  }
-}
-
-const ui = { home: 'Home', products: 'Products', viewDetail: 'View Details' };
-
-const alternates = {
-  en: '/metal-recycling-equipment',
-  es: '/es/equipos-reciclaje-metales',
-  ru: '/ru/oborudovanie-dlya-pererabotki-metallov',
-};
+const ui = headerI18n[lang] || headerI18n.en;
+ui.viewDetail = { en: 'View Details', es: 'Ver Detalles', ru: 'Подробнее' }[lang] || 'View Details';
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={productCategories.pageTitle} 
-  description={productCategories.pageDescription} 
+<BaseLayout
+  lang={lang}
+  currentContentId="productList"
+  title={productCategories.pageTitle}
+  description={productCategories.pageDescription}
   keywords={productCategories.pageKeywords}
-  alternates={alternates}
 >
   <ProductList lang={lang} products={products} productCategories={productCategories} ui={ui} />
 </BaseLayout>

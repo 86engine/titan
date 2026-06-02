@@ -3,40 +3,30 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import KnowledgeSubList from "../../components/KnowledgeSubList.astro";
 import { getKnowledge } from "../../data/knowledge.js";
 import { getKnowledgeCategory } from "../../data/knowledgeCategories.js";
+import { getKnowledgeIdsBySubCategory } from "../../data/site.js";
+import headerI18n from "../../../public/data/header-i18n.json" with { type: 'json' };
 
 const lang = 'en';
 const type = 'briquetting';
+const currentContentId = 'knowledgeList-briquetter';
+
 const [allKnowledge, pageData] = await Promise.all([
   getKnowledge(lang),
   getKnowledgeCategory(lang, type),
 ]);
-const knowledgeList = allKnowledge.filter(item => item.knowledgeType === type);
-const knowledgeParents = { en: 'knowledge', es: 'conocimiento', ru: 'znaniya' };
-const pageTranslations = {};
-for (const [l, data] of Object.entries(pageData.translations || {})) {
-  if (data?.slug) {
-    const parentSlug = knowledgeParents[l];
-    const childSlug = data.slug;
-    const prefix = l === 'en' ? '' : `/${l}`;
-    pageTranslations[l] = { url: `${prefix}/${parentSlug}/${childSlug}` };
-  }
-}
-const ui = { home: 'Home', knowledge: 'Knowledge', detail: 'Detail' };
 
-const alternates = {
-  en: '/knowledge/briquetting',
-  es: '/es/conocimiento/briqueteado',
-  ru: '/ru/znaniya/briketirovanie-metalla',
-};
+const subKnowledgeIds = getKnowledgeIdsBySubCategory(currentContentId);
+const knowledgeList = allKnowledge.filter(item => subKnowledgeIds.includes(item.content_id));
+
+const ui = headerI18n[lang] || headerI18n.en;
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={pageData.pageTitle} 
-  description={pageData.pageDescription} 
+<BaseLayout
+  lang={lang}
+  currentContentId={currentContentId}
+  title={pageData.pageTitle}
+  description={pageData.pageDescription}
   keywords={pageData.pageKeywords}
-  alternates={alternates}
 >
-  <KnowledgeSubList lang={lang} type={type} knowledgeList={knowledgeList} pageData={pageData} ui={ui} />
+  <KnowledgeSubList lang={lang} knowledgeList={knowledgeList} pageData={pageData} ui={ui} currentContentId={currentContentId} parentContentId="knowledgeList" />
 </BaseLayout>

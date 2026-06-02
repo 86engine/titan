@@ -1,27 +1,6 @@
 // src/data/knowledge.js
 import wpData from './wp-data.json' with { type: 'json' };
-
-const LIST_SLUGS = {
-  en: 'knowledge',
-  es: 'conocimiento',
-  ru: 'znaniya',
-};
-
-const TYPE_SLUGS = {
-  baling:          { en: 'baling', es: 'embalaje', ru: 'pressovanie-metalla' },
-  briquetting:     { en: 'briquetting', es: 'briqueteado', ru: 'briketirovanie-metalla' },
-  'metal-shearing': { en: 'metal-shearing', es: 'cizallado', ru: 'rezka-metalla' },
-  shredding:       { en: 'shredding', es: 'trituracion', ru: 'droblenie-metalla' },
-};
-
-const KNOWLEDGE_BY_CONTENT_ID = new Map();
-for (const knowledge of wpData.knowledge) {
-  const contentId = knowledge.acf?.content_id;
-  if (!contentId) continue;
-  const group = KNOWLEDGE_BY_CONTENT_ID.get(contentId) || {};
-  group[knowledge.lang] = knowledge;
-  KNOWLEDGE_BY_CONTENT_ID.set(contentId, group);
-}
+import { localizeURL } from './site.js';
 
 function buildBlocks(acf) {
   if (!acf) return [];
@@ -66,37 +45,21 @@ function buildBlocks(acf) {
 export async function getKnowledge(lang = 'en') {
   const items = wpData.knowledge.filter(k => k.lang === lang);
   return items.map(knowledge => {
-    const kType = knowledge.acf?.knowledge_type;
     const translations = {};
-    const relatedKnowledge = KNOWLEDGE_BY_CONTENT_ID.get(knowledge.acf?.content_id) || {};
-
-    for (const [l, listSlug] of Object.entries(LIST_SLUGS)) {
-      const translatedKnowledge = relatedKnowledge[l];
-      const translatedType = translatedKnowledge?.acf?.knowledge_type || kType;
-      const typeSlug = TYPE_SLUGS[translatedType]?.[l];
-      if (!translatedKnowledge?.slug || !typeSlug) continue;
-      const prefix = l === 'en' ? '' : `/${l}`;
-      translations[l] = {
-        slug: translatedKnowledge.slug,
-        url: `${prefix}/${listSlug}/${typeSlug}/${translatedKnowledge.slug}`,
-      };
+    if (knowledge.translations) {
+      for (const [l, t] of Object.entries(knowledge.translations)) {
+        if (t.link) {
+          translations[l] = { link: localizeURL(t.link) };
+        }
+      }
+    }
+    if (knowledge.link) {
+      translations[lang] = { link: localizeURL(knowledge.link) };
     }
 
     return {
       content_id: knowledge.acf?.content_id,
       id: knowledge.slug,
-      knowledgeType: kType,
-      pageTitle: knowledge.acf?.knowledge_page_title,
-      pageKeywords: knowledge.acf?.knowledge_page_keywords,
-      pageDescription: knowledge.acf?.knowledge_page_des,
-      pageBackground: knowledge.acf?.knowledge_bg_img,
-      pageH1: knowledge.acf?.knowledge_h1,
-      knowledgeName: knowledge.acf?.knowledge_name,
-      knowledgeListDescription: knowledge.acf?.knowledge_category_overview,
-      knowledgeOverview: knowledge.acf?.knowledge_overview,
-      knowledgeListImage: knowledge.acf?.knowledge_category_img,
-      knowledgeImage: knowledge.acf?.knowledge_img,
-      link: knowledge.link,
       acf: knowledge.acf,
       translations,
       blocks: buildBlocks(knowledge.acf)

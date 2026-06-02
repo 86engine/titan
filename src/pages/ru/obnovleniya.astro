@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import UpdatesList from "../../components/UpdatesList.astro";
 import { getUpdates, getUpdateCategories } from "../../data/updates.js";
+import headerI18n from "../../../public/data/header-i18n.json" with { type: 'json' };
 
 const lang = 'ru';
 
@@ -10,32 +11,21 @@ const [allUpdates, categories] = await Promise.all([
   getUpdateCategories(lang),
 ]);
 
-const pageTranslations = {};
-for (const [l, data] of Object.entries(categories.translations || {})) {
-  if (data?.link) {
-    pageTranslations[l] = { url: new URL(data.link).pathname };
-  }
-}
-
-const ui = { 
-  home: 'Главная', updates: 'Обновления', by: 'От', continueReading: 'Читать далее',
-  search: 'Поиск...', categories: 'Категории', latestPosts: 'Последние записи', all: 'Все',
-};
-
-const alternates = {
-  en: '/updates',
-  es: '/es/actualizaciones',
-  ru: '/ru/obnovleniya',
-};
+const ui = headerI18n[lang] || headerI18n.en;
+ui.by = { en: 'By', es: 'Por', ru: 'Автор' }[lang] || 'By';
+ui.continueReading = { en: 'Continue Reading', es: 'Seguir Leyendo', ru: 'Читать далее' }[lang] || 'Continue Reading';
+ui.search = { en: 'Search...', es: 'Buscar...', ru: 'Поиск...' }[lang] || 'Search...';
+ui.categories = { en: 'Categories', es: 'Categorías', ru: 'Категории' }[lang] || 'Categories';
+ui.latestPosts = { en: 'Latest Posts', es: 'Últimas Publicaciones', ru: 'Последние записи' }[lang] || 'Latest Posts';
+ui.all = { en: 'All', es: 'Todos', ru: 'Все' }[lang] || 'All';
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={categories.pageTitle} 
-  description={categories.pageDescription} 
+<BaseLayout
+  lang={lang}
+  currentContentId="newsList"
+  title={categories.pageTitle}
+  description={categories.pageDescription}
   keywords={categories.pageKeywords}
-  alternates={alternates}
 >
   <UpdatesList lang={lang} updates={allUpdates} ui={ui} />
 </BaseLayout>

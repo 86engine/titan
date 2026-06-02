@@ -1,21 +1,6 @@
 // src/data/products.js
 import wpData from './wp-data.json' with { type: 'json' };
-
-// 各语言的列表页 slug
-const LIST_SLUGS = {
-  en: 'metal-recycling-equipment',
-  es: 'equipos-reciclaje-metales',
-  ru: 'oborudovanie-dlya-pererabotki-metallov',
-};
-
-const PRODUCTS_BY_CONTENT_ID = new Map();
-for (const product of wpData.products) {
-  const contentId = product.acf?.content_id;
-  if (!contentId) continue;
-  const group = PRODUCTS_BY_CONTENT_ID.get(contentId) || {};
-  group[product.lang] = product;
-  PRODUCTS_BY_CONTENT_ID.set(contentId, group);
-}
+import { localizeURL } from './site.js';
 
 function buildBlocks(acf) {
   if (!acf) return [];
@@ -60,18 +45,16 @@ export async function getProducts(lang = 'en') {
   const items = wpData.products.filter(p => p.lang === lang);
   return items.map(product => {
     const translations = {};
-    const relatedProducts = PRODUCTS_BY_CONTENT_ID.get(product.acf?.content_id) || {};
-
-    for (const [l, listSlug] of Object.entries(LIST_SLUGS)) {
-      const translatedProduct = relatedProducts[l];
-      if (!translatedProduct?.slug) continue;
-      const prefix = l === 'en' ? '' : `/${l}`;
-      translations[l] = {
-        slug: translatedProduct.slug,
-        url: `${prefix}/${listSlug}/${translatedProduct.slug}`,
-      };
+    if (product.translations) {
+      for (const [l, t] of Object.entries(product.translations)) {
+        if (t.link) {
+          translations[l] = { link: localizeURL(t.link) };
+        }
+      }
     }
-
+      if (product.link) {
+      translations[lang] = { link: localizeURL(product.link) };
+    }
     return {
       content_id: product.acf?.content_id,
       id: product.slug,

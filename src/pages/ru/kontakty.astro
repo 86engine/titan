@@ -1,60 +1,21 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ContactPage from "../../components/ContactPage.astro";
+import contactI18n from "../../../public/data/contact-i18n.json" with { type: 'json' };
 
 const lang = 'ru';
 
-const pageTranslations = {
-  en: { url: '/contact' },
-  es: { url: '/es/contacto' },
-  ru: { url: '/ru/kontakty' },
-};
+const ui = contactI18n[lang] || contactI18n.en;
 
-const ui = {
-  home: 'Главная',
-  pageTitle: 'Контакты',
-  globalBranch: 'Свяжитесь с нами',
-  heading: 'Свяжитесь с нашей командой',
-  subheading: 'Мы можем предложить вам профессиональные решения, чтобы помочь решить проблемы в производственном процессе!',
-  locationTitle: 'Наше местоположение',
-  locationDesc: 'Китай, провинция Цзянсу, г. Цзянъинь, High-Tech Zone, Dongde Road, 1',
-  chatTitle: 'Чат с Поддержкой',
-  mailto:'aaron@titan-recycling.com',
-  callTitle: 'Позвоните Нам',
-  phone: '+86 183 6080 9300',
-  formTitle: 'Отправить сообщение',
-  formDesc: 'Наша команда готова ответить на любые ваши вопросы',
-  namePlaceholder: 'Полное имя',
-  emailPlaceholder: 'Адрес электронной почты',
-  phonePlaceholder: 'Телефон',
-  messagePlaceholder: 'Напишите ваше сообщение',
-  sendBtn: 'Отправить сообщение',
-  nameRequired: 'Пожалуйста, введите ваше имя',
-  emailRequired: 'Пожалуйста, введите адрес электронной почты.',
-  emailInvalid: 'Пожалуйста, введите корректный адрес электронной почты.',
-  messageRequired: 'Пожалуйста, введите ваше сообщение',
-  submitSuccess: 'Сообщение успешно отправлено. Мы свяжемся с вами как можно скорее.',
-  submitError: 'Не удалось отправить сообщение. Повторите попытку позже.',
-};
-
-const title = 'Связаться с TITAN | Производитель оборудования для переработки металлолома';
-const description = 'Свяжитесь с TITAN для получения решений по оборудованию для переработки металлолома, технической поддержки и коммерческих предложений. Наша инженерная команда быстро ответит на ваш запрос.';
-const keywords = 'производитель оборудования для переработки металлолома';
-
-const alternates = {
-  en: '/contact',
-  es: '/es/contacto',
-  ru: '/ru/kontakty',
-};
+const title = `${ui.pageTitle} | TITAN`;
+const description = ui.subheading;
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={title} 
-  description={description} 
-  keywords={keywords}
-  alternates={alternates}
+<BaseLayout
+  lang={lang}
+  currentContentId="contact"
+  title={title}
+  description={description}
 >
   <ContactPage lang={lang} ui={ui} />
 </BaseLayout>

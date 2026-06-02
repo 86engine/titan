@@ -25700,4 +25700,8 @@ a.ui-button:active {
   box-shadow: 0 0 5px #666;
 }
 
+.main-menu li.has-mega-menu .submenu .menu-item-has-children > a::after {
+  content: "\f105";
+}
 /*# sourceMappingURL=main.css.map */
+

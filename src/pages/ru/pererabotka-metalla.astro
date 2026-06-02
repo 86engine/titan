@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ApplicationList from "../../components/ApplicationList.astro";
 import { getApplications } from "../../data/applications.js";
 import { getApplicationCategories } from "../../data/applicationCategories.js";
+import headerI18n from "../../../public/data/header-i18n.json" with { type: 'json' };
 
 const lang = 'ru';
 
@@ -11,29 +12,15 @@ const [applications, applicationCategories] = await Promise.all([
   getApplicationCategories(lang),
 ]);
 
-const pageTranslations = {};
-for (const [l, data] of Object.entries(applicationCategories.translations || {})) {
-  if (data?.link) {
-    pageTranslations[l] = { url: new URL(data.link).pathname };
-  }
-}
-
-const ui = { home: 'Главная', applications: 'Решения' };
-
-const alternates = {
-  en: '/metal-recycling',
-  es: '/es/reciclaje-de-metales',
-  ru: '/ru/pererabotka-metalla',
-};
+const ui = headerI18n[lang] || headerI18n.en;
 ---
 
-<BaseLayout 
-  lang={lang} 
-  translations={pageTranslations}
-  title={applicationCategories.pageTitle} 
-  description={applicationCategories.pageDescription} 
+<BaseLayout
+  lang={lang}
+  currentContentId="solutionList"
+  title={applicationCategories.pageTitle}
+  description={applicationCategories.pageDescription}
   keywords={applicationCategories.pageKeywords}
-  alternates={alternates}
 >
   <ApplicationList lang={lang} applications={applications} applicationCategories={applicationCategories} ui={ui} />
 </BaseLayout>
