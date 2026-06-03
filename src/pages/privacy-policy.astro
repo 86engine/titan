@@ -15,7 +15,7 @@ const title = 'Cookie Policy | TITAN';
   title={title}
 >
   <section class="rs-breadcrumb-area rs-breadcrumb-one p-relative">
-    <div class="rs-breadcrumb-bg" style="background-image: url('https://img.titan-recycling.com/wp-content/uploads/2026/04/cookie.jpg');"></div>
+    <div class="rs-breadcrumb-bg" style="background-image: url('https://img.titan-recycling.com/wp-content/uploads/2026/06/news-detail.webp');"></div>
     <div class="container">
       <div class="row">
         <div class="col-xxl-6 col-xl-8 col-lg-8">
@@ -72,98 +72,14 @@ const title = 'Cookie Policy | TITAN';
 
 <CookieConsent lang={lang} />
 
-<!-- Cookie 弹窗 -->
-<div class="cookie-overlay" id="cookieModal" style="display:none;">
-  <div class="cookie-panel">
-    <h2 id="cookieTitle"></h2>
-    <p id="cookieDesc"></p>
-    <div class="cookie-top-row">
-      <a href={STATIC_PAGES['privacy-policy'][lang]} id="cookiePrivacyLink"></a>
-      <select id="cookieLang" onchange="window._cookieSetLang(this.value)">
-        <option value="en">English</option>
-        <option value="es">Español</option>
-        <option value="ru">русский</option>
-      </select>
-    </div>
-    <div class="cookie-options">
-      <label class="cookie-option"><div><strong id="cookieEssentialTitle"></strong><small id="cookieEssentialDesc"></small><em id="cookieEssentialRequired"></em></div><span class="toggle-switch"><input type="checkbox" checked disabled><span class="toggle-slider"></span></span></label>
-      <label class="cookie-option"><div><strong id="cookieAnalyzeTitle"></strong><small id="cookieAnalyzeDesc"></small></div><span class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></span></label>
-      <label class="cookie-option"><div><strong id="cookiePersonalizedTitle"></strong><small id="cookiePersonalizedDesc"></small></div><span class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></span></label>
-      <label class="cookie-option"><div><strong id="cookieMarketingTitle"></strong><small id="cookieMarketingDesc"></small></div><span class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></span></label>
-    </div>
-    <div class="cookie-actions">
-      <button class="cookie-btn primary" id="btnAcceptAll"></button>
-      <button class="cookie-btn outline" id="btnStrictlyNecessary"></button>
-      <button class="cookie-btn outline" id="btnSaveSettings"></button>
-    </div>
-  </div>
-</div>
-
 <style>
-  @import "../styles/cookie.css";
   .cookie-settings-btn { font-size: 16px; padding: 10px 30px; height: auto; width: auto; }
 </style>
 
 <script is:inline>
-  (async () => {
-    const res = await fetch('/data/cookie-i18n.json');
-    const translations = await res.json();
-
-    const ids = {
-      cookieTitle: 'title',
-      cookieDesc: 'desc',
-      cookiePrivacyLink: 'privacy',
-      cookieEssentialTitle: 'essentialTitle',
-      cookieEssentialDesc: 'essentialDesc',
-      cookieEssentialRequired: 'essentialRequired',
-      cookieAnalyzeTitle: 'analyzeTitle',
-      cookieAnalyzeDesc: 'analyzeDesc',
-      cookiePersonalizedTitle: 'personalizedTitle',
-      cookiePersonalizedDesc: 'personalizedDesc',
-      cookieMarketingTitle: 'marketingTitle',
-      cookieMarketingDesc: 'marketingDesc',
-      btnAcceptAll: 'acceptAll',
-      btnStrictlyNecessary: 'strictlyNecessary',
-      btnSaveSettings: 'saveSettings'
-    };
-
-    function setLang(lang) {
-      const t = translations[lang];
-      if (!t) return;
-      Object.entries(ids).forEach(([elId, key]) => {
-        const el = document.getElementById(elId);
-        if (el) el.textContent = t[key] || '';
-      });
-      const opts = document.querySelectorAll('#cookieLang option');
-      if (opts[0]) opts[0].textContent = t.langEn || 'English';
-      if (opts[1]) opts[1].textContent = t.langEs || 'Español';
-      if (opts[2]) opts[2].textContent = t.langRu || 'русский';
-      localStorage.setItem('cookieLang', lang);
+  document.getElementById('cookieSettingsBtn')?.addEventListener('click', () => {
+    if (window.openCookieConsentModal) {
+      window.openCookieConsentModal();
     }
-
-    window._cookieSetLang = setLang;
-
-    document.getElementById('cookieSettingsBtn')?.addEventListener('click', () => {
-      const modal = document.getElementById('cookieModal');
-      modal.style.display = 'flex';
-      const savedLang = localStorage.getItem('cookieLang') || 'en';
-      document.getElementById('cookieLang').value = savedLang;
-      setLang(savedLang);
-    });
-
-    document.querySelectorAll('#btnAcceptAll, #btnStrictlyNecessary, #btnSaveSettings').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.getElementById('cookieModal').style.display = 'none';
-        const newLang = document.getElementById('cookieLang').value;
-        const path = window.location.pathname;
-        const pageMap = {
-          '/privacy-policy': { en: '/privacy-policy', es: '/es/politica-de-privacidad', ru: '/ru/politika-konfidencialnosti' },
-          '/es/politica-de-privacidad': { en: '/privacy-policy', es: '/es/politica-de-privacidad', ru: '/ru/politika-konfidencialnosti' },
-          '/ru/politika-konfidencialnosti': { en: '/privacy-policy', es: '/es/politica-de-privacidad', ru: '/ru/politika-konfidencialnosti' },
-        };
-        const target = pageMap[path]?.[newLang];
-        if (target && target !== path) window.location.href = target;
-      });
-    });
-  })();
+  });
 </script>

@@ -11,8 +11,8 @@
 .cookie-table td { padding: 12px 16px; border: 1px solid #e5e7eb; }
 
 /* ===== 弹窗 ===== */
-.cookie-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 20px; backdrop-filter: blur(4px); }
-.cookie-panel { background: #fff; border-radius: 16px; padding: 32px; max-width: 680px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+.cookie-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 20px; backdrop-filter: blur(4px); overflow-y: auto; overscroll-behavior: contain; }
+.cookie-panel { background: #fff; border-radius: 16px; padding: 32px; max-width: 680px; width: 100%; max-height: calc(100dvh - 40px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); overflow-y: auto; -webkit-overflow-scrolling: touch; }
 .cookie-panel h2 { font-size: 24px; font-weight: 700; color: #0C3C61; margin-bottom: 10px; }
 .cookie-panel > p { font-size: 16px; color: #6b7280; line-height: 1.6; margin-bottom: 16px; }
 .cookie-top-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -35,3 +35,48 @@
 .cookie-btn.primary { background: var(--rs-theme-blue); color: #fff; }
 .cookie-btn.outline { background: transparent; border: 1px solid #0C3C61; color: #0C3C61; }
 .cookie-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+@media (max-width: 767px) {
+  .cookie-overlay {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .cookie-panel {
+    padding: 20px;
+    max-height: calc(100dvh - 24px);
+    border-radius: 12px;
+    margin: 0 auto;
+  }
+
+  .cookie-panel h2 {
+    font-size: 20px;
+  }
+
+  .cookie-panel > p {
+    font-size: 15px;
+  }
+
+  .cookie-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cookie-top-row select {
+    width: 100%;
+  }
+
+  .cookie-option {
+    align-items: flex-start;
+  }
+
+  .cookie-actions {
+    flex-direction: column;
+  }
+
+  .cookie-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -2,7 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { LANGS } from "../config/site";
-import { getTranslationsByContentId } from "../data/site.js";
+import { getPageURL, getTranslationsByContentId } from "../data/site.js";
 import "../styles/main.css";
 
 const {
@@ -17,6 +17,9 @@ const {
 const siteUrl = 'https://titan-recycling.com';
 
 const translations = getTranslationsByContentId(currentContentId);
+const pageUrls = Object.fromEntries(
+  LANGS.map((language) => [language, getPageURL(currentContentId, language)])
+);
 
 const alternates = {};
 if (translations) {
@@ -44,6 +47,105 @@ const canonical = alternates[lang] || `${siteUrl}/`;
     {alternates.es && <link rel="alternate" hreflang="es" href={alternates.es} />}
     {alternates.ru && <link rel="alternate" hreflang="ru" href={alternates.ru} />}
     {alternates.en && <link rel="alternate" hreflang="x-default" href={alternates.en} />}
+
+    <script is:inline define:vars={{ lang, pageUrls }}>
+      (() => {
+        const STORAGE_KEY = 'siteLang';
+        const LEGACY_STORAGE_KEY = 'cookieLang';
+        const supportedLangs = ['en', 'es', 'ru'];
+        const fallbackUrls = { en: '/', es: '/es/', ru: '/ru/' };
+
+        const normalizeLang = (value) => supportedLangs.includes(value) ? value : '';
+        const safeGetItem = (key) => {
+          try {
+            return window.localStorage.getItem(key);
+          } catch {
+            return null;
+          }
+        };
+        const safeSetItem = (key, value) => {
+          try {
+            window.localStorage.setItem(key, value);
+          } catch {
+            // 忽略本地存储不可用场景
+          }
+        };
+
+        const getPreferredSiteLang = () => (
+          normalizeLang(safeGetItem(STORAGE_KEY)) ||
+          normalizeLang(safeGetItem(LEGACY_STORAGE_KEY)) ||
+          ''
+        );
+
+        const setPreferredSiteLang = (targetLang) => {
+          const normalizedLang = normalizeLang(targetLang) || 'en';
+          safeSetItem(STORAGE_KEY, normalizedLang);
+          safeSetItem(LEGACY_STORAGE_KEY, normalizedLang);
+          return normalizedLang;
+        };
+
+        const resolveUrl = (targetLang) => pageUrls?.[targetLang] || fallbackUrls[targetLang] || '/';
+
+        const navigateToSiteLang = (targetLang, options = {}) => {
+          const normalizedLang = setPreferredSiteLang(targetLang);
+          const target = resolveUrl(normalizedLang);
+          if (!target) return normalizedLang;
+
+          const currentUrl = new URL(window.location.href);
+          const targetUrl = new URL(target, window.location.origin);
+          if (
+            currentUrl.pathname === targetUrl.pathname &&
+            currentUrl.search === targetUrl.search &&
+            currentUrl.hash === targetUrl.hash
+          ) {
+            return normalizedLang;
+          }
+
+          if (options.replace) {
+            window.location.replace(targetUrl.toString());
+          } else {
+            window.location.assign(targetUrl.toString());
+          }
+          return normalizedLang;
+        };
+
+        window.__siteLanguage = {
+          currentLang: lang,
+          fallbackUrls,
+          pageUrls,
+          getPreferredSiteLang,
+          navigateToSiteLang,
+          resolveUrl,
+          setPreferredSiteLang,
+        };
+
+        document.addEventListener('click', (event) => {
+          const switcher = event.target.closest('a[data-site-lang-switch]');
+          if (!switcher) return;
+          const targetLang = switcher.dataset.siteLangSwitch;
+          if (!targetLang) return;
+          setPreferredSiteLang(targetLang);
+        });
+
+        const preferredSiteLang = getPreferredSiteLang();
+        if (!preferredSiteLang || preferredSiteLang === lang) return;
+
+        const target = resolveUrl(preferredSiteLang);
+        if (!target) return;
+
+        const currentUrl = new URL(window.location.href);
+        const targetUrl = new URL(target, window.location.origin);
+        if (
+          currentUrl.pathname === targetUrl.pathname &&
+          currentUrl.search === targetUrl.search &&
+          currentUrl.hash === targetUrl.hash
+        ) {
+          return;
+        }
+
+        window.location.replace(targetUrl.toString());
+      })();
+    </script>
 
     <link rel="dns-prefetch" href="https://img.titan-recycling.com" />
     <link rel="preconnect" href="https://img.titan-recycling.com" crossorigin />

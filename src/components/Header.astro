@@ -91,7 +91,11 @@ const subKnowledge = getSubKnowledgeList();
                 <ul class="submenu last-children">
                   {locales.map(locale => (
                     <li>
-                      <a href={getPageURL(currentContentId, locale.code)} class:list={[locale.code === lang ? 'active' : '']}>
+                      <a
+                        href={getPageURL(currentContentId, locale.code)}
+                        data-site-lang-switch={locale.code}
+                        class:list={[locale.code === lang ? 'active' : '']}
+                      >
                         {locale.label}
                       </a>
                     </li>
