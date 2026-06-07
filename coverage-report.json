@@ -1,0 +1,3615 @@
+[
+  {
+    "url": "http://localhost:4321/",
+    "type": "首页",
+    "js": [
+      {
+        "url": "http://localhost:4321/",
+        "totalBytes": 3321,
+        "usedBytes": 1718
+      },
+      {
+        "url": "http://localhost:4321/",
+        "totalBytes": 3402,
+        "usedBytes": 2916
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 35283
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 1943
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 13979
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 44309
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 5655
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4199
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 8771
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2342
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 1478
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 1779
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1306
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 190
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 26203
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3200
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 10780
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 10848
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 3652
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 601
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22058
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1803
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1175
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2145
+      },
+      {
+        "url": "http://localhost:4321/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 15840
+      },
+      {
+        "url": "http://localhost:4321/",
+        "totalBytes": 33,
+        "usedBytes": 33
+      }
+    ],
+    "css": [
+      {
+        "url": "http://localhost:4321/css/plugins/swiper.min.css",
+        "totalBytes": 7130,
+        "usedBytes": 2066
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/spacing.css",
+        "totalBytes": 278,
+        "usedBytes": 52
+      },
+      {
+        "url": "http://localhost:4321/_astro/BaseLayout.836ba230.css",
+        "totalBytes": 84792,
+        "usedBytes": 30828
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/bootstrap.min.css",
+        "totalBytes": 31523,
+        "usedBytes": 7866
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/odometer.min.css",
+        "totalBytes": 2322,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nouislider.min.css",
+        "totalBytes": 0,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nice-select.css",
+        "totalBytes": 4409,
+        "usedBytes": 2749
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/magnific-popup.css",
+        "totalBytes": 4761,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/remixicon.css",
+        "totalBytes": 140423,
+        "usedBytes": 306
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/",
+        "totalBytes": 3387,
+        "usedBytes": 2162
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/fontawesome-pro.css",
+        "totalBytes": 10168,
+        "usedBytes": 1130
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/animate.min.css",
+        "totalBytes": 40174,
+        "usedBytes": 246
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/",
+    "type": "首页",
+    "js": [
+      {
+        "url": "http://localhost:4321/es/",
+        "totalBytes": 3321,
+        "usedBytes": 1669
+      },
+      {
+        "url": "http://localhost:4321/es/",
+        "totalBytes": 3402,
+        "usedBytes": 2916
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 35330
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 1943
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 13979
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 44309
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 5655
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4199
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 8771
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2342
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 1478
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 1779
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1306
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 190
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 26482
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3200
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 10780
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 10848
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 3652
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 601
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22058
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1803
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1175
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2145
+      },
+      {
+        "url": "http://localhost:4321/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 15840
+      },
+      {
+        "url": "http://localhost:4321/es/",
+        "totalBytes": 33,
+        "usedBytes": 33
+      }
+    ],
+    "css": [
+      {
+        "url": "http://localhost:4321/css/vendor/magnific-popup.css",
+        "totalBytes": 4761,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/_astro/BaseLayout.836ba230.css",
+        "totalBytes": 84792,
+        "usedBytes": 30828
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/swiper.min.css",
+        "totalBytes": 7130,
+        "usedBytes": 2066
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/bootstrap.min.css",
+        "totalBytes": 31523,
+        "usedBytes": 7866
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/odometer.min.css",
+        "totalBytes": 2322,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/spacing.css",
+        "totalBytes": 278,
+        "usedBytes": 52
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/remixicon.css",
+        "totalBytes": 140423,
+        "usedBytes": 306
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/animate.min.css",
+        "totalBytes": 40174,
+        "usedBytes": 246
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nouislider.min.css",
+        "totalBytes": 0,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/fontawesome-pro.css",
+        "totalBytes": 10168,
+        "usedBytes": 1130
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nice-select.css",
+        "totalBytes": 4409,
+        "usedBytes": 2749
+      },
+      {
+        "url": "http://localhost:4321/es/",
+        "totalBytes": 3387,
+        "usedBytes": 2162
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/",
+    "type": "首页",
+    "js": [
+      {
+        "url": "http://localhost:4321/es/",
+        "totalBytes": 3321,
+        "usedBytes": 1669
+      },
+      {
+        "url": "http://localhost:4321/es/",
+        "totalBytes": 3402,
+        "usedBytes": 2916
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 43393
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 15031
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 67897
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 6778
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 1710
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 36858
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 5233
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 17311
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 14458
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2774
+      },
+      {
+        "url": "http://localhost:4321/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 20540
+      },
+      {
+        "url": "http://localhost:4321/es/",
+        "totalBytes": 33,
+        "usedBytes": 33
+      }
+    ],
+    "css": [
+      {
+        "url": "http://localhost:4321/css/plugins/swiper.min.css",
+        "totalBytes": 7130,
+        "usedBytes": 2066
+      },
+      {
+        "url": "http://localhost:4321/es/",
+        "totalBytes": 3387,
+        "usedBytes": 2162
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/animate.min.css",
+        "totalBytes": 40174,
+        "usedBytes": 246
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/bootstrap.min.css",
+        "totalBytes": 31523,
+        "usedBytes": 7866
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/spacing.css",
+        "totalBytes": 278,
+        "usedBytes": 52
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/fontawesome-pro.css",
+        "totalBytes": 10168,
+        "usedBytes": 1130
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/odometer.min.css",
+        "totalBytes": 2322,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nice-select.css",
+        "totalBytes": 4409,
+        "usedBytes": 2749
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/remixicon.css",
+        "totalBytes": 140423,
+        "usedBytes": 306
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/magnific-popup.css",
+        "totalBytes": 4761,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nouislider.min.css",
+        "totalBytes": 0,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/_astro/BaseLayout.836ba230.css",
+        "totalBytes": 84792,
+        "usedBytes": 30828
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/metal-recycling-equipment/",
+    "type": "产品列表",
+    "js": [
+      {
+        "url": "https://titan-recycling.com/es/equipos-reciclaje-metales/",
+        "totalBytes": 3493,
+        "usedBytes": 1419
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 27559
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 1943
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 13785
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 20218
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 3182
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4199
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 8771
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2342
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 578
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 1779
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1306
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 190
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 16190
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 2003
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 6063
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7828
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 3652
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 601
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22058
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1803
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1175
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2050
+      },
+      {
+        "url": "https://titan-recycling.com/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 10508
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447",
+        "totalBytes": 33228,
+        "usedBytes": 13428
+      }
+    ],
+    "css": [
+      {
+        "url": "https://titan-recycling.com/css/plugins/swiper.min.css",
+        "totalBytes": 21064,
+        "usedBytes": 71
+      },
+      {
+        "url": "https://titan-recycling.com/_astro/BaseLayout.3KcTKRod.css",
+        "totalBytes": 488344,
+        "usedBytes": 21397
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/spacing.css",
+        "totalBytes": 17244,
+        "usedBytes": 52
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nice-select.css",
+        "totalBytes": 4839,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/magnific-popup.css",
+        "totalBytes": 7718,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/fontawesome-pro.css",
+        "totalBytes": 520685,
+        "usedBytes": 1345
+      },
+      {
+        "url": "https://titan-recycling.com/es/equipos-reciclaje-metales/",
+        "totalBytes": 73,
+        "usedBytes": 72
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/remixicon.css",
+        "totalBytes": 140985,
+        "usedBytes": 264
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/animate.min.css",
+        "totalBytes": 45036,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nouislider.min.css",
+        "totalBytes": 4859,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/odometer.min.css",
+        "totalBytes": 3299,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/bootstrap.min.css",
+        "totalBytes": 294469,
+        "usedBytes": 7548
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/metal-recycling-equipment/",
+    "type": "产品列表",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/metal-recycling-equipment/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/metal-recycling-equipment/",
+    "type": "产品列表",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/metal-recycling-equipment/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/metal-recycling-equipment/scrap-metal-shear/",
+    "type": "产品详情",
+    "js": [
+      {
+        "url": "https://titan-recycling.com/es/equipos-reciclaje-metales/cizalla-chatarra/",
+        "totalBytes": 3567,
+        "usedBytes": 1616
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 38143
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 1943
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 19605
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 46253
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 3459
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 10635
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 8771
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2342
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 692
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 1779
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1306
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 190
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 16220
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 2003
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 6115
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7828
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 3652
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 601
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22058
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1803
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1175
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2107
+      },
+      {
+        "url": "https://titan-recycling.com/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 15724
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447",
+        "totalBytes": 33228,
+        "usedBytes": 15124
+      }
+    ],
+    "css": [
+      {
+        "url": "https://titan-recycling.com/css/vendor/bootstrap.min.css",
+        "totalBytes": 294469,
+        "usedBytes": 11229
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/swiper.min.css",
+        "totalBytes": 21064,
+        "usedBytes": 2426
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/_astro/BaseLayout.3KcTKRod.css",
+        "totalBytes": 488344,
+        "usedBytes": 24240
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nouislider.min.css",
+        "totalBytes": 4859,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/remixicon.css",
+        "totalBytes": 140985,
+        "usedBytes": 306
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/magnific-popup.css",
+        "totalBytes": 7718,
+        "usedBytes": 2899
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/animate.min.css",
+        "totalBytes": 45036,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/fontawesome-pro.css",
+        "totalBytes": 520685,
+        "usedBytes": 1345
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/spacing.css",
+        "totalBytes": 17244,
+        "usedBytes": 153
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nice-select.css",
+        "totalBytes": 4839,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/odometer.min.css",
+        "totalBytes": 3299,
+        "usedBytes": 0
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/metal-recycling-equipment/scrap-metal-shear/",
+    "type": "产品详情",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/metal-recycling-equipment/scrap-metal-shear/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/metal-recycling-equipment/scrap-metal-shear/",
+    "type": "产品详情",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/metal-recycling-equipment/scrap-metal-shear/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/metal-recycling/",
+    "type": "应用列表",
+    "js": [
+      {
+        "url": "https://titan-recycling.com/es/reciclaje-de-metales/",
+        "totalBytes": 3459,
+        "usedBytes": 1385
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 33949
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 22767
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4009
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 790
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2645
+      },
+      {
+        "url": "https://titan-recycling.com/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 14868
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447",
+        "totalBytes": 33228,
+        "usedBytes": 16398
+      }
+    ],
+    "css": [
+      {
+        "url": "https://titan-recycling.com/css/vendor/spacing.css",
+        "totalBytes": 17244,
+        "usedBytes": 103
+      },
+      {
+        "url": "https://titan-recycling.com/es/reciclaje-de-metales/",
+        "totalBytes": 73,
+        "usedBytes": 72
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nouislider.min.css",
+        "totalBytes": 4859,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/animate.min.css",
+        "totalBytes": 45036,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/swiper.min.css",
+        "totalBytes": 21064,
+        "usedBytes": 71
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nice-select.css",
+        "totalBytes": 4839,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/fontawesome-pro.css",
+        "totalBytes": 520685,
+        "usedBytes": 1345
+      },
+      {
+        "url": "https://titan-recycling.com/_astro/BaseLayout.3KcTKRod.css",
+        "totalBytes": 488344,
+        "usedBytes": 20129
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/magnific-popup.css",
+        "totalBytes": 7718,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/remixicon.css",
+        "totalBytes": 140985,
+        "usedBytes": 264
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/odometer.min.css",
+        "totalBytes": 3299,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/bootstrap.min.css",
+        "totalBytes": 294469,
+        "usedBytes": 7548
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/metal-recycling/",
+    "type": "应用列表",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/metal-recycling/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/metal-recycling/",
+    "type": "应用列表",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/metal-recycling/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/metal-recycling/copper-recycling/",
+    "type": "应用详情",
+    "js": [
+      {
+        "url": "https://titan-recycling.com/es/reciclaje-de-metales/reciclaje-de-cobre/",
+        "totalBytes": 3512,
+        "usedBytes": 1438
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 34794
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 49106
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4009
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 790
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2645
+      },
+      {
+        "url": "https://titan-recycling.com/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 19929
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447",
+        "totalBytes": 33228,
+        "usedBytes": 16398
+      }
+    ],
+    "css": [
+      {
+        "url": "https://titan-recycling.com/css/plugins/swiper.min.css",
+        "totalBytes": 21064,
+        "usedBytes": 2426
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/magnific-popup.css",
+        "totalBytes": 7718,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/bootstrap.min.css",
+        "totalBytes": 294469,
+        "usedBytes": 7593
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/odometer.min.css",
+        "totalBytes": 3299,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nice-select.css",
+        "totalBytes": 4839,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/_astro/BaseLayout.3KcTKRod.css",
+        "totalBytes": 488344,
+        "usedBytes": 19459
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/fontawesome-pro.css",
+        "totalBytes": 520685,
+        "usedBytes": 1345
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/animate.min.css",
+        "totalBytes": 45036,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/spacing.css",
+        "totalBytes": 17244,
+        "usedBytes": 78
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/remixicon.css",
+        "totalBytes": 140985,
+        "usedBytes": 264
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nouislider.min.css",
+        "totalBytes": 4859,
+        "usedBytes": 0
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/metal-recycling/copper-recycling/",
+    "type": "应用详情",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/metal-recycling/copper-recycling/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/metal-recycling/copper-recycling/",
+    "type": "应用详情",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/metal-recycling/copper-recycling/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/knowledge/",
+    "type": "知识列表",
+    "js": [
+      {
+        "url": "https://titan-recycling.com/es/conocimiento/",
+        "totalBytes": 3433,
+        "usedBytes": 1359
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 33949
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 22767
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4009
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 790
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2645
+      },
+      {
+        "url": "https://titan-recycling.com/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 14868
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447",
+        "totalBytes": 33228,
+        "usedBytes": 16398
+      }
+    ],
+    "css": [
+      {
+        "url": "https://titan-recycling.com/css/vendor/fontawesome-pro.css",
+        "totalBytes": 520685,
+        "usedBytes": 1345
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/spacing.css",
+        "totalBytes": 17244,
+        "usedBytes": 52
+      },
+      {
+        "url": "https://titan-recycling.com/_astro/BaseLayout.3KcTKRod.css",
+        "totalBytes": 488344,
+        "usedBytes": 19890
+      },
+      {
+        "url": "https://titan-recycling.com/es/conocimiento/",
+        "totalBytes": 73,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nice-select.css",
+        "totalBytes": 4839,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/magnific-popup.css",
+        "totalBytes": 7718,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/remixicon.css",
+        "totalBytes": 140985,
+        "usedBytes": 264
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/animate.min.css",
+        "totalBytes": 45036,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/bootstrap.min.css",
+        "totalBytes": 294469,
+        "usedBytes": 7548
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/swiper.min.css",
+        "totalBytes": 21064,
+        "usedBytes": 71
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nouislider.min.css",
+        "totalBytes": 4859,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/odometer.min.css",
+        "totalBytes": 3299,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/knowledge/",
+    "type": "知识列表",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/knowledge/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/knowledge/",
+    "type": "知识列表",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/knowledge/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/knowledge/briquetting/",
+    "type": "知识详情",
+    "js": [
+      {
+        "url": "https://titan-recycling.com/es/conocimiento/briqueteado/",
+        "totalBytes": 3480,
+        "usedBytes": 1406
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 33949
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 22767
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4009
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 790
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2645
+      },
+      {
+        "url": "https://titan-recycling.com/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 14868
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447",
+        "totalBytes": 33228,
+        "usedBytes": 16398
+      }
+    ],
+    "css": [
+      {
+        "url": "https://titan-recycling.com/_astro/BaseLayout.3KcTKRod.css",
+        "totalBytes": 488344,
+        "usedBytes": 21233
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/odometer.min.css",
+        "totalBytes": 3299,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/fontawesome-pro.css",
+        "totalBytes": 520685,
+        "usedBytes": 1345
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/animate.min.css",
+        "totalBytes": 45036,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nice-select.css",
+        "totalBytes": 4839,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/remixicon.css",
+        "totalBytes": 140985,
+        "usedBytes": 264
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/bootstrap.min.css",
+        "totalBytes": 294469,
+        "usedBytes": 7548
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/swiper.min.css",
+        "totalBytes": 21064,
+        "usedBytes": 71
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/spacing.css",
+        "totalBytes": 17244,
+        "usedBytes": 103
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/magnific-popup.css",
+        "totalBytes": 7718,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nouislider.min.css",
+        "totalBytes": 4859,
+        "usedBytes": 0
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/knowledge/briquetting/",
+    "type": "知识详情",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/knowledge/briquetting/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/knowledge/briquetting/",
+    "type": "知识详情",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/knowledge/briquetting/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/updates/",
+    "type": "新闻列表",
+    "js": [
+      {
+        "url": "https://titan-recycling.com/es/actualizaciones/",
+        "totalBytes": 3438,
+        "usedBytes": 1364
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 33949
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 22767
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4009
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 790
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2645
+      },
+      {
+        "url": "https://titan-recycling.com/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 14868
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447",
+        "totalBytes": 33228,
+        "usedBytes": 16398
+      }
+    ],
+    "css": [
+      {
+        "url": "https://titan-recycling.com/css/vendor/animate.min.css",
+        "totalBytes": 45036,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/swiper.min.css",
+        "totalBytes": 21064,
+        "usedBytes": 71
+      },
+      {
+        "url": "https://titan-recycling.com/_astro/BaseLayout.3KcTKRod.css",
+        "totalBytes": 488344,
+        "usedBytes": 22451
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nouislider.min.css",
+        "totalBytes": 4859,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/spacing.css",
+        "totalBytes": 17244,
+        "usedBytes": 52
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/odometer.min.css",
+        "totalBytes": 3299,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/bootstrap.min.css",
+        "totalBytes": 294469,
+        "usedBytes": 7335
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/magnific-popup.css",
+        "totalBytes": 7718,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/remixicon.css",
+        "totalBytes": 140985,
+        "usedBytes": 359
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nice-select.css",
+        "totalBytes": 4839,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/fontawesome-pro.css",
+        "totalBytes": 520685,
+        "usedBytes": 1345
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/updates/",
+    "type": "新闻列表",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/updates/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/updates/",
+    "type": "新闻列表",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/updates/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/updates/titan-at-international-aluminum-event/",
+    "type": "新闻详情",
+    "js": [
+      {
+        "url": "https://titan-recycling.com/es/actualizaciones/titan-en-el-evento-internacional-del-aluminio/",
+        "totalBytes": 3567,
+        "usedBytes": 1493
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 33949
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 22767
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4009
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 790
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2645
+      },
+      {
+        "url": "https://titan-recycling.com/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 14868
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447",
+        "totalBytes": 33228,
+        "usedBytes": 16398
+      }
+    ],
+    "css": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/odometer.min.css",
+        "totalBytes": 3299,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/swiper.min.css",
+        "totalBytes": 21064,
+        "usedBytes": 71
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/magnific-popup.css",
+        "totalBytes": 7718,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/bootstrap.min.css",
+        "totalBytes": 294469,
+        "usedBytes": 7336
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nice-select.css",
+        "totalBytes": 4839,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nouislider.min.css",
+        "totalBytes": 4859,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/_astro/BaseLayout.3KcTKRod.css",
+        "totalBytes": 488344,
+        "usedBytes": 19722
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/remixicon.css",
+        "totalBytes": 140985,
+        "usedBytes": 264
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/spacing.css",
+        "totalBytes": 17244,
+        "usedBytes": 52
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/fontawesome-pro.css",
+        "totalBytes": 520685,
+        "usedBytes": 1345
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/animate.min.css",
+        "totalBytes": 45036,
+        "usedBytes": 0
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/updates/titan-at-international-aluminum-event/",
+    "type": "新闻详情",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/updates/titan-at-international-aluminum-event/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/updates/titan-at-international-aluminum-event/",
+    "type": "新闻详情",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/updates/titan-at-international-aluminum-event/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/downloads",
+    "type": "下载中心",
+    "js": [
+      {
+        "url": "http://localhost:4321/es/descargas",
+        "totalBytes": 3347,
+        "usedBytes": 1231
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 33949
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 22767
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4009
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 790
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2645
+      },
+      {
+        "url": "http://localhost:4321/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 14868
+      }
+    ],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/descargas",
+        "totalBytes": 1688,
+        "usedBytes": 1687
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/swiper.min.css",
+        "totalBytes": 7130,
+        "usedBytes": 71
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nice-select.css",
+        "totalBytes": 4409,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/animate.min.css",
+        "totalBytes": 40174,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/bootstrap.min.css",
+        "totalBytes": 31523,
+        "usedBytes": 7335
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/magnific-popup.css",
+        "totalBytes": 4761,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/odometer.min.css",
+        "totalBytes": 2322,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nouislider.min.css",
+        "totalBytes": 0,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/spacing.css",
+        "totalBytes": 278,
+        "usedBytes": 75
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/remixicon.css",
+        "totalBytes": 140423,
+        "usedBytes": 264
+      },
+      {
+        "url": "http://localhost:4321/_astro/BaseLayout.836ba230.css",
+        "totalBytes": 84792,
+        "usedBytes": 18432
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/fontawesome-pro.css",
+        "totalBytes": 10168,
+        "usedBytes": 1053
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/downloads",
+    "type": "下载中心",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/downloads",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/downloads",
+    "type": "下载中心",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/downloads",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/about/",
+    "type": "关于我们",
+    "js": [
+      {
+        "url": "https://titan-recycling.com/es/sobre-nosotros/",
+        "totalBytes": 3434,
+        "usedBytes": 1360
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 34794
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 49106
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4009
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 790
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "https://titan-recycling.com/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "https://titan-recycling.com/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2645
+      },
+      {
+        "url": "https://titan-recycling.com/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 19929
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447",
+        "totalBytes": 33228,
+        "usedBytes": 16398
+      }
+    ],
+    "css": [
+      {
+        "url": "https://titan-recycling.com/css/plugins/nouislider.min.css",
+        "totalBytes": 4859,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/nice-select.css",
+        "totalBytes": 4839,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/bootstrap.min.css",
+        "totalBytes": 294469,
+        "usedBytes": 7615
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/odometer.min.css",
+        "totalBytes": 3299,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/spacing.css",
+        "totalBytes": 17244,
+        "usedBytes": 77
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/magnific-popup.css",
+        "totalBytes": 7718,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/remixicon.css",
+        "totalBytes": 140985,
+        "usedBytes": 264
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/fontawesome-pro.css",
+        "totalBytes": 520685,
+        "usedBytes": 1345
+      },
+      {
+        "url": "https://titan-recycling.com/_astro/BaseLayout.3KcTKRod.css",
+        "totalBytes": 488344,
+        "usedBytes": 20808
+      },
+      {
+        "url": "https://titan-recycling.com/css/vendor/animate.min.css",
+        "totalBytes": 45036,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://titan-recycling.com/css/plugins/swiper.min.css",
+        "totalBytes": 21064,
+        "usedBytes": 2426
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/about/",
+    "type": "关于我们",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/about/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/about/",
+    "type": "关于我们",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/about/",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/contact",
+    "type": "联系我们",
+    "js": [
+      {
+        "url": "http://localhost:4321/es/contacto",
+        "totalBytes": 3344,
+        "usedBytes": 1228
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 34306
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 22767
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4009
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 790
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2645
+      },
+      {
+        "url": "http://localhost:4321/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 14970
+      }
+    ],
+    "css": [
+      {
+        "url": "http://localhost:4321/css/plugins/swiper.min.css",
+        "totalBytes": 7130,
+        "usedBytes": 71
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/animate.min.css",
+        "totalBytes": 40174,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/bootstrap.min.css",
+        "totalBytes": 31523,
+        "usedBytes": 7504
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/remixicon.css",
+        "totalBytes": 140423,
+        "usedBytes": 264
+      },
+      {
+        "url": "http://localhost:4321/_astro/BaseLayout.836ba230.css",
+        "totalBytes": 84792,
+        "usedBytes": 21371
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/odometer.min.css",
+        "totalBytes": 2322,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/magnific-popup.css",
+        "totalBytes": 4761,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/fontawesome-pro.css",
+        "totalBytes": 10168,
+        "usedBytes": 1053
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nice-select.css",
+        "totalBytes": 4409,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/spacing.css",
+        "totalBytes": 278,
+        "usedBytes": 78
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nouislider.min.css",
+        "totalBytes": 0,
+        "usedBytes": 0
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/contact",
+    "type": "联系我们",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/contact",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/contact",
+    "type": "联系我们",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/contact",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/privacy-policy",
+    "type": "隐私政策",
+    "js": [
+      {
+        "url": "http://localhost:4321/es/politica-de-privacidad",
+        "totalBytes": 3383,
+        "usedBytes": 1608
+      },
+      {
+        "url": "http://localhost:4321/es/politica-de-privacidad",
+        "totalBytes": 3402,
+        "usedBytes": 2916
+      },
+      {
+        "url": "http://localhost:4321/es/politica-de-privacidad",
+        "totalBytes": 175,
+        "usedBytes": 78
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/jquery-3.7.1.min.js",
+        "totalBytes": 87537,
+        "usedBytes": 41566
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/waypoints.min.js",
+        "totalBytes": 9033,
+        "usedBytes": 2006
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/bootstrap.bundle.min.js",
+        "totalBytes": 80727,
+        "usedBytes": 14285
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/meanmenu.min.js",
+        "totalBytes": 11264,
+        "usedBytes": 1192
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/swiper.min.js",
+        "totalBytes": 143673,
+        "usedBytes": 22767
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/wow.min.js",
+        "totalBytes": 8157,
+        "usedBytes": 4456
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/magnific-popup.min.js",
+        "totalBytes": 20213,
+        "usedBytes": 4707
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/isotope.pkgd.min.js",
+        "totalBytes": 35514,
+        "usedBytes": 11684
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/imagesloaded.pkgd.min.js",
+        "totalBytes": 5447,
+        "usedBytes": 2745
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nice-select.min.js",
+        "totalBytes": 2944,
+        "usedBytes": 1596
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jarallax.min.js",
+        "totalBytes": 10521,
+        "usedBytes": 2545
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/ajax-form.js",
+        "totalBytes": 1297,
+        "usedBytes": 222
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/easypie.js",
+        "totalBytes": 14975,
+        "usedBytes": 1486
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/headding-title.js",
+        "totalBytes": 5719,
+        "usedBytes": 997
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/lenis.min.js",
+        "totalBytes": 10445,
+        "usedBytes": 267
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/gsap.min.js",
+        "totalBytes": 61069,
+        "usedBytes": 23769
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-anim-int.js",
+        "totalBytes": 13121,
+        "usedBytes": 3302
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-scroll-trigger.min.js",
+        "totalBytes": 37200,
+        "usedBytes": 7155
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/rs-splitText.min.js",
+        "totalBytes": 15405,
+        "usedBytes": 7960
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.lettering.js",
+        "totalBytes": 1092,
+        "usedBytes": 111
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/parallax-effect.min.js",
+        "totalBytes": 17314,
+        "usedBytes": 4388
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/jquery.appear.min.js",
+        "totalBytes": 1266,
+        "usedBytes": 634
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/marquee.min.js",
+        "totalBytes": 7664,
+        "usedBytes": 471
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/chart.umd.min.js",
+        "totalBytes": 202631,
+        "usedBytes": 22378
+      },
+      {
+        "url": "http://localhost:4321/js/plugins/nouislider.min.js",
+        "totalBytes": 27743,
+        "usedBytes": 1884
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/purecounter.js",
+        "totalBytes": 5368,
+        "usedBytes": 1509
+      },
+      {
+        "url": "http://localhost:4321/js/vendor/odometer.min.js",
+        "totalBytes": 10263,
+        "usedBytes": 2774
+      },
+      {
+        "url": "http://localhost:4321/js/main.js",
+        "totalBytes": 40189,
+        "usedBytes": 14868
+      },
+      {
+        "url": "http://localhost:4321/es/politica-de-privacidad",
+        "totalBytes": 33,
+        "usedBytes": 33
+      }
+    ],
+    "css": [
+      {
+        "url": "http://localhost:4321/css/plugins/swiper.min.css",
+        "totalBytes": 7130,
+        "usedBytes": 71
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nice-select.css",
+        "totalBytes": 4409,
+        "usedBytes": 2749
+      },
+      {
+        "url": "http://localhost:4321/es/politica-de-privacidad",
+        "totalBytes": 3490,
+        "usedBytes": 2975
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/remixicon.css",
+        "totalBytes": 140423,
+        "usedBytes": 264
+      },
+      {
+        "url": "http://localhost:4321/css/plugins/nouislider.min.css",
+        "totalBytes": 0,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/animate.min.css",
+        "totalBytes": 40174,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/_astro/BaseLayout.836ba230.css",
+        "totalBytes": 84792,
+        "usedBytes": 17367
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/spacing.css",
+        "totalBytes": 278,
+        "usedBytes": 52
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/fontawesome-pro.css",
+        "totalBytes": 10168,
+        "usedBytes": 1053
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/odometer.min.css",
+        "totalBytes": 2322,
+        "usedBytes": 0
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap",
+        "totalBytes": 3520,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/magnific-popup.css",
+        "totalBytes": 4761,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:4321/css/vendor/bootstrap.min.css",
+        "totalBytes": 31523,
+        "usedBytes": 7461
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/es/privacy-policy",
+    "type": "隐私政策",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/es/privacy-policy",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:4321/ru/privacy-policy",
+    "type": "隐私政策",
+    "js": [],
+    "css": [
+      {
+        "url": "http://localhost:4321/ru/privacy-policy",
+        "totalBytes": 1637,
+        "usedBytes": 1545
+      }
+    ]
+  }
+]
