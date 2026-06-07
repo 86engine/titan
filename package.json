@@ -9,12 +9,23 @@
     "dev": "astro dev",
     "prebuild": "node scripts/generate-sitemaps.js",
     "build": "npm run sync && npm run prebuild && astro build",
-    "preview": "astro preview",
+    "preview": "npm run build && wrangler dev",
     "astro": "astro",
     "sync": "node scripts/sync-wp.js",
-    "sitemap": "node scripts/generate-sitemaps.js"
+    "sitemap": "node scripts/generate-sitemaps.js",
+    "generate-types": "wrangler types",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.6.1",
     "astro": "^6.3.1"
+  },
+  "devDependencies": {
+    "astro-purgecss": "^6.0.1",
+    "puppeteer-core": "^25.1.0",
+    "wrangler": "^4.98.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
