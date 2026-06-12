@@ -22,7 +22,9 @@
     "address":"No. 1 Dongde Rd., High-Tech Zone Jiangyin, Jiangsu, China",
     "phone":"+86 183 6080 9300",
     "email":"aaron@titan-recycling.com",
-    "subscribe":"Subscribe & Follow"
+    "subscribe":"Subscribe & Follow",
+    "openMenu":"Open menu",
+    "closeMenu":"Close menu"
   },
   "es": {
     "home": "Inicio",
@@ -47,7 +49,9 @@
     "address":"Calle Dongde N.º 1, Zona de Alta Tecnología Jiangyin, Jiangsu, China",
     "phone":"+86 183 6080 9300",
     "email":"aaron@titan-recycling.com",
-    "subscribe":"Suscríbase y síganos"
+    "subscribe":"Suscríbase y síganos",
+    "openMenu":"Abrir menú",
+    "closeMenu":"Cerrar menú"
   },
   "ru": {
     "home": "Главная",
@@ -72,6 +76,8 @@
     "address":"Высокотехнологическая зона, улица Дунде, д. 1 Китай, провинция Цзянсу, город Цзянъинь",
     "phone":"+86 183 6080 9300",
     "email":"aaron@titan-recycling.com",
-    "subscribe":"Подписка и подписывайтесь"
+    "subscribe":"Подписка и подписывайтесь",
+    "openMenu":"Открыть меню",
+    "closeMenu":"Закрыть меню"
   }
 }

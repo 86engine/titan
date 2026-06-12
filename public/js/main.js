@@ -581,7 +581,7 @@ Sidebar Toggle
             meanScreenWidth: "1199",
             meanExpand: ['<i class="fa-regular fa-plus"></i>'],
         });
-
+   
         /*======================================
           One Page overlay close
         ========================================*/
