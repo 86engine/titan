@@ -1,15 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import UpdatesList from "../../components/UpdatesList.astro";
-import { getUpdates, getUpdateCategories } from "../../data/updates.js";
+import { getUpdates } from "../../data/updates.js";
 import headerI18n from "../../../public/data/header-i18n.json" with { type: 'json' };
 
 const lang = 'ru';
 
-const [allUpdates, categories] = await Promise.all([
-  getUpdates(lang),
-  getUpdateCategories(lang),
-]);
+const allUpdates = await getUpdates(lang);
+
+const pageMeta = {
+  title: "Связаться с TITAN | Производитель оборудования для переработки металлолома",
+  description: "Свяжитесь с TITAN для получения решений по оборудованию для переработки металлолома, технической поддержки и коммерческих предложений. Наша инженерная команда быстро ответит на ваш запрос.",
+  keywords: "производитель оборудования для переработки металлолома",
+};
 
 const ui = headerI18n[lang] || headerI18n.en;
 ui.by = { en: 'By', es: 'Por', ru: 'Автор' }[lang] || 'By';
@@ -23,9 +26,9 @@ ui.all = { en: 'All', es: 'Todos', ru: 'Все' }[lang] || 'All';
 <BaseLayout
   lang={lang}
   currentContentId="newsList"
-  title={categories.pageTitle}
-  description={categories.pageDescription}
-  keywords={categories.pageKeywords}
+  title={pageMeta.title}
+  description={pageMeta.description}
+  keywords={pageMeta.keywords}
 >
   <UpdatesList lang={lang} updates={allUpdates} ui={ui} />
 </BaseLayout>
