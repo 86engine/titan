@@ -159,6 +159,14 @@ const canonical = alternates[lang] || `${siteUrl}/`;
     <link rel="stylesheet" href="/css/vendor/magnific-popup.css">
     <link rel="stylesheet" href="/css/vendor/fontawesome-pro.css">
     <link rel="stylesheet" href="/css/vendor/spacing.css">
+    <style is:global>
+      [data-no-copy-detail] {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+      }
+    </style>
   </head>
   
   <body>
@@ -175,5 +183,44 @@ const canonical = alternates[lang] || `${siteUrl}/`;
     <script is:inline defer src="/js/vendor/ajax-form.js"></script>
     <script is:inline defer src="/js/plugins/parallax-effect.min.js"></script>
     <script is:inline defer src="/js/main.js"></script>
+    <script is:inline>
+      (() => {
+        const getDetailRoot = (target) => {
+          if (!(target instanceof Element)) return null;
+          return target.closest('[data-no-copy-detail]');
+        };
+
+        document.addEventListener('copy', (event) => {
+          if (!getDetailRoot(event.target)) return;
+          event.preventDefault();
+        }, true);
+
+        document.addEventListener('cut', (event) => {
+          if (!getDetailRoot(event.target)) return;
+          event.preventDefault();
+        }, true);
+
+        document.addEventListener('selectstart', (event) => {
+          if (!getDetailRoot(event.target)) return;
+          event.preventDefault();
+        }, true);
+
+        document.addEventListener('contextmenu', (event) => {
+          if (!getDetailRoot(event.target)) return;
+          event.preventDefault();
+        }, true);
+
+        document.addEventListener('keydown', (event) => {
+          if (!(event.ctrlKey || event.metaKey)) return;
+          if (!['a', 'c', 'x'].includes(event.key.toLowerCase())) return;
+
+          const activeElement = document.activeElement;
+          const source = activeElement instanceof Element ? activeElement : event.target;
+          if (!getDetailRoot(source)) return;
+
+          event.preventDefault();
+        }, true);
+      })();
+    </script>
   </body>
 </html>
