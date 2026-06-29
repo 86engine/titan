@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { LANGS } from "../config/site";
+import { LANGS, isStaticPage } from "../config/site";
 import { getPageURL, getTranslationsByContentId } from "../data/site.js";
 import "../styles/main.css";
 
@@ -15,22 +15,32 @@ const {
 } = Astro.props;
 
 const siteUrl = 'https://titan-recycling.com';
+const toAbsoluteUrl = (url) => {
+  if (!url) return '';
+  if (/^https?:\/\//.test(url)) return url;
+  return new URL(url, siteUrl).toString();
+};
 
 const translations = getTranslationsByContentId(currentContentId);
 const pageUrls = Object.fromEntries(
   LANGS.map((language) => [language, getPageURL(currentContentId, language)])
 );
+const useStaticAlternates = isStaticPage(currentContentId);
 
 const alternates = {};
-if (translations) {
-  for (const l of LANGS) {
-    if (translations[l]?.link) {
-      alternates[l] = translations[l].link;
-    }
+for (const l of LANGS) {
+  const translatedUrl = translations?.[l]?.link;
+  const pageUrl = pageUrls[l];
+  if (useStaticAlternates && pageUrl) {
+    alternates[l] = toAbsoluteUrl(pageUrl);
+  } else if (translatedUrl) {
+    alternates[l] = toAbsoluteUrl(translatedUrl);
+  } else if (pageUrl) {
+    alternates[l] = toAbsoluteUrl(pageUrl);
   }
 }
 
-const canonical = alternates[lang] || `${siteUrl}/`;
+const canonical = alternates[lang] || toAbsoluteUrl(pageUrls[lang]) || `${siteUrl}/`;
 ---
 
 <html lang={lang}>
