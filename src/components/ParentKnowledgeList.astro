@@ -1,6 +1,6 @@
 ---
 import PageBanner from "./PageBanner.astro";
-import { buildBreadcrumb, getSubCategoryURL, getSubKnowledgeList, getSubCategoryName } from "../data/site.js";
+import { getPageURL, buildBreadcrumb, getSubKnowledgeList, getSubCategoryName } from "../data/site.js";
 
 const { lang, pageData, ui } = Astro.props;
 
@@ -43,7 +43,7 @@ const cardImages = {
   <div class="container">
     <div class="row g-5">
       {subKnowledge.map(sub => {
-        const href = getSubCategoryURL(sub.contentId, lang);
+        const href = getPageURL(sub.contentId, lang);
         const img = cardImages[sub.contentId] || 'https://img.titan-recycling.com/system/metal-recycling-equipment-banner.webp';
         const title = getSubCategoryName(sub.contentId, lang);
         return (
