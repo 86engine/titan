@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const lang = 'es';
 const { application } = Astro.props;
 
-if (!application) return Astro.redirect('/es/reciclaje-de-metales');
+if (!application) return Astro.redirect('/es/soluciones-de-reciclaje');
 
 const ui = headerI18n[lang] || headerI18n.en;
 ---
