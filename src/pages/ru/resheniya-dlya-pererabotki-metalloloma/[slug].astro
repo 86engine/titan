@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const lang = 'ru';
 const { application } = Astro.props;
 
-if (!application) return Astro.redirect('/ru/pererabotka-metalla');
+if (!application) return Astro.redirect('/ru/resheniya-dlya-pererabotki-metalloloma');
 
 const ui = headerI18n[lang] || headerI18n.en;
 ---

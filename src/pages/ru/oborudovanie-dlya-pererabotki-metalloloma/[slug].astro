@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const lang = 'ru';
 const { product } = Astro.props;
 
-if (!product) return Astro.redirect('/ru/oborudovanie-dlya-pererabotki-metallov');
+if (!product) return Astro.redirect('/ru/oborudovanie-dlya-pererabotki-metalloloma');
 
 const ui = headerI18n[lang] || headerI18n.en;
 ui.download = { en: 'Download', es: 'Descargar', ru: 'Скачать' }[lang] || 'Download';
